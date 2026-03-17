@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { registerStaticInvalidationHandlers, registerHeaderFooterInvalidation } from './invalidation-handlers.js';
-import { applyPartInvalidation, clearInvalidationHandlers } from './part-invalidation-registry.js';
-import type { PartChangedEvent } from '../types.js';
+import { registerStaticInvalidationHandlers, registerHeaderFooterInvalidation } from './invalidation-handlers';
+import { applyPartInvalidation, clearInvalidationHandlers } from './part-invalidation-registry';
+import type { PartChangedEvent } from '../types';
 
 function createMockEditor() {
   const tr = { setMeta: vi.fn() };

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import type { Editor } from '../core/Editor.js';
-import { createHistoryAdapter } from './history-adapter.js';
+import type { Editor } from '../core/Editor';
+import { createHistoryAdapter } from './history-adapter';
 
 const { undoDepthMock, redoDepthMock, yGetStateMock } = vi.hoisted(() => ({
   undoDepthMock: vi.fn(() => 0),

@@ -1,7 +1,7 @@
 import { describe, it, expect, afterEach } from 'vitest';
 import * as Y from 'yjs';
-import { encodeEnvelopeToYjs, decodeYjsToEnvelope, readEnvelopeVersion } from './json-crdt.js';
-import type { PartEnvelope } from './types.js';
+import { encodeEnvelopeToYjs, decodeYjsToEnvelope, readEnvelopeVersion } from './json-crdt';
+import type { PartEnvelope } from './types';
 
 /**
  * Helper: encode an envelope and integrate it into a Y.Doc so Yjs types are

@@ -21,8 +21,8 @@ import type { EditorState } from 'prosemirror-state';
 import type { FlowBlock } from '@superdoc/contracts';
 import { toFlowBlocks, type ConverterContext } from '@superdoc/pm-adapter';
 
-import type { FootnoteReference, FootnotesLayoutInput } from '../types.js';
-import { findNoteEntryById } from '../../../document-api-adapters/helpers/note-entry-lookup.js';
+import type { FootnoteReference, FootnotesLayoutInput } from '../types';
+import { findNoteEntryById } from '../../../document-api-adapters/helpers/note-entry-lookup';
 
 // Re-export types for consumers
 export type { FootnoteReference, FootnotesLayoutInput };

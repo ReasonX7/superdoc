@@ -5,7 +5,7 @@
  * Canonical storage is OOXML JSON per part — no alternate domain models.
  */
 
-import type { Editor } from '../Editor.js';
+import type { Editor } from '../Editor';
 
 // ---------------------------------------------------------------------------
 // Part Identity

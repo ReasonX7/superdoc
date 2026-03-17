@@ -13,8 +13,8 @@
  */
 
 import { Fragment, type Node as ProseMirrorNode, type Schema } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import type { ProseMirrorJSON } from '../../core/types/EditorTypes.js';
+import type { Editor } from '../../core/Editor';
+import type { ProseMirrorJSON } from '../../core/types/EditorTypes';
 import type {
   ContentControlInfo,
   ContentControlMutationResult,
@@ -86,9 +86,9 @@ import type {
   MutationOptions,
   CreateContentControlInput,
 } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
+import { DocumentApiAdapterError } from '../errors';
+import { executeDomainCommand } from './plan-wrappers';
+import { clearIndexCache } from '../helpers/index-cache';
 
 // Shared helpers — single source of truth for SDT logic
 import {
@@ -117,8 +117,8 @@ import {
   upsertSdtPrChild,
   removeSdtPrChild,
   type SdtPrElement,
-} from '../helpers/content-controls/index.js';
-import { buildBlockIndex, findBlockByNodeIdOnly } from '../helpers/node-address-resolver.js';
+} from '../helpers/content-controls/index';
+import { buildBlockIndex, findBlockByNodeIdOnly } from '../helpers/node-address-resolver';
 
 // ---------------------------------------------------------------------------
 // Helpers

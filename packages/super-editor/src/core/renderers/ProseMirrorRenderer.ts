@@ -1,12 +1,12 @@
 import { EditorView } from 'prosemirror-view';
 import type { DirectEditorProps } from 'prosemirror-view';
 import { DOMSerializer as PmDOMSerializer } from 'prosemirror-model';
-import { transformListsInCopiedContent } from '@core/inputRules/html/transform-copied-lists.js';
-import { applyStyleIsolationClass } from '../../utils/styleIsolation.js';
-import { canUseDOM } from '../../utils/canUseDOM.js';
-import type { EditorRenderer, EditorRendererAttachParams } from './EditorRenderer.js';
-import type { Editor } from '../Editor.js';
-import type { EditorOptions } from '../types/EditorConfig.js';
+import { transformListsInCopiedContent } from '@core/inputRules/html/transform-copied-lists';
+import { applyStyleIsolationClass } from '../../utils/styleIsolation';
+import { canUseDOM } from '../../utils/canUseDOM';
+import type { EditorRenderer, EditorRendererAttachParams } from './EditorRenderer';
+import type { Editor } from '../Editor';
+import type { EditorOptions } from '../types/EditorConfig';
 
 /**
  * Default fallback margin for presentation mode when pageMargins.top is undefined.

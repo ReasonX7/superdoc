@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { denormalizeClientPoint, normalizeClientPoint } from './PointerNormalization.js';
+import { denormalizeClientPoint, normalizeClientPoint } from './PointerNormalization';
 
 describe('PointerNormalization', () => {
   const makeHosts = () => {

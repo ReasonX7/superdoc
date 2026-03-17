@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import type { FlowBlock } from '@superdoc/contracts';
 
-import { buildSemanticFootnoteBlocks } from '../semantic-flow-footnotes.js';
+import { buildSemanticFootnoteBlocks } from '../semantic-flow-footnotes';
 import {
   isSemanticFootnoteBlockId,
   SEMANTIC_FOOTNOTES_HEADING_BLOCK_ID,
   SEMANTIC_FOOTNOTE_BLOCK_ID_PREFIX,
-} from '../semantic-flow-constants.js';
-import type { FootnotesLayoutInput } from '../types.js';
+} from '../semantic-flow-constants';
+import type { FootnotesLayoutInput } from '../types';
 
 const createParagraphBlock = (id: string, run: Record<string, unknown>): FlowBlock =>
   ({

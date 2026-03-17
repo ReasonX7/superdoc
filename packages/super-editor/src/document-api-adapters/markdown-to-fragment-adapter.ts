@@ -5,16 +5,16 @@
  * Flow: Markdown string → mdast → PM nodes → SDContentNode[]
  */
 
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type {
   MarkdownToFragmentInput,
   SDMarkdownToFragmentResult,
   SDDiagnostic,
   SDContentNode,
 } from '@superdoc/document-api';
-import { markdownToPmFragment } from '../core/helpers/markdown/markdownToPmContent.js';
-import { projectContentNode } from './helpers/sd-projection.js';
-import type { MarkdownDiagnostic } from '../core/helpers/markdown/types.js';
+import { markdownToPmFragment } from '../core/helpers/markdown/markdownToPmContent';
+import { projectContentNode } from './helpers/sd-projection';
+import type { MarkdownDiagnostic } from '../core/helpers/markdown/types';
 
 /**
  * Converts a Markdown string into an SDM/1 fragment by parsing through the

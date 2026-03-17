@@ -8,7 +8,7 @@
  */
 
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   TocEntryAddress,
   TocMarkEntryInput,
@@ -28,19 +28,19 @@ import {
   applyTcPatch,
   areTcConfigsEqual,
   parseTcInstruction,
-} from '../../core/super-converter/field-references/shared/tc-switches.js';
+} from '../../core/super-converter/field-references/shared/tc-switches';
 import {
   findAllTcEntryNodes,
   resolveTcEntryTarget,
   findParagraphBySdBlockId,
   extractTcEntryInfo,
   buildTcEntryDiscoveryItem,
-} from '../helpers/toc-entry-resolver.js';
-import { paginate } from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { requireEditorCommand, rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
+} from '../helpers/toc-entry-resolver';
+import { paginate } from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
+import { executeDomainCommand } from './plan-wrappers';
+import { requireEditorCommand, rejectTrackedMode } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
 
 // ---------------------------------------------------------------------------
 // Validation

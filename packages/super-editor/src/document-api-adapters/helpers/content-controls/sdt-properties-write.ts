@@ -9,9 +9,9 @@
  * (translate-structured-content.js).
  */
 
-import type { Editor } from '../../../core/Editor.js';
+import type { Editor } from '../../../core/Editor';
 import type { ContentControlTarget } from '@superdoc/document-api';
-import { resolveSdtByTarget } from './target-resolution.js';
+import { resolveSdtByTarget } from './target-resolution';
 
 // ---------------------------------------------------------------------------
 // XML element helpers for sdtPr.elements

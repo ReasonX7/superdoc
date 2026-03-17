@@ -1,9 +1,9 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { InlineNodeType, NodeAddress, Query, QueryResult, UnknownNodeDiagnostic } from '@superdoc/document-api';
-import { getInlineIndex } from '../helpers/index-cache.js';
-import { findInlineByType, isInlineQueryType, type InlineCandidate } from '../helpers/inline-address-resolver.js';
-import { addDiagnostic, paginate, resolveWithinScope, scopeByRange } from '../helpers/adapter-utils.js';
-import type { BlockIndex } from '../helpers/node-address-resolver.js';
+import { getInlineIndex } from '../helpers/index-cache';
+import { findInlineByType, isInlineQueryType, type InlineCandidate } from '../helpers/inline-address-resolver';
+import { addDiagnostic, paginate, resolveWithinScope, scopeByRange } from '../helpers/adapter-utils';
+import type { BlockIndex } from '../helpers/node-address-resolver';
 
 function toInlineAddress(candidate: InlineCandidate, nodeTypeOverride?: InlineNodeType): NodeAddress {
   return {

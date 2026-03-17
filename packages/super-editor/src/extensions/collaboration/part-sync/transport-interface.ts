@@ -6,7 +6,7 @@
  * never mutate converter directly.
  */
 
-import type { PartId, PartSectionId, PartChangedEvent } from '../../../core/parts/types.js';
+import type { PartId, PartSectionId, PartChangedEvent } from '../../../core/parts/types';
 
 /** A serializable patch representing changes to a single part. */
 export interface PartPatch {

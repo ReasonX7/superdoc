@@ -10,15 +10,15 @@
  */
 
 import * as Y from 'yjs';
-import type { Editor } from '../../../core/Editor.js';
-import type { PartId } from '../../../core/parts/types.js';
-import type { PartsCapability } from './types.js';
-import { createPartPublisher, type PartPublisher } from './publisher.js';
-import { createPartConsumer, replacePartData, type PartConsumer } from './consumer.js';
-import { decodeYjsToEnvelope } from './json-crdt.js';
-import { isMigrationNeeded, migrateMetaDocxToParts } from './migration-from-meta-docx.js';
-import { seedPartsFromEditor } from './seed-parts.js';
-import { mutateParts, hasPart } from '../../../core/parts/index.js';
+import type { Editor } from '../../../core/Editor';
+import type { PartId } from '../../../core/parts/types';
+import type { PartsCapability } from './types';
+import { createPartPublisher, type PartPublisher } from './publisher';
+import { createPartConsumer, replacePartData, type PartConsumer } from './consumer';
+import { decodeYjsToEnvelope } from './json-crdt';
+import { isMigrationNeeded, migrateMetaDocxToParts } from './migration-from-meta-docx';
+import { seedPartsFromEditor } from './seed-parts';
+import { mutateParts, hasPart } from '../../../core/parts/index';
 import {
   PARTS_MAP_KEY,
   META_MAP_KEY,
@@ -29,15 +29,15 @@ import {
   CRITICAL_PART_IDS,
   PARTS_SCHEMA_VERSION,
   SOURCE_COLLAB_REMOTE_PARTS,
-} from './constants.js';
+} from './constants';
 import {
   registerExistingHeaderFooterDescriptors,
   resolveHeaderFooterRId,
-} from '../../../core/parts/adapters/header-footer-sync.js';
+} from '../../../core/parts/adapters/header-footer-sync';
 import {
   ensureHeaderFooterDescriptor,
   isHeaderFooterPartId,
-} from '../../../core/parts/adapters/header-footer-part-descriptor.js';
+} from '../../../core/parts/adapters/header-footer-part-descriptor';
 
 // ---------------------------------------------------------------------------
 // Public API
@@ -169,7 +169,7 @@ export function bootstrapPartSync(editor: Editor, ydoc: Y.Doc): PartSyncHandle {
 
 function activateSync(editor: Editor, ydoc: Y.Doc): PartSyncHandle {
   const publisher = createPartPublisher(editor, ydoc);
-  const partChangedHandler = (event: import('../../../core/parts/types.js').PartChangedEvent) => {
+  const partChangedHandler = (event: import('../../../core/parts/types').PartChangedEvent) => {
     publisher.handlePartChanged(event);
   };
   editor.on('partChanged', partChangedHandler);
@@ -207,7 +207,7 @@ interface HydrationResult {
  * Critical parts must all succeed; non-critical parts are skipped on failure.
  */
 function hydrateFromPartsMap(editor: Editor, ydoc: Y.Doc, partsMap: Y.Map<unknown>): HydrationResult {
-  const operations: import('../../../core/parts/types.js').PartOperation[] = [];
+  const operations: import('../../../core/parts/types').PartOperation[] = [];
   const criticalFailures: string[] = [];
 
   // Decode rels from Yjs for header/footer sectionId resolution

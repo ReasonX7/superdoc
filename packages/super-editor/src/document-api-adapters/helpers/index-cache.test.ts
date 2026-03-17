@@ -1,6 +1,6 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import { getBlockIndex, getInlineIndex } from './index-cache.js';
+import type { Editor } from '../../core/Editor';
+import { getBlockIndex, getInlineIndex } from './index-cache';
 
 function createTextNode(text: string): ProseMirrorNode {
   return {

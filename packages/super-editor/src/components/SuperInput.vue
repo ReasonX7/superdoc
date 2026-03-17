@@ -1,7 +1,7 @@
 <script setup>
 import { ref, shallowRef, onMounted, onBeforeUnmount } from 'vue';
 import { Editor } from '@superdoc/super-editor';
-import { getRichTextExtensions, Placeholder } from '@extensions/index.js';
+import { getRichTextExtensions, Placeholder } from '@extensions/index';
 
 const emit = defineEmits(['update:modelValue', 'focus', 'blur']);
 const props = defineProps({

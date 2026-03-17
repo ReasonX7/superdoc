@@ -33,9 +33,9 @@ import type {
   CompiledRangeTarget,
   CompiledSpanTarget,
   ExecuteContext,
-} from './executor-registry.types.js';
-import { registerStepExecutor } from './executor-registry.js';
-import { planError } from './errors.js';
+} from './executor-registry.types';
+import { registerStepExecutor } from './executor-registry';
+import { planError } from './errors';
 
 /** Safely extract blockId from a target (only present on range targets). */
 function targetBlockId(t: CompiledTarget | undefined): string {
@@ -50,8 +50,8 @@ import {
   executeSpanTextDelete,
   executeSpanStyleApply,
   executeCreateStep,
-} from './executor.js';
-import { executeStructuralInsert, executeStructuralReplace } from '../structural-write-engine/index.js';
+} from './executor';
+import { executeStructuralInsert, executeStructuralReplace } from '../structural-write-engine/index';
 import {
   tablesDeleteAdapter,
   tablesClearContentsAdapter,
@@ -90,7 +90,7 @@ import {
   tablesSetCellSpacingAdapter,
   tablesClearCellSpacingAdapter,
   createTableAdapter,
-} from '../tables-adapter.js';
+} from '../tables-adapter';
 
 // ---------------------------------------------------------------------------
 // Target partitioning

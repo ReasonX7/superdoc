@@ -1,10 +1,10 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { BlocksDeleteInput, MutationOptions } from '@superdoc/document-api';
-import { blocksDeleteWrapper, blocksDeleteRangeWrapper, blocksListWrapper } from './blocks-wrappers.js';
-import { registerBuiltInExecutors } from './register-executors.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import { blocksDeleteWrapper, blocksDeleteRangeWrapper, blocksListWrapper } from './blocks-wrappers';
+import { registerBuiltInExecutors } from './register-executors';
+import { DocumentApiAdapterError } from '../errors';
 
 // Ensure the domain.command executor is registered for executeDomainCommand
 registerBuiltInExecutors();

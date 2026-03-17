@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findNoteEntryById } from './note-entry-lookup.js';
+import { findNoteEntryById } from './note-entry-lookup';
 
 describe('findNoteEntryById', () => {
   it('returns the matching regular entry', () => {

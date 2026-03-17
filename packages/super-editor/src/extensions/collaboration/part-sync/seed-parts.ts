@@ -7,9 +7,9 @@
  */
 
 import * as Y from 'yjs';
-import type { Editor } from '../../../core/Editor.js';
-import type { PartsCapability } from './types.js';
-import { encodeEnvelopeToYjs } from './json-crdt.js';
+import type { Editor } from '../../../core/Editor';
+import type { PartsCapability } from './types';
+import { encodeEnvelopeToYjs } from './json-crdt';
 import {
   PARTS_MAP_KEY,
   META_MAP_KEY,
@@ -17,7 +17,7 @@ import {
   META_PARTS_SCHEMA_VERSION_KEY,
   EXCLUDED_PART_IDS,
   PARTS_SCHEMA_VERSION,
-} from './constants.js';
+} from './constants';
 
 interface SeedOptions {
   /** When true, delete stale keys from parts map not in the current snapshot. */

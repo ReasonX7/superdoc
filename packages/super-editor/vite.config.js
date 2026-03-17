@@ -3,6 +3,7 @@ import { configDefaults } from 'vitest/config'
 import { fileURLToPath, URL } from 'node:url'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import vue from '@vitejs/plugin-vue'
+import dts from 'vite-plugin-dts'
 
 import { version as superdocVersion } from '../superdoc/package.json';
 import sourceResolve from '../../vite.sourceResolve'
@@ -27,7 +28,13 @@ function resolveManualChunk(id) {
 }
 
 export default defineConfig(({ mode }) => {
-  const plugins = [vue()];
+  const plugins = [
+    vue(),
+    dts({
+      include: ['src/**/*'],
+      outDir: 'dist',
+    }),
+  ];
 
   if (mode !== 'test') plugins.push(nodePolyfills());
 

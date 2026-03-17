@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref, watch, computed } from 'vue';
-import { moveCursorToMouseEvent } from '../cursor-helpers.js';
+import { moveCursorToMouseEvent } from '../cursor-helpers';
 
 const props = defineProps({
   editor: { type: Object, required: true },

@@ -1,4 +1,4 @@
-import type { CollaborationProvider } from '../types/EditorConfig.js';
+import type { CollaborationProvider } from '../types/EditorConfig';
 
 type ProviderEventHandler = (...args: unknown[]) => void;
 

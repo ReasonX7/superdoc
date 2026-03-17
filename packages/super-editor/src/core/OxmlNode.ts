@@ -1,5 +1,5 @@
-import { Node } from './Node.js';
-import type { NodeConfig } from './Node.js';
+import { Node } from './Node';
+import type { NodeConfig } from './Node';
 
 /**
  * Configuration for OXML Node extensions (extends NodeConfig)

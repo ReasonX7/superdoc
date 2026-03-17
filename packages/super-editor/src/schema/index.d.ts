@@ -136,7 +136,7 @@ export interface SchemaKit {
  *
  * @example
  * ```typescript
- * import { schemaKit as v3Kit } from './versions/v3/index.js';
+ * import { schemaKit as v3Kit } from './versions/v3/index';
  * registerSchemaVersion('3.0', v3Kit);
  * ```
  */

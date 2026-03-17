@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { diffPartPaths } from './diff-part-paths.js';
+import { diffPartPaths } from './diff-part-paths';
 
 describe('diffPartPaths', () => {
   it('returns empty array for identical values', () => {

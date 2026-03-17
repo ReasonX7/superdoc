@@ -8,7 +8,7 @@
  */
 
 import { TextSelection } from 'prosemirror-state';
-import type { Editor } from '../../Editor.js';
+import type { Editor } from '../../Editor';
 import type { PositionHit } from '@superdoc/layout-bridge';
 
 // =============================================================================

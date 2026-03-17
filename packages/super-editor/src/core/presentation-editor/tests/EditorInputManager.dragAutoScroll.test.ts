@@ -4,7 +4,7 @@ import {
   EditorInputManager,
   type EditorInputDependencies,
   type EditorInputCallbacks,
-} from '../pointer-events/EditorInputManager.js';
+} from '../pointer-events/EditorInputManager';
 
 vi.mock('@superdoc/layout-bridge', () => ({
   clickToPosition: vi.fn(() => ({ pos: 5, layoutEpoch: 1, pageIndex: 0 })),

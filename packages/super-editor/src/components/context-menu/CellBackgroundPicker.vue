@@ -1,8 +1,8 @@
 <script setup>
 import IconGrid from '../toolbar/IconGrid.vue';
-import { icons } from '../toolbar/color-dropdown-helpers.js';
-import { isCellSelection } from '@extensions/table/tableHelpers/isCellSelection.js';
-import { cellAround } from '@extensions/table/tableHelpers/cellAround.js';
+import { icons } from '../toolbar/color-dropdown-helpers';
+import { isCellSelection } from '@extensions/table/tableHelpers/isCellSelection';
+import { cellAround } from '@extensions/table/tableHelpers/cellAround';
 
 const props = defineProps({
   editor: {

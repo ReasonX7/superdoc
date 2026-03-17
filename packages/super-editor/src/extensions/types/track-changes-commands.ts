@@ -4,7 +4,7 @@
  * @module TrackChangesCommands
  */
 
-import type { User } from '../../core/types/EditorConfig.js';
+import type { User } from '../../core/types/EditorConfig';
 
 /** Tracked change object with position info */
 export type TrackedChange = {
@@ -197,6 +197,6 @@ export interface TrackChangesCommands {
   enableTrackChangesShowFinal: () => boolean;
 }
 
-declare module '../../core/types/ChainedCommands.js' {
+declare module '../../core/types/ChainedCommands' {
   interface ExtensionCommandMap extends TrackChangesCommands {}
 }

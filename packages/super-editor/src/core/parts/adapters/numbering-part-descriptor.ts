@@ -9,11 +9,11 @@
  * shares element references with the canonical XML tree).
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartDescriptor } from '../types.js';
-import { translator as wAbstractNumTranslator } from '../../super-converter/v3/handlers/w/abstractNum/index.js';
-import { translator as wNumTranslator } from '../../super-converter/v3/handlers/w/num/index.js';
-import { isPartCacheStale, clearPartCacheStale } from '../cache-staleness.js';
+import type { Editor } from '../../Editor';
+import type { PartDescriptor } from '../types';
+import { translator as wAbstractNumTranslator } from '../../super-converter/v3/handlers/w/abstractNum/index';
+import { translator as wNumTranslator } from '../../super-converter/v3/handlers/w/num/index';
+import { isPartCacheStale, clearPartCacheStale } from '../cache-staleness';
 
 const NUMBERING_PART_ID = 'word/numbering.xml' as const;
 

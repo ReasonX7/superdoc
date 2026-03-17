@@ -1,11 +1,11 @@
 import { toFlowBlocks } from '@superdoc/pm-adapter';
-import { getAtomNodeTypes as getAtomNodeTypesFromSchema } from '../presentation-editor/utils/SchemaNodeTypes.js';
+import { getAtomNodeTypes as getAtomNodeTypesFromSchema } from '../presentation-editor/utils/SchemaNodeTypes';
 import type { FlowBlock } from '@superdoc/contracts';
 import type { HeaderFooterBatch } from '@superdoc/layout-bridge';
-import type { Editor } from '@core/Editor.js';
-import { EventEmitter } from '@core/EventEmitter.js';
-import { createHeaderFooterEditor, onHeaderFooterDataUpdate } from '@extensions/pagination/pagination-helpers.js';
-import type { ConverterContext } from '@superdoc/pm-adapter/converter-context.js';
+import type { Editor } from '@core/Editor';
+import { EventEmitter } from '@core/EventEmitter';
+import { createHeaderFooterEditor, onHeaderFooterDataUpdate } from '@extensions/pagination/pagination-helpers';
+import type { ConverterContext } from '@superdoc/pm-adapter/converter-context';
 
 const HEADER_FOOTER_VARIANTS = ['default', 'first', 'even', 'odd'] as const;
 const DEFAULT_HEADER_FOOTER_HEIGHT = 100;

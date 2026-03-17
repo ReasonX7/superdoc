@@ -33,7 +33,7 @@
  */
 
 // Load all augmentations (side-effect imports)
-import './extensions/types/index.js';
+import './extensions/types/index';
 
 // ============================================
 // COMMAND TYPES
@@ -51,23 +51,23 @@ export type {
   ExtensionCommands,
   CoreCommandMap,
   ExtensionCommandMap,
-} from './core/types/ChainedCommands.js';
+} from './core/types/ChainedCommands';
 
 // ============================================
 // NODE ATTRIBUTE TYPES
 // ============================================
 
-export type { NodeAttributesMap, NodeName, NodeAttrs, TypedNode } from './core/types/NodeAttributesMap.js';
+export type { NodeAttributesMap, NodeName, NodeAttrs, TypedNode } from './core/types/NodeAttributesMap';
 
-export { isNodeType, assertNodeType } from './core/types/NodeAttributesMap.js';
+export { isNodeType, assertNodeType } from './core/types/NodeAttributesMap';
 
 // ============================================
 // MARK ATTRIBUTE TYPES
 // ============================================
 
-export type { MarkAttributesMap, MarkName, MarkAttrs, TypedMark } from './core/types/MarkAttributesMap.js';
+export type { MarkAttributesMap, MarkName, MarkAttrs, TypedMark } from './core/types/MarkAttributesMap';
 
-export { isMarkType } from './core/types/MarkAttributesMap.js';
+export { isMarkType } from './core/types/MarkAttributesMap';
 
 // ============================================
 // NODE CATEGORY INTERFACES
@@ -80,7 +80,7 @@ export type {
   TextContainerAttributes,
   InlineNodeAttributes,
   ShapeNodeAttributes,
-} from './core/types/NodeCategories.js';
+} from './core/types/NodeCategories';
 
 // ============================================
 // COMMONLY USED ATTRIBUTE TYPES
@@ -95,7 +95,7 @@ export type {
   SpacingProperties,
   ListRendering,
   SectionMargins,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Table types
 export type {
@@ -114,7 +114,7 @@ export type {
   BorderSpec,
   ShadingProperties,
   ThemeColor,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Image types
 export type {
@@ -123,10 +123,10 @@ export type {
   ImagePadding,
   ImageWrap,
   ImageTransformData,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Run types
-export type { RunAttrs, RunProperties } from './extensions/types/node-attributes.js';
+export type { RunAttrs, RunProperties } from './extensions/types/node-attributes';
 
 // Other node types
 export type {
@@ -136,10 +136,10 @@ export type {
   HardBreakAttrs,
   StructuredContentAttrs,
   DocumentSectionAttrs,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Tab and bookmark types
-export type { TabAttrs, BookmarkStartAttrs, BookmarkEndAttrs } from './extensions/types/node-attributes.js';
+export type { TabAttrs, BookmarkStartAttrs, BookmarkEndAttrs } from './extensions/types/node-attributes';
 
 // Shape types
 export type {
@@ -151,7 +151,7 @@ export type {
   ShapeTextboxAttrs,
   VectorShapeAttrs,
   VectorShapeTextInsets,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Mention and page types
 export type {
@@ -159,10 +159,10 @@ export type {
   PageReferenceAttrs,
   PageNumberAttrs,
   TotalPageCountAttrs,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Field annotation types
-export type { FieldAnnotationAttrs, FieldAnnotationSize } from './extensions/types/node-attributes.js';
+export type { FieldAnnotationAttrs, FieldAnnotationSize } from './extensions/types/node-attributes';
 
 // Content block types
 export type {
@@ -172,20 +172,20 @@ export type {
   TableOfContentsAttrs,
   StructuredContentBlockAttrs,
   DocumentPartObjectAttrs,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Passthrough types
-export type { PassthroughBlockAttrs, PassthroughInlineAttrs } from './extensions/types/node-attributes.js';
+export type { PassthroughBlockAttrs, PassthroughInlineAttrs } from './extensions/types/node-attributes';
 
 // Permission types
-export type { PermStartAttrs, PermEndAttrs } from './extensions/types/node-attributes.js';
+export type { PermStartAttrs, PermEndAttrs } from './extensions/types/node-attributes';
 
 // Comment range types
 export type {
   CommentRangeStartAttrs,
   CommentRangeEndAttrs,
   CommentReferenceAttrs,
-} from './extensions/types/node-attributes.js';
+} from './extensions/types/node-attributes';
 
 // Mark types
 export type {
@@ -204,21 +204,21 @@ export type {
   TrackFormatEntry,
   TrackFormatAttrs,
   CommentMarkAttrs,
-} from './extensions/types/mark-attributes.js';
+} from './extensions/types/mark-attributes';
 
 // ============================================
 // EXTENSION HELPERS
 // ============================================
 
-export { defineNode } from './core/defineNode.js';
-export { defineMark } from './core/defineMark.js';
+export { defineNode } from './core/defineNode';
+export { defineMark } from './core/defineMark';
 
-export type { NodeConfig } from './core/Node.js';
-export type { MarkConfig } from './core/Mark.js';
-export type { OxmlNodeConfig } from './core/OxmlNode.js';
+export type { NodeConfig } from './core/Node';
+export type { MarkConfig } from './core/Mark';
+export type { OxmlNodeConfig } from './core/OxmlNode';
 
 // ============================================
 // EDITOR TYPES
 // ============================================
 
-export type { ProseMirrorJSON, ProseMirrorJSONNode, ProseMirrorJSONMark } from './core/types/EditorTypes.js';
+export type { ProseMirrorJSON, ProseMirrorJSONNode, ProseMirrorJSONMark } from './core/types/EditorTypes';

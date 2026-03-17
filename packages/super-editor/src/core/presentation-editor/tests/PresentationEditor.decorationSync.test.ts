@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { DecorationSet } from 'prosemirror-view';
 import { PluginKey } from 'prosemirror-state';
 
-import { PresentationEditor } from '../PresentationEditor.js';
+import { PresentationEditor } from '../PresentationEditor';
 
 // Create a plugin key for our test highlight plugin
 const testHighlightPluginKey = new PluginKey('testHighlight');
@@ -156,7 +156,7 @@ const {
   };
 });
 
-vi.mock('../../Editor.js', () => {
+vi.mock('../../Editor', () => {
   return {
     Editor: vi.fn().mockImplementation(() => {
       const domElement = document.createElement('div');
@@ -263,7 +263,7 @@ vi.mock('@superdoc/painter-dom', () => ({
   },
 }));
 
-vi.mock('../../header-footer/EditorOverlayManager.js', () => ({
+vi.mock('../../header-footer/EditorOverlayManager', () => ({
   EditorOverlayManager: mockEditorOverlayManager,
 }));
 

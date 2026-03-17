@@ -20,12 +20,12 @@ import type {
   ValueSchema,
 } from '@superdoc/document-api';
 import { PROPERTY_REGISTRY } from '@superdoc/document-api';
-import type { Editor } from '../core/Editor.js';
-import { DocumentApiAdapterError } from './errors.js';
-import { mutatePart } from '../core/parts/mutation/mutate-part.js';
-import { syncDocDefaultsToConvertedXml, type DocDefaultsTranslator } from './styles-xml-sync.js';
-import { translator as docDefaultsTranslator } from '../core/super-converter/v3/handlers/w/docDefaults/docDefaults-translator.js';
-import type { PartId } from '../core/parts/types.js';
+import type { Editor } from '../core/Editor';
+import { DocumentApiAdapterError } from './errors';
+import { mutatePart } from '../core/parts/mutation/mutate-part';
+import { syncDocDefaultsToConvertedXml, type DocDefaultsTranslator } from './styles-xml-sync';
+import { translator as docDefaultsTranslator } from '../core/super-converter/v3/handlers/w/docDefaults/docDefaults-translator';
+import type { PartId } from '../core/parts/types';
 
 // ---------------------------------------------------------------------------
 // Local type shapes (avoids importing engine-specific modules directly)

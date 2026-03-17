@@ -15,29 +15,29 @@
 import { Selection, TextSelection, NodeSelection } from 'prosemirror-state';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { CellSelection } from 'prosemirror-tables';
-import type { Editor } from '../../Editor.js';
+import type { Editor } from '../../Editor';
 import type { Layout, FlowBlock, Measure } from '@superdoc/contracts';
-import type { CellAnchorState, PendingMarginClick, HeaderFooterRegion } from '../types.js';
+import type { CellAnchorState, PendingMarginClick, HeaderFooterRegion } from '../types';
 import type { PositionHit, PageGeometryHelper, TableHitResult } from '@superdoc/layout-bridge';
-import type { SelectionDebugHudState } from '../selection/SelectionDebug.js';
-import type { EpochPositionMapper } from '../layout/EpochPositionMapper.js';
-import type { HeaderFooterSessionManager } from '../header-footer/HeaderFooterSessionManager.js';
+import type { SelectionDebugHudState } from '../selection/SelectionDebug';
+import type { EpochPositionMapper } from '../layout/EpochPositionMapper';
+import type { HeaderFooterSessionManager } from '../header-footer/HeaderFooterSessionManager';
 
 import { clickToPosition, getFragmentAtPosition } from '@superdoc/layout-bridge';
 import {
   getFirstTextPosition as getFirstTextPositionFromHelper,
   registerPointerClick as registerPointerClickFromHelper,
-} from '../input/ClickSelectionUtilities.js';
-import { calculateExtendedSelection } from '../selection/SelectionHelpers.js';
+} from '../input/ClickSelectionUtilities';
+import { calculateExtendedSelection } from '../selection/SelectionHelpers';
 import {
   shouldUseCellSelection as shouldUseCellSelectionFromHelper,
   getCellPosFromTableHit as getCellPosFromTableHitFromHelper,
   getTablePosFromHit as getTablePosFromHitFromHelper,
   hitTestTable as hitTestTableFromHelper,
-} from '../tables/TableSelectionUtilities.js';
-import { debugLog } from '../selection/SelectionDebug.js';
+} from '../tables/TableSelectionUtilities';
+import { debugLog } from '../selection/SelectionDebug';
 import { DOM_CLASS_NAMES, buildInlineImagePmSelector } from '@superdoc/painter-dom';
-import { isSemanticFootnoteBlockId } from '../semantic-flow-constants.js';
+import { isSemanticFootnoteBlockId } from '../semantic-flow-constants';
 
 // =============================================================================
 // Constants

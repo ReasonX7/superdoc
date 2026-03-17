@@ -28,6 +28,6 @@ export interface BlockNodeCommands {
   updateBlockNodeAttributes: (id: string, attrs?: Record<string, unknown>) => boolean;
 }
 
-declare module '../../core/types/ChainedCommands.js' {
+declare module '../../core/types/ChainedCommands' {
   interface ExtensionCommandMap extends BlockNodeCommands {}
 }

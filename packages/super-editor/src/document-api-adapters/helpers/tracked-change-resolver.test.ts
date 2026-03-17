@@ -1,20 +1,20 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import {
   TrackDeleteMarkName,
   TrackFormatMarkName,
   TrackInsertMarkName,
-} from '../../extensions/track-changes/constants.js';
-import { getTrackChanges } from '../../extensions/track-changes/trackChangesHelpers/getTrackChanges.js';
+} from '../../extensions/track-changes/constants';
+import { getTrackChanges } from '../../extensions/track-changes/trackChangesHelpers/getTrackChanges';
 import {
   buildTrackedChangeCanonicalIdMap,
   groupTrackedChanges,
   resolveTrackedChange,
   resolveTrackedChangeType,
   toCanonicalTrackedChangeId,
-} from './tracked-change-resolver.js';
+} from './tracked-change-resolver';
 
-vi.mock('../../extensions/track-changes/trackChangesHelpers/getTrackChanges.js', () => ({
+vi.mock('../../extensions/track-changes/trackChangesHelpers/getTrackChanges', () => ({
   getTrackChanges: vi.fn(),
 }));
 

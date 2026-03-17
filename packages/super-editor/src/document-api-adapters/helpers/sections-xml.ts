@@ -16,7 +16,7 @@ import type {
   SectionPageSetup,
   SectionVerticalAlign,
 } from '@superdoc/document-api';
-import { inchesToTwips, twipsToInches } from '../../core/super-converter/helpers.js';
+import { inchesToTwips, twipsToInches } from '../../core/super-converter/helpers';
 
 export interface XmlElement {
   type?: string;

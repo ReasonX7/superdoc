@@ -6,21 +6,21 @@
  */
 
 // Command augmentations (existing)
-import './formatting-commands.js';
-import './specialized-commands.js';
-import './history-link-table-commands.js';
+import './formatting-commands';
+import './specialized-commands';
+import './history-link-table-commands';
 
 // Command augmentations (new)
-import './paragraph-commands.js';
-import './block-node-commands.js';
-import './image-commands.js';
-import './comment-commands.js';
-import './track-changes-commands.js';
-import './miscellaneous-commands.js';
+import './paragraph-commands';
+import './block-node-commands';
+import './image-commands';
+import './comment-commands';
+import './track-changes-commands';
+import './miscellaneous-commands';
 
 // Attribute augmentations
-import './node-attributes.js';
-import './mark-attributes.js';
+import './node-attributes';
+import './mark-attributes';
 
 // Re-export common types for convenience
 export type {
@@ -29,8 +29,8 @@ export type {
   Command,
   ChainedCommand,
   ChainableCommandObject,
-} from '../../core/types/ChainedCommands.js';
+} from '../../core/types/ChainedCommands';
 
-export type { NodeAttributesMap, NodeName, NodeAttrs, TypedNode } from '../../core/types/NodeAttributesMap.js';
+export type { NodeAttributesMap, NodeName, NodeAttrs, TypedNode } from '../../core/types/NodeAttributesMap';
 
-export type { MarkAttributesMap, MarkName, MarkAttrs } from '../../core/types/MarkAttributesMap.js';
+export type { MarkAttributesMap, MarkName, MarkAttrs } from '../../core/types/MarkAttributesMap';

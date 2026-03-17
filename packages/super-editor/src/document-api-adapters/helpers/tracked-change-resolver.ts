@@ -1,13 +1,13 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { TrackChangeType } from '@superdoc/document-api';
 import {
   TrackDeleteMarkName,
   TrackFormatMarkName,
   TrackInsertMarkName,
-} from '../../extensions/track-changes/constants.js';
-import { getTrackChanges } from '../../extensions/track-changes/trackChangesHelpers/getTrackChanges.js';
-import { normalizeExcerpt, toNonEmptyString } from './value-utils.js';
+} from '../../extensions/track-changes/constants';
+import { getTrackChanges } from '../../extensions/track-changes/trackChangesHelpers/getTrackChanges';
+import { normalizeExcerpt, toNonEmptyString } from './value-utils';
 
 const DERIVED_ID_LENGTH = 24;
 

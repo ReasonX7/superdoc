@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { applyDirectMutationMeta, applyTrackedMutationMeta } from './transaction-meta.js';
+import { applyDirectMutationMeta, applyTrackedMutationMeta } from './transaction-meta';
 
 function makeFakeTransaction() {
   const meta = new Map<string, unknown>();

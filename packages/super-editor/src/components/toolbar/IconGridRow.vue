@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { toolbarIcons } from './toolbarIcons.js';
+import { toolbarIcons } from './toolbarIcons';
 
 const emit = defineEmits(['select', 'clickoutside']);
 const props = defineProps({

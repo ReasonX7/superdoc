@@ -1,6 +1,6 @@
 import type { Schema } from 'prosemirror-model';
-import type { SchemaSummaryJSON, SchemaSummaryAttribute } from './types/EditorSchema.js';
-import type { AttributeValue } from './Attribute.js';
+import type { SchemaSummaryJSON, SchemaSummaryAttribute } from './types/EditorSchema';
+import type { AttributeValue } from './Attribute';
 
 declare const __APP_VERSION__: string | undefined;
 declare const version: string | undefined;

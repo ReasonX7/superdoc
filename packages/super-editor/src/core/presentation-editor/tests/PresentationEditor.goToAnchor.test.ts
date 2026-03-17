@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import type { Mock } from 'vitest';
-import { PresentationEditor } from '../PresentationEditor.js';
-import type { Editor as EditorInstance } from '../../Editor.js';
+import { PresentationEditor } from '../PresentationEditor';
+import type { Editor as EditorInstance } from '../../Editor';
 
 type MockedEditor = Mock<(...args: unknown[]) => EditorInstance> & {
   mock: {
@@ -244,7 +244,7 @@ vi.mock('@superdoc/measuring-dom', () => ({
   measureBlock: mockMeasureBlock,
 }));
 
-vi.mock('@extensions/pagination/pagination-helpers.js', () => ({
+vi.mock('@extensions/pagination/pagination-helpers', () => ({
   createHeaderFooterEditor: mockCreateHeaderFooterEditor,
   onHeaderFooterDataUpdate: mockOnHeaderFooterDataUpdate,
 }));

@@ -7,8 +7,8 @@
  * @example
  * ```typescript
  * // In a TypeScript file:
- * import { defineMark } from '@core/defineMark.js';
- * import type { LinkAttrs } from '@extensions/types/mark-attributes.js';
+ * import { defineMark } from '@core/defineMark';
+ * import type { LinkAttrs } from '@extensions/types/mark-attributes';
  *
  * interface LinkOptions {
  *   autolink: boolean;
@@ -30,10 +30,10 @@
  * @example
  * ```javascript
  * // In a JavaScript file with JSDoc:
- * import { defineMark } from '@core/defineMark.js';
+ * import { defineMark } from '@core/defineMark';
  *
  * /**
- *  * @typedef {import('@extensions/types/mark-attributes.js').BoldAttrs} BoldAttrs
+ *  * @typedef {import('@extensions/types/mark-attributes').BoldAttrs} BoldAttrs
  *  *\/
  *
  * export const Bold = defineMark({
@@ -45,7 +45,7 @@
  * @module defineMark
  */
 
-import { Mark, type MarkConfig } from './Mark.js';
+import { Mark, type MarkConfig } from './Mark';
 
 /**
  * Type-safe factory for creating Mark extensions.

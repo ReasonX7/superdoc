@@ -5,4 +5,4 @@
  * This module exists as the canonical import path for descriptor-related types.
  */
 
-export type { PartDescriptor, CommitContext, DeleteContext } from '../types.js';
+export type { PartDescriptor, CommitContext, DeleteContext } from '../types';

@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "checkJs": false,
-    "allowJs": true,
+    "allowJs": false,
+    "noImplicitAny": false,
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "dist",
@@ -16,7 +17,8 @@
       "@helpers/*": ["./src/core/helpers/*"],
       "@converter/*": ["./src/core/super-converter/*"],
       "@tests/*": ["./src/tests/*"],
-      "@translator": ["./src/core/super-converter/v3/node-translator/"]
+      "@translator": ["./src/core/super-converter/v3/node-translator/"],
+      "@utils": ["./src/utils/"],
     }
   },
   "include": ["src/**/*"],

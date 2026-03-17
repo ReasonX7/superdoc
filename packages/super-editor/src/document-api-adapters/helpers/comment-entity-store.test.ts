@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { TextTarget } from '@superdoc/document-api';
 import {
   buildCommentJsonFromText,
@@ -11,7 +11,7 @@ import {
   toCommentInfo,
   upsertCommentEntity,
   type CommentEntityRecord,
-} from './comment-entity-store.js';
+} from './comment-entity-store';
 
 function makeEditorWithConverter(comments: CommentEntityRecord[] = []): Editor {
   return { converter: { comments } } as unknown as Editor;

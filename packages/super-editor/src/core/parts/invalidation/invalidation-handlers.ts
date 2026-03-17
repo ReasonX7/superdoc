@@ -6,9 +6,9 @@
  * and dynamically at creation time for header/footer parts.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartChangedEvent, PartId } from '../types.js';
-import { registerInvalidationHandler } from './part-invalidation-registry.js';
+import type { Editor } from '../../Editor';
+import type { PartChangedEvent, PartId } from '../types';
+import { registerInvalidationHandler } from './part-invalidation-registry';
 
 // ---------------------------------------------------------------------------
 // word/numbering.xml

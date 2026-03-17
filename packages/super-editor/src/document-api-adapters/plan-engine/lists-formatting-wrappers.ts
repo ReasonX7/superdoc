@@ -9,7 +9,7 @@
  * `clearLevelOverrides` is the only instance-scope operation (removes w:lvlOverride).
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   ListsApplyTemplateInput,
   ListsApplyPresetInput,
@@ -30,17 +30,17 @@ import type {
   MutationOptions,
   ReceiptFailureCode,
 } from '@superdoc/document-api';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { mutatePart } from '../../core/parts/mutation/mutate-part.js';
-import { compoundMutation } from '../../core/parts/mutation/compound-mutation.js';
-import { syncNumberingToXmlTree } from '../../core/parts/adapters/numbering-part-descriptor.js';
-import type { PartId } from '../../core/parts/types.js';
-import { resolveListItem, type ListItemProjection } from '../helpers/list-item-resolver.js';
-import { getAbstractNumId, getContiguousSequence, findAdjacentSequence } from '../helpers/list-sequence-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { LevelFormattingHelpers } from '../../core/helpers/list-level-formatting-helpers.js';
-import { updateNumberingProperties } from '../../core/commands/changeListLevel.js';
-import { ListHelpers } from '../../core/helpers/list-numbering-helpers.js';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { mutatePart } from '../../core/parts/mutation/mutate-part';
+import { compoundMutation } from '../../core/parts/mutation/compound-mutation';
+import { syncNumberingToXmlTree } from '../../core/parts/adapters/numbering-part-descriptor';
+import type { PartId } from '../../core/parts/types';
+import { resolveListItem, type ListItemProjection } from '../helpers/list-item-resolver';
+import { getAbstractNumId, getContiguousSequence, findAdjacentSequence } from '../helpers/list-sequence-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { LevelFormattingHelpers } from '../../core/helpers/list-level-formatting-helpers';
+import { updateNumberingProperties } from '../../core/commands/changeListLevel';
+import { ListHelpers } from '../../core/helpers/list-numbering-helpers';
 
 // ---------------------------------------------------------------------------
 // Shared helpers

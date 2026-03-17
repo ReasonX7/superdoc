@@ -4,8 +4,8 @@ import { PluginKey } from 'prosemirror-state';
 import type { EditorState, Plugin } from 'prosemirror-state';
 import type { Transaction } from 'prosemirror-state';
 
-import { DecorationBridge } from './DecorationBridge.js';
-import { DomPositionIndex } from './DomPositionIndex.js';
+import { DecorationBridge } from './DecorationBridge';
+import { DomPositionIndex } from './DomPositionIndex';
 
 // ---------------------------------------------------------------------------
 // Test helpers

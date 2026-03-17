@@ -1,6 +1,6 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type { SDGetInput, SDDocument } from '@superdoc/document-api';
-import { projectDocument } from './helpers/sd-projection.js';
+import { projectDocument } from './helpers/sd-projection';
 
 /**
  * Read the full document as an SDDocument structure.

@@ -1,7 +1,7 @@
 import type { MarkType } from 'prosemirror-model';
 import type { MutationOptions } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import { DocumentApiAdapterError } from '../errors';
 
 /**
  * Validates that an editor command exists and returns it.

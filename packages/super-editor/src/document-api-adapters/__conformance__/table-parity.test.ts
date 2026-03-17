@@ -8,7 +8,7 @@
  * 4. Set→get round-trips produce correct output
  */
 import { describe, it, expect, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import {
   tablesSetLayoutAdapter,
@@ -19,7 +19,7 @@ import {
   tablesClearCellSpacingAdapter,
   tablesSetBorderAdapter,
   tablesGetPropertiesAdapter,
-} from '../tables-adapter.js';
+} from '../tables-adapter';
 
 // ---------------------------------------------------------------------------
 // Test utilities

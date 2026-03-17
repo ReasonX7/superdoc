@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 
-import { DomPositionIndexObserverManager } from '../dom/DomPositionIndexObserverManager.js';
+import { DomPositionIndexObserverManager } from '../dom/DomPositionIndexObserverManager';
 
 describe('DomPositionIndexObserverManager', () => {
   let mockWindow: Window & typeof globalThis;

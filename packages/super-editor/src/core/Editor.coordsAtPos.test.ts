@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Editor } from './Editor.js';
+import { Editor } from './Editor';
 
 function makeCoords(left: number, top: number) {
   return {

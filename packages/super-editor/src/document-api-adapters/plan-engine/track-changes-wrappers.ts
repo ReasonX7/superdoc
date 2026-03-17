@@ -7,7 +7,7 @@
  * editor commands with plan-engine revision tracking.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   Receipt,
   RevisionGuardOptions,
@@ -22,18 +22,18 @@ import type {
   TrackChangesListResult,
 } from '@superdoc/document-api';
 import { buildResolvedHandle, buildDiscoveryItem, buildDiscoveryResult } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
-import { requireEditorCommand } from '../helpers/mutation-helpers.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { paginate, validatePaginationInput } from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
+import { DocumentApiAdapterError } from '../errors';
+import { requireEditorCommand } from '../helpers/mutation-helpers';
+import { executeDomainCommand } from './plan-wrappers';
+import { paginate, validatePaginationInput } from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
 import {
   groupTrackedChanges,
   resolveTrackedChange,
   resolveTrackedChangeType,
   type GroupedTrackedChange,
-} from '../helpers/tracked-change-resolver.js';
-import { normalizeExcerpt, toNonEmptyString } from '../helpers/value-utils.js';
+} from '../helpers/tracked-change-resolver';
+import { normalizeExcerpt, toNonEmptyString } from '../helpers/value-utils';
 
 function buildTrackChangeInfo(editor: Editor, change: GroupedTrackedChange): TrackChangeInfo {
   const excerpt = normalizeExcerpt(editor.state.doc.textBetween(change.from, change.to, ' ', '\ufffc'));

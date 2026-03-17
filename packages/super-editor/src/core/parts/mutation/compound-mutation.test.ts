@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { compoundMutation } from './compound-mutation.js';
-import { mutatePart } from './mutate-part.js';
-import { createTestEditor, withPart, cleanupParts } from '../testing/test-helpers.js';
-import { registerPartDescriptor } from '../registry/part-registry.js';
-import { initRevision, getRevision } from '../../../document-api-adapters/plan-engine/revision-tracker.js';
-import type { Editor } from '../../Editor.js';
+import { compoundMutation } from './compound-mutation';
+import { mutatePart } from './mutate-part';
+import { createTestEditor, withPart, cleanupParts } from '../testing/test-helpers';
+import { registerPartDescriptor } from '../registry/part-registry';
+import { initRevision, getRevision } from '../../../document-api-adapters/plan-engine/revision-tracker';
+import type { Editor } from '../../Editor';
 
 function asEditor(mock: ReturnType<typeof createTestEditor>): Editor {
   return mock as unknown as Editor;

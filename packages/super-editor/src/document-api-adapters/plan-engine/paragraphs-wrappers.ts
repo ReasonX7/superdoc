@@ -11,7 +11,7 @@
  *   6. Returns a typed ParagraphMutationResult
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   MutationOptions,
   ParagraphMutationResult,
@@ -37,11 +37,11 @@ import type {
   ParagraphsClearShadingInput,
   ParagraphAlignment,
 } from '@superdoc/document-api';
-import { clearIndexCache, getBlockIndex } from '../helpers/index-cache.js';
-import { findBlockByIdStrict, type BlockCandidate } from '../helpers/node-address-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { executeDomainCommand } from './plan-wrappers.js';
+import { clearIndexCache, getBlockIndex } from '../helpers/index-cache';
+import { findBlockByIdStrict, type BlockCandidate } from '../helpers/node-address-resolver';
+import { DocumentApiAdapterError } from '../errors';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { executeDomainCommand } from './plan-wrappers';
 
 // ---------------------------------------------------------------------------
 // Paragraph block types accepted by this adapter

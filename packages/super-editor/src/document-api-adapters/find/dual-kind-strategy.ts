@@ -1,10 +1,10 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { Query, QueryResult, UnknownNodeDiagnostic } from '@superdoc/document-api';
-import { paginate } from '../helpers/adapter-utils.js';
-import type { BlockIndex } from '../helpers/node-address-resolver.js';
-import { sortAddressesByPosition } from './common.js';
-import { executeBlockSelector } from './block-strategy.js';
-import { executeInlineSelector } from './inline-strategy.js';
+import { paginate } from '../helpers/adapter-utils';
+import type { BlockIndex } from '../helpers/node-address-resolver';
+import { sortAddressesByPosition } from './common';
+import { executeBlockSelector } from './block-strategy';
+import { executeInlineSelector } from './inline-strategy';
 
 /**
  * Executes a selector for node types that exist as both block and inline

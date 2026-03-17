@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import type { StylesApplyInput, NormalizedStylesApplyOptions, ValueSchema } from '@superdoc/document-api';
 import { PROPERTY_REGISTRY } from '@superdoc/document-api';
-import { stylesApplyAdapter } from './styles-adapter.js';
-import { DocumentApiAdapterError } from './errors.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../core/parts/registry/part-registry.js';
-import { clearInvalidationHandlers } from '../core/parts/invalidation/part-invalidation-registry.js';
-import { stylesPartDescriptor } from '../core/parts/adapters/styles-part-descriptor.js';
-import { initRevision } from './plan-engine/revision-tracker.js';
+import { stylesApplyAdapter } from './styles-adapter';
+import { DocumentApiAdapterError } from './errors';
+import { registerPartDescriptor, clearPartDescriptors } from '../core/parts/registry/part-registry';
+import { clearInvalidationHandlers } from '../core/parts/invalidation/part-invalidation-registry';
+import { stylesPartDescriptor } from '../core/parts/adapters/styles-part-descriptor';
+import { initRevision } from './plan-engine/revision-tracker';
 
 // ---------------------------------------------------------------------------
 // Parts system setup (descriptor must be registered for afterCommit hooks)

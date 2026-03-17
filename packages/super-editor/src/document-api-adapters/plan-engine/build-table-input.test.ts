@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildTableInput } from './register-executors.js';
+import { buildTableInput } from './register-executors';
 
 describe('buildTableInput', () => {
   it('routes row ops with rowIndex to tableNodeId (table-scoped)', () => {

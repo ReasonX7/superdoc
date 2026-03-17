@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean) => {
     const changed = handler();
     return {
@@ -21,7 +21,7 @@ vi.mock('./plan-wrappers.js', () => ({
   }),
 }));
 
-import { paragraphsSetIndentationWrapper } from './paragraphs-wrappers.js';
+import { paragraphsSetIndentationWrapper } from './paragraphs-wrappers';
 
 type MockNode = {
   type: { name: 'paragraph' };

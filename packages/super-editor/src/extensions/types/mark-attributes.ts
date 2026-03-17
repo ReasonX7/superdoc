@@ -247,7 +247,7 @@ export interface CommentMarkAttrs {
 // MODULE AUGMENTATION
 // ============================================
 
-declare module '../../core/types/MarkAttributesMap.js' {
+declare module '../../core/types/MarkAttributesMap' {
   interface MarkAttributesMap {
     bold: BoldAttrs;
     italic: ItalicAttrs;

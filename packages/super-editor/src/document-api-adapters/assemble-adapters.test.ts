@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { assembleDocumentApiAdapters } from './assemble-adapters.js';
-import type { Editor } from '../core/Editor.js';
+import { assembleDocumentApiAdapters } from './assemble-adapters';
+import type { Editor } from '../core/Editor';
 
 function makeEditor(): Editor {
   return {

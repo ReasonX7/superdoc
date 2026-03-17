@@ -1,18 +1,18 @@
 import type { EditorState, Transaction } from 'prosemirror-state';
 import type { XmlFragment as YXmlFragment } from 'yjs';
-import type { Editor } from '../Editor.js';
-import type { Extension } from '../Extension.js';
-import type { Node as EditorNode } from '../Node.js';
-import type { Mark as EditorMark } from '../Mark.js';
-import type { EditorRenderer } from '../renderers/EditorRenderer.js';
+import type { Editor } from '../Editor';
+import type { Extension } from '../Extension';
+import type { Node as EditorNode } from '../Node';
+import type { Mark as EditorMark } from '../Mark';
+import type { EditorRenderer } from '../renderers/EditorRenderer';
 import type {
   FontsResolvedPayload,
   Comment,
   CommentsPayload,
   CommentLocationsPayload,
   ListDefinitionsPayload,
-} from './EditorEvents.js';
-import type { ProseMirrorJSON } from './EditorTypes.js';
+} from './EditorEvents';
+import type { ProseMirrorJSON } from './EditorTypes';
 
 /**
  * Context provided to a link popover resolver when a link is clicked.

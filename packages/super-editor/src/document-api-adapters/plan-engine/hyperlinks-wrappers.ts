@@ -3,7 +3,7 @@
  */
 
 import type { Mark } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   HyperlinksListQuery,
   HyperlinksListResult,
@@ -22,13 +22,13 @@ import type {
   InlineAnchor,
 } from '@superdoc/document-api';
 import { buildDiscoveryResult, buildDiscoveryItem, buildResolvedHandle } from '@superdoc/document-api';
-import { getBlockIndex, clearIndexCache } from '../helpers/index-cache.js';
+import { getBlockIndex, clearIndexCache } from '../helpers/index-cache';
 import {
   buildInlineIndex,
   findInlineByAnchor,
   findInlineByType,
   type InlineCandidate,
-} from '../helpers/inline-address-resolver.js';
+} from '../helpers/inline-address-resolver';
 import {
   paginate,
   resolveTextTarget,
@@ -36,11 +36,11 @@ import {
   insertParagraphAtEnd,
   resolveWithinScope,
   scopeByRange,
-} from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { DocumentApiAdapterError } from '../errors.js';
+} from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
+import { executeDomainCommand } from './plan-wrappers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { DocumentApiAdapterError } from '../errors';
 import {
   wrapWithLink,
   insertLinkedText,
@@ -49,7 +49,7 @@ import {
   deleteLinkedText,
   sanitizeHrefOrThrow,
   type HyperlinkWriteSpec,
-} from '../helpers/hyperlink-mutation-helper.js';
+} from '../helpers/hyperlink-mutation-helper';
 
 // ---------------------------------------------------------------------------
 // Read normalization

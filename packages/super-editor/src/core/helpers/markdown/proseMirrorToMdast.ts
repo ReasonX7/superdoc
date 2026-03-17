@@ -37,8 +37,8 @@ import type {
   Break,
   PhrasingContent,
 } from 'mdast';
-import { ListHelpers } from '../list-numbering-helpers.js';
-import type { Editor } from '../../Editor.js';
+import { ListHelpers } from '../list-numbering-helpers';
+import type { Editor } from '../../Editor';
 
 // ---------------------------------------------------------------------------
 // Public entry point

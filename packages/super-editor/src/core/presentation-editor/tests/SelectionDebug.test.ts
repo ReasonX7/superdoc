@@ -4,7 +4,7 @@ import {
   getSelectionDebugConfig,
   type SelectionDebugConfig,
   type SelectionDebugLogLevel,
-} from '../selection/SelectionDebug.js';
+} from '../selection/SelectionDebug';
 
 describe('SelectionDebug', () => {
   // Store original window.superdocDebug to restore after tests

@@ -1,5 +1,5 @@
-import { ListHelpers } from '@helpers/list-numbering-helpers.js';
-import type { Editor } from '../../core/Editor.js';
+import { ListHelpers } from '@helpers/list-numbering-helpers';
+import type { Editor } from '../../core/Editor';
 import type {
   BlockNodeAddress,
   ListItemAddress,
@@ -9,13 +9,13 @@ import type {
   ListsListResult,
 } from '@superdoc/document-api';
 import { buildResolvedHandle, buildDiscoveryItem, buildDiscoveryResult } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
-import { getRevision } from '../plan-engine/revision-tracker.js';
-import { getBlockIndex } from './index-cache.js';
-import { validatePaginationInput } from './adapter-utils.js';
-import { computeSequenceIdMap } from './list-sequence-helpers.js';
-import type { BlockCandidate, BlockIndex } from './node-address-resolver.js';
-import { toFiniteNumber } from './value-utils.js';
+import { DocumentApiAdapterError } from '../errors';
+import { getRevision } from '../plan-engine/revision-tracker';
+import { getBlockIndex } from './index-cache';
+import { validatePaginationInput } from './adapter-utils';
+import { computeSequenceIdMap } from './list-sequence-helpers';
+import type { BlockCandidate, BlockIndex } from './node-address-resolver';
+import { toFiniteNumber } from './value-utils';
 
 export type ListItemProjection = {
   candidate: BlockCandidate;

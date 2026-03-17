@@ -10,9 +10,9 @@
  * factory creates both descriptors.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartDescriptor, PartId } from '../types.js';
-import { clearPartCacheStale } from '../cache-staleness.js';
+import type { Editor } from '../../Editor';
+import type { PartDescriptor, PartId } from '../types';
+import { clearPartCacheStale } from '../cache-staleness';
 
 // ---------------------------------------------------------------------------
 // Part IDs

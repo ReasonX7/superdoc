@@ -13,11 +13,11 @@ import type {
   StepPreview,
   PreviewFailure,
 } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { checkRevision, getRevision } from './revision-tracker.js';
-import { compilePlan } from './compiler.js';
-import { runMutationsOnTransaction } from './executor.js';
-import { planError, PlanError } from './errors.js';
+import type { Editor } from '../../core/Editor';
+import { checkRevision, getRevision } from './revision-tracker';
+import { compilePlan } from './compiler';
+import { runMutationsOnTransaction } from './executor';
+import { planError, PlanError } from './errors';
 
 export function previewPlan(editor: Editor, input: MutationsPreviewInput): MutationsPreviewOutput {
   // Revision guard (before compile)

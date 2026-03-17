@@ -1,6 +1,6 @@
 import type { TextAddress } from '@superdoc/document-api';
-import { normalizeMatchRanges, normalizeMatchSpan } from './compiler.js';
-import { PlanError } from './errors.js';
+import { normalizeMatchRanges, normalizeMatchSpan } from './compiler';
+import { PlanError } from './errors';
 
 // ---------------------------------------------------------------------------
 // Helper to build TextAddress values concisely

@@ -1,4 +1,4 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import { v4 as uuidv4 } from 'uuid';
 import type {
   BlockNodeAddress,
@@ -57,7 +57,7 @@ import type {
 } from '@superdoc/document-api';
 import type { Transaction } from 'prosemirror-state';
 import { TableMap } from 'prosemirror-tables';
-import { clearIndexCache, getBlockIndex } from './helpers/index-cache.js';
+import { clearIndexCache, getBlockIndex } from './helpers/index-cache';
 import {
   resolveTableLocator,
   resolveTableCreateLocation,
@@ -67,13 +67,13 @@ import {
   resolveMergeRangeLocator,
   getTableColumnCount,
   toTableFailure,
-} from './helpers/table-target-resolver.js';
-import { rejectTrackedMode, ensureTrackedCapability, requireEditorCommand } from './helpers/mutation-helpers.js';
-import { collectTrackInsertRefsInRange } from './helpers/tracked-change-refs.js';
-import { applyDirectMutationMeta, applyTrackedMutationMeta } from './helpers/transaction-meta.js';
-import { DocumentApiAdapterError } from './errors.js';
-import { toBlockAddress, findBlockById, findBlockByNodeIdOnly } from './helpers/node-address-resolver.js';
-import { twipsToPixels } from '../core/super-converter/helpers.js';
+} from './helpers/table-target-resolver';
+import { rejectTrackedMode, ensureTrackedCapability, requireEditorCommand } from './helpers/mutation-helpers';
+import { collectTrackInsertRefsInRange } from './helpers/tracked-change-refs';
+import { applyDirectMutationMeta, applyTrackedMutationMeta } from './helpers/transaction-meta';
+import { DocumentApiAdapterError } from './errors';
+import { toBlockAddress, findBlockById, findBlockByNodeIdOnly } from './helpers/node-address-resolver';
+import { twipsToPixels } from '../core/super-converter/helpers';
 import { resolvePreferredNewTableStyleId, isKnownTableStyleId } from '@superdoc/style-engine/ooxml';
 import {
   readSettingsRoot,
@@ -82,10 +82,10 @@ import {
   setDefaultTableStyle,
   removeDefaultTableStyle,
   type ConverterWithDocumentSettings,
-} from './document-settings.js';
-import { readTranslatedLinkedStyles } from '../core/parts/adapters/styles-read.js';
-import { mutatePart } from '../core/parts/mutation/mutate-part.js';
-import type { PartId } from '../core/parts/types.js';
+} from './document-settings';
+import { readTranslatedLinkedStyles } from '../core/parts/adapters/styles-read';
+import { mutatePart } from '../core/parts/mutation/mutate-part';
+import type { PartId } from '../core/parts/types';
 
 // ---------------------------------------------------------------------------
 // Helpers

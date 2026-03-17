@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { normalizeReplacementText } from './replacement-normalizer.js';
-import { PlanError } from './errors.js';
+import { normalizeReplacementText } from './replacement-normalizer';
+import { PlanError } from './errors';
 
 // ---------------------------------------------------------------------------
 // normalizeReplacementText — unit tests

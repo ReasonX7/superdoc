@@ -1,6 +1,6 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import {
   COMMAND_CATALOG,
   INLINE_PROPERTY_REGISTRY,
@@ -15,13 +15,13 @@ import {
   TrackDeleteMarkName,
   TrackFormatMarkName,
   TrackInsertMarkName,
-} from '../../extensions/track-changes/constants.js';
-import { ListHelpers } from '../../core/helpers/list-numbering-helpers.js';
-import { createCommentsWrapper } from '../plan-engine/comments-wrappers.js';
-import { createParagraphWrapper, createHeadingWrapper } from '../plan-engine/create-wrappers.js';
-import { blocksDeleteWrapper, blocksDeleteRangeWrapper } from '../plan-engine/blocks-wrappers.js';
-import { clearContentWrapper } from '../plan-engine/clear-content-wrapper.js';
-import { styleApplyWrapper } from '../plan-engine/plan-wrappers.js';
+} from '../../extensions/track-changes/constants';
+import { ListHelpers } from '../../core/helpers/list-numbering-helpers';
+import { createCommentsWrapper } from '../plan-engine/comments-wrappers';
+import { createParagraphWrapper, createHeadingWrapper } from '../plan-engine/create-wrappers';
+import { blocksDeleteWrapper, blocksDeleteRangeWrapper } from '../plan-engine/blocks-wrappers';
+import { clearContentWrapper } from '../plan-engine/clear-content-wrapper';
+import { styleApplyWrapper } from '../plan-engine/plan-wrappers';
 import {
   paragraphsSetStyleWrapper,
   paragraphsClearStyleWrapper,
@@ -42,9 +42,9 @@ import {
   paragraphsClearBorderWrapper,
   paragraphsSetShadingWrapper,
   paragraphsClearShadingWrapper,
-} from '../plan-engine/paragraphs-wrappers.js';
-import { stylesApplyAdapter } from '../styles-adapter.js';
-import { createTableWrapper } from '../plan-engine/create-table-wrapper.js';
+} from '../plan-engine/paragraphs-wrappers';
+import { stylesApplyAdapter } from '../styles-adapter';
+import { createTableWrapper } from '../plan-engine/create-table-wrapper';
 import {
   tablesDeleteWrapper,
   tablesClearContentsWrapper,
@@ -82,20 +82,20 @@ import {
   tablesSetCellPaddingWrapper,
   tablesSetCellSpacingWrapper,
   tablesClearCellSpacingWrapper,
-} from '../plan-engine/tables-wrappers.js';
-import { getDocumentApiCapabilities } from '../capabilities-adapter.js';
+} from '../plan-engine/tables-wrappers';
+import { getDocumentApiCapabilities } from '../capabilities-adapter';
 import {
   tocConfigureWrapper,
   tocUpdateWrapper,
   tocRemoveWrapper,
   createTableOfContentsWrapper,
-} from '../plan-engine/toc-wrappers.js';
+} from '../plan-engine/toc-wrappers';
 import {
   tocListEntriesWrapper,
   tocMarkEntryWrapper,
   tocUnmarkEntryWrapper,
   tocEditEntryWrapper,
-} from '../plan-engine/toc-entry-wrappers.js';
+} from '../plan-engine/toc-entry-wrappers';
 import {
   createImageWrapper,
   imagesDeleteWrapper,
@@ -123,21 +123,21 @@ import {
   imagesInsertCaptionWrapper,
   imagesUpdateCaptionWrapper,
   imagesRemoveCaptionWrapper,
-} from '../plan-engine/images-wrappers.js';
+} from '../plan-engine/images-wrappers';
 import {
   hyperlinksWrapWrapper,
   hyperlinksInsertWrapper,
   hyperlinksPatchWrapper,
   hyperlinksRemoveWrapper,
-} from '../plan-engine/hyperlinks-wrappers.js';
-import { createContentControlsAdapter } from '../plan-engine/content-controls-wrappers.js';
+} from '../plan-engine/hyperlinks-wrappers';
+import { createContentControlsAdapter } from '../plan-engine/content-controls-wrappers';
 import {
   headerFootersRefsSetAdapter,
   headerFootersRefsClearAdapter,
   headerFootersRefsSetLinkedToPreviousAdapter,
   headerFootersPartsCreateAdapter,
   headerFootersPartsDeleteAdapter,
-} from '../header-footers-adapter.js';
+} from '../header-footers-adapter';
 import {
   listsInsertWrapper,
   listsIndentWrapper,
@@ -152,7 +152,7 @@ import {
   listsContinuePreviousWrapper,
   listsSetLevelRestartWrapper,
   listsConvertToTextWrapper,
-} from '../plan-engine/lists-wrappers.js';
+} from '../plan-engine/lists-wrappers';
 import {
   listsApplyTemplateWrapper,
   listsApplyPresetWrapper,
@@ -166,30 +166,30 @@ import {
   listsSetLevelTrailingCharacterWrapper,
   listsSetLevelMarkerFontWrapper,
   listsClearLevelOverridesWrapper,
-} from '../plan-engine/lists-formatting-wrappers.js';
-import * as listSequenceHelpers from '../helpers/list-sequence-helpers.js';
-import { LevelFormattingHelpers } from '../../core/helpers/list-level-formatting-helpers.js';
-import * as planWrappers from '../plan-engine/plan-wrappers.js';
-import { trackChangesAcceptWrapper, trackChangesRejectWrapper } from '../plan-engine/track-changes-wrappers.js';
-import * as hyperlinkMutationHelper from '../helpers/hyperlink-mutation-helper.js';
-import * as adapterUtils from '../helpers/adapter-utils.js';
+} from '../plan-engine/lists-formatting-wrappers';
+import * as listSequenceHelpers from '../helpers/list-sequence-helpers';
+import { LevelFormattingHelpers } from '../../core/helpers/list-level-formatting-helpers';
+import * as planWrappers from '../plan-engine/plan-wrappers';
+import { trackChangesAcceptWrapper, trackChangesRejectWrapper } from '../plan-engine/track-changes-wrappers';
+import * as hyperlinkMutationHelper from '../helpers/hyperlink-mutation-helper';
+import * as adapterUtils from '../helpers/adapter-utils';
 import {
   bookmarksInsertWrapper,
   bookmarksRenameWrapper,
   bookmarksRemoveWrapper,
-} from '../plan-engine/bookmark-wrappers.js';
+} from '../plan-engine/bookmark-wrappers';
 
 import {
   footnotesInsertWrapper,
   footnotesUpdateWrapper,
   footnotesRemoveWrapper,
   footnotesConfigureWrapper,
-} from '../plan-engine/footnote-wrappers.js';
+} from '../plan-engine/footnote-wrappers';
 import {
   crossRefsInsertWrapper,
   crossRefsRebuildWrapper,
   crossRefsRemoveWrapper,
-} from '../plan-engine/crossref-wrappers.js';
+} from '../plan-engine/crossref-wrappers';
 import {
   indexInsertWrapper,
   indexConfigureWrapper,
@@ -198,14 +198,14 @@ import {
   indexEntriesInsertWrapper,
   indexEntriesUpdateWrapper,
   indexEntriesRemoveWrapper,
-} from '../plan-engine/index-wrappers.js';
+} from '../plan-engine/index-wrappers';
 import {
   captionsInsertWrapper,
   captionsUpdateWrapper,
   captionsRemoveWrapper,
   captionsConfigureWrapper,
-} from '../plan-engine/caption-wrappers.js';
-import { fieldsInsertWrapper, fieldsRebuildWrapper, fieldsRemoveWrapper } from '../plan-engine/field-wrappers.js';
+} from '../plan-engine/caption-wrappers';
+import { fieldsInsertWrapper, fieldsRebuildWrapper, fieldsRemoveWrapper } from '../plan-engine/field-wrappers';
 import {
   citationsInsertWrapper,
   citationsUpdateWrapper,
@@ -217,7 +217,7 @@ import {
   bibliographyConfigureWrapper,
   bibliographyRebuildWrapper,
   bibliographyRemoveWrapper,
-} from '../plan-engine/citation-wrappers.js';
+} from '../plan-engine/citation-wrappers';
 import {
   authoritiesInsertWrapper,
   authoritiesConfigureWrapper,
@@ -226,24 +226,24 @@ import {
   authorityEntriesInsertWrapper,
   authorityEntriesUpdateWrapper,
   authorityEntriesRemoveWrapper,
-} from '../plan-engine/authority-wrappers.js';
-import { registerBuiltInExecutors } from '../plan-engine/register-executors.js';
-import { getRevision, initRevision } from '../plan-engine/revision-tracker.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../../core/parts/registry/part-registry.js';
-import { numberingPartDescriptor } from '../../core/parts/adapters/numbering-part-descriptor.js';
-import { settingsPartDescriptor } from '../../core/parts/adapters/settings-part-descriptor.js';
-import { stylesPartDescriptor } from '../../core/parts/adapters/styles-part-descriptor.js';
-import { clearInvalidationHandlers } from '../../core/parts/invalidation/part-invalidation-registry.js';
-import { executePlan } from '../plan-engine/executor.js';
-import { toCanonicalTrackedChangeId } from '../helpers/tracked-change-resolver.js';
-import { writeAdapter } from '../write-adapter.js';
+} from '../plan-engine/authority-wrappers';
+import { registerBuiltInExecutors } from '../plan-engine/register-executors';
+import { getRevision, initRevision } from '../plan-engine/revision-tracker';
+import { registerPartDescriptor, clearPartDescriptors } from '../../core/parts/registry/part-registry';
+import { numberingPartDescriptor } from '../../core/parts/adapters/numbering-part-descriptor';
+import { settingsPartDescriptor } from '../../core/parts/adapters/settings-part-descriptor';
+import { stylesPartDescriptor } from '../../core/parts/adapters/styles-part-descriptor';
+import { clearInvalidationHandlers } from '../../core/parts/invalidation/part-invalidation-registry';
+import { executePlan } from '../plan-engine/executor';
+import { toCanonicalTrackedChangeId } from '../helpers/tracked-change-resolver';
+import { writeAdapter } from '../write-adapter';
 import {
   tablesGetCellsAdapter,
   tablesGetPropertiesAdapter,
   tablesGetStylesAdapter,
   tablesSetDefaultStyleAdapter,
   tablesClearDefaultStyleAdapter,
-} from '../tables-adapter.js';
+} from '../tables-adapter';
 import {
   createSectionBreakAdapter,
   sectionsSetBreakTypeAdapter,
@@ -262,8 +262,8 @@ import {
   sectionsSetLinkToPreviousAdapter,
   sectionsSetPageBordersAdapter,
   sectionsClearPageBordersAdapter,
-} from '../sections-adapter.js';
-import { validateJsonSchema } from './schema-validator.js';
+} from '../sections-adapter';
+import { validateJsonSchema } from './schema-validator';
 
 const mockedDeps = vi.hoisted(() => ({
   resolveCommentAnchorsById: vi.fn(() => []),
@@ -272,16 +272,16 @@ const mockedDeps = vi.hoisted(() => ({
   insertRowAtIndex: vi.fn(() => {}),
 }));
 
-vi.mock('../helpers/comment-target-resolver.js', () => ({
+vi.mock('../helpers/comment-target-resolver', () => ({
   resolveCommentAnchorsById: mockedDeps.resolveCommentAnchorsById,
   listCommentAnchors: mockedDeps.listCommentAnchors,
 }));
 
-vi.mock('../../extensions/track-changes/trackChangesHelpers/getTrackChanges.js', () => ({
+vi.mock('../../extensions/track-changes/trackChangesHelpers/getTrackChanges', () => ({
   getTrackChanges: mockedDeps.getTrackChanges,
 }));
 
-vi.mock('../../extensions/table/tableHelpers/appendRows.js', () => ({
+vi.mock('../../extensions/table/tableHelpers/appendRows', () => ({
   insertRowAtIndex: mockedDeps.insertRowAtIndex,
 }));
 
@@ -374,28 +374,28 @@ const refResolverMocks = vi.hoisted(() => ({
   buildAuthorityEntryDiscoveryItem: vi.fn(),
 }));
 
-vi.mock('../helpers/bookmark-resolver.js', () => ({
+vi.mock('../helpers/bookmark-resolver', () => ({
   findAllBookmarks: refResolverMocks.findAllBookmarks,
   resolveBookmarkTarget: refResolverMocks.resolveBookmarkTarget,
   extractBookmarkInfo: refResolverMocks.extractBookmarkInfo,
   buildBookmarkDiscoveryItem: refResolverMocks.buildBookmarkDiscoveryItem,
 }));
 
-vi.mock('../helpers/footnote-resolver.js', () => ({
+vi.mock('../helpers/footnote-resolver', () => ({
   findAllFootnotes: refResolverMocks.findAllFootnotes,
   resolveFootnoteTarget: refResolverMocks.resolveFootnoteTarget,
   extractFootnoteInfo: refResolverMocks.extractFootnoteInfo,
   buildFootnoteDiscoveryItem: refResolverMocks.buildFootnoteDiscoveryItem,
 }));
 
-vi.mock('../helpers/crossref-resolver.js', () => ({
+vi.mock('../helpers/crossref-resolver', () => ({
   findAllCrossRefs: refResolverMocks.findAllCrossRefs,
   resolveCrossRefTarget: refResolverMocks.resolveCrossRefTarget,
   extractCrossRefInfo: refResolverMocks.extractCrossRefInfo,
   buildCrossRefDiscoveryItem: refResolverMocks.buildCrossRefDiscoveryItem,
 }));
 
-vi.mock('../helpers/index-resolver.js', async (importOriginal) => {
+vi.mock('../helpers/index-resolver', async (importOriginal) => {
   const orig = await importOriginal<Record<string, unknown>>();
   return {
     findAllIndexNodes: refResolverMocks.findAllIndexNodes,
@@ -410,21 +410,21 @@ vi.mock('../helpers/index-resolver.js', async (importOriginal) => {
   };
 });
 
-vi.mock('../helpers/caption-resolver.js', () => ({
+vi.mock('../helpers/caption-resolver', () => ({
   findAllCaptions: refResolverMocks.findAllCaptions,
   resolveCaptionTarget: refResolverMocks.resolveCaptionTarget,
   extractCaptionInfo: refResolverMocks.extractCaptionInfo,
   buildCaptionDiscoveryItem: refResolverMocks.buildCaptionDiscoveryItem,
 }));
 
-vi.mock('../helpers/field-resolver.js', () => ({
+vi.mock('../helpers/field-resolver', () => ({
   findAllFields: refResolverMocks.findAllFields,
   resolveFieldTarget: refResolverMocks.resolveFieldTarget,
   extractFieldInfo: refResolverMocks.extractFieldInfo,
   buildFieldDiscoveryItem: refResolverMocks.buildFieldDiscoveryItem,
 }));
 
-vi.mock('../helpers/citation-resolver.js', () => ({
+vi.mock('../helpers/citation-resolver', () => ({
   findAllCitations: refResolverMocks.findAllCitations,
   resolveCitationTarget: refResolverMocks.resolveCitationTarget,
   extractCitationInfo: refResolverMocks.extractCitationInfo,
@@ -437,7 +437,7 @@ vi.mock('../helpers/citation-resolver.js', () => ({
   resolveSourceTarget: refResolverMocks.resolveSourceTarget,
 }));
 
-vi.mock('../helpers/authority-resolver.js', async (importOriginal) => {
+vi.mock('../helpers/authority-resolver', async (importOriginal) => {
   const orig = await importOriginal<Record<string, unknown>>();
   return {
     findAllAuthorities: refResolverMocks.findAllAuthorities,

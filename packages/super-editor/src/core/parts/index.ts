@@ -19,7 +19,7 @@ export type {
   MutatePartResult,
   MutatePartsResult,
   PartChangedEvent,
-} from './types.js';
+} from './types';
 
 // Registry
 export {
@@ -27,13 +27,13 @@ export {
   getPartDescriptor,
   hasPartDescriptor,
   clearPartDescriptors,
-} from './registry/part-registry.js';
+} from './registry/part-registry';
 
 // Store
-export { getPart, hasPart, setPart, removePart, clonePart } from './store/part-store.js';
+export { getPart, hasPart, setPart, removePart, clonePart } from './store/part-store';
 
 // Mutation
-export { mutatePart, mutateParts } from './mutation/mutate-part.js';
+export { mutatePart, mutateParts } from './mutation/mutate-part';
 
 // Invalidation
 export {
@@ -41,4 +41,4 @@ export {
   removeInvalidationHandler,
   applyPartInvalidation,
   clearInvalidationHandlers,
-} from './invalidation/part-invalidation-registry.js';
+} from './invalidation/part-invalidation-registry';

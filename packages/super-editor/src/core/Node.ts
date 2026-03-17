@@ -1,13 +1,13 @@
-import { getExtensionConfigField } from './helpers/getExtensionConfigField.js';
-import { callOrGet } from './utilities/callOrGet.js';
-import type { MaybeGetter } from './utilities/callOrGet.js';
+import { getExtensionConfigField } from './helpers/getExtensionConfigField';
+import { callOrGet } from './utilities/callOrGet';
+import type { MaybeGetter } from './utilities/callOrGet';
 import type { NodeType, ParseRule, DOMOutputSpec, Node as PmNode } from 'prosemirror-model';
 import type { Plugin } from 'prosemirror-state';
 import type { NodeView, EditorView, Decoration, DecorationSource } from 'prosemirror-view';
-import type { InputRule } from './InputRule.js';
-import type { Editor } from './Editor.js';
-import type { Command } from './types/ChainedCommands.js';
-import type { AttributeSpec } from './Attribute.js';
+import type { InputRule } from './InputRule';
+import type { Editor } from './Editor';
+import type { Command } from './types/ChainedCommands';
+import type { AttributeSpec } from './Attribute';
 
 /**
  * Configuration for Node extensions.

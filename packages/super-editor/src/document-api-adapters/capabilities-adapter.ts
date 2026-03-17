@@ -1,4 +1,4 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import {
   CAPABILITY_REASON_CODES,
   COMMAND_CATALOG,
@@ -15,7 +15,7 @@ import {
   type OperationId,
   OPERATION_IDS,
 } from '@superdoc/document-api';
-import { TrackFormatMarkName } from '../extensions/track-changes/constants.js';
+import { TrackFormatMarkName } from '../extensions/track-changes/constants';
 
 type EditorCommandName = string;
 type EditorWithBlockNodeHelper = Editor & {

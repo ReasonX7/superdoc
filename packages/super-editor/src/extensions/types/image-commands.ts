@@ -94,6 +94,6 @@ export interface ImageCommands {
   setWrapping: (options: SetWrappingOptions) => boolean;
 }
 
-declare module '../../core/types/ChainedCommands.js' {
+declare module '../../core/types/ChainedCommands' {
   interface ExtensionCommandMap extends ImageCommands {}
 }

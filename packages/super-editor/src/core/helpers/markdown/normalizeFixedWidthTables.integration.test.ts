@@ -5,8 +5,8 @@
  * table nodes by the same remark pipeline used in production.
  */
 import { describe, expect, it } from 'vitest';
-import { normalizeFixedWidthTables } from './normalizeFixedWidthTables.js';
-import { parseMarkdownToAst } from './parseMarkdownAst.js';
+import { normalizeFixedWidthTables } from './normalizeFixedWidthTables';
+import { parseMarkdownToAst } from './parseMarkdownAst';
 import type { Root, Table, TableRow, TableCell } from 'mdast';
 
 // ---------------------------------------------------------------------------

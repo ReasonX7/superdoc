@@ -1,74 +1,74 @@
 import { NodeSelection, Selection, TextSelection } from 'prosemirror-state';
-import { ContextMenuPluginKey } from '@extensions/context-menu/context-menu.js';
+import { ContextMenuPluginKey } from '@extensions/context-menu/context-menu';
 import { CellSelection } from 'prosemirror-tables';
-import { DecorationBridge } from './dom/DecorationBridge.js';
+import { DecorationBridge } from './dom/DecorationBridge';
 import type { EditorState, Transaction } from 'prosemirror-state';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import type { Mapping } from 'prosemirror-transform';
-import { Editor } from '../Editor.js';
-import { EventEmitter } from '../EventEmitter.js';
-import { EpochPositionMapper } from './layout/EpochPositionMapper.js';
-import { DomPositionIndex } from './dom/DomPositionIndex.js';
-import { DomPositionIndexObserverManager } from './dom/DomPositionIndexObserverManager.js';
+import { Editor } from '../Editor';
+import { EventEmitter } from '../EventEmitter';
+import { EpochPositionMapper } from './layout/EpochPositionMapper';
+import { DomPositionIndex } from './dom/DomPositionIndex';
+import { DomPositionIndexObserverManager } from './dom/DomPositionIndexObserverManager';
 import {
   computeDomCaretPageLocal as computeDomCaretPageLocalFromDom,
   computeSelectionRectsFromDom as computeSelectionRectsFromDomFromDom,
-} from './dom/DomSelectionGeometry.js';
+} from './dom/DomSelectionGeometry';
 import {
   convertPageLocalToOverlayCoords as convertPageLocalToOverlayCoordsFromTransform,
   getPageOffsetX as getPageOffsetXFromTransform,
   getPageOffsetY as getPageOffsetYFromTransform,
-} from './dom/CoordinateTransform.js';
+} from './dom/CoordinateTransform';
 import {
   normalizeClientPoint as normalizeClientPointFromPointer,
   denormalizeClientPoint as denormalizeClientPointFromPointer,
-} from './dom/PointerNormalization.js';
-import { getPageElementByIndex } from './dom/PageDom.js';
-import { inchesToPx, parseColumns } from './layout/LayoutOptionParsing.js';
-import { createLayoutMetrics as createLayoutMetricsFromHelper } from './layout/PresentationLayoutMetrics.js';
-import { buildFootnotesInput } from './layout/FootnotesBuilder.js';
-import { safeCleanup } from './utils/SafeCleanup.js';
-import { createHiddenHost } from './dom/HiddenHost.js';
-import { RemoteCursorManager, type RenderDependencies } from './remote-cursors/RemoteCursorManager.js';
-import { EditorInputManager } from './pointer-events/EditorInputManager.js';
-import { SelectionSyncCoordinator } from './selection/SelectionSyncCoordinator.js';
-import { PresentationInputBridge } from './input/PresentationInputBridge.js';
-import { calculateExtendedSelection } from './selection/SelectionHelpers.js';
-import { getAtomNodeTypes as getAtomNodeTypesFromSchema } from './utils/SchemaNodeTypes.js';
-import { buildPositionMapFromPmDoc } from './utils/PositionMapFromPm.js';
+} from './dom/PointerNormalization';
+import { getPageElementByIndex } from './dom/PageDom';
+import { inchesToPx, parseColumns } from './layout/LayoutOptionParsing';
+import { createLayoutMetrics as createLayoutMetricsFromHelper } from './layout/PresentationLayoutMetrics';
+import { buildFootnotesInput } from './layout/FootnotesBuilder';
+import { safeCleanup } from './utils/SafeCleanup';
+import { createHiddenHost } from './dom/HiddenHost';
+import { RemoteCursorManager, type RenderDependencies } from './remote-cursors/RemoteCursorManager';
+import { EditorInputManager } from './pointer-events/EditorInputManager';
+import { SelectionSyncCoordinator } from './selection/SelectionSyncCoordinator';
+import { PresentationInputBridge } from './input/PresentationInputBridge';
+import { calculateExtendedSelection } from './selection/SelectionHelpers';
+import { getAtomNodeTypes as getAtomNodeTypesFromSchema } from './utils/SchemaNodeTypes';
+import { buildPositionMapFromPmDoc } from './utils/PositionMapFromPm';
 import {
   computeParagraphSelectionRangeAt as computeParagraphSelectionRangeAtFromHelper,
   computeWordSelectionRangeAt as computeWordSelectionRangeAtFromHelper,
   getFirstTextPosition as getFirstTextPositionFromHelper,
   registerPointerClick as registerPointerClickFromHelper,
-} from './input/ClickSelectionUtilities.js';
+} from './input/ClickSelectionUtilities';
 import {
   computeA11ySelectionAnnouncement as computeA11ySelectionAnnouncementFromHelper,
   scheduleA11ySelectionAnnouncement as scheduleA11ySelectionAnnouncementFromHelper,
   syncHiddenEditorA11yAttributes as syncHiddenEditorA11yAttributesFromHelper,
-} from './utils/A11ySupport.js';
-import { computeSelectionVirtualizationPins } from './selection/SelectionVirtualizationPins.js';
-import { debugLog, updateSelectionDebugHud, type SelectionDebugHudState } from './selection/SelectionDebug.js';
-import { renderCellSelectionOverlay } from './selection/CellSelectionOverlay.js';
-import { renderCaretOverlay, renderSelectionRects } from './selection/LocalSelectionOverlayRendering.js';
-import { computeCaretLayoutRectGeometry as computeCaretLayoutRectGeometryFromHelper } from './selection/CaretGeometry.js';
-import { collectCommentPositions as collectCommentPositionsFromHelper } from './utils/CommentPositionCollection.js';
-import { getCurrentSectionPageStyles as getCurrentSectionPageStylesFromHelper } from './layout/SectionPageStyles.js';
+} from './utils/A11ySupport';
+import { computeSelectionVirtualizationPins } from './selection/SelectionVirtualizationPins';
+import { debugLog, updateSelectionDebugHud, type SelectionDebugHudState } from './selection/SelectionDebug';
+import { renderCellSelectionOverlay } from './selection/CellSelectionOverlay';
+import { renderCaretOverlay, renderSelectionRects } from './selection/LocalSelectionOverlayRendering';
+import { computeCaretLayoutRectGeometry as computeCaretLayoutRectGeometryFromHelper } from './selection/CaretGeometry';
+import { collectCommentPositions as collectCommentPositionsFromHelper } from './utils/CommentPositionCollection';
+import { getCurrentSectionPageStyles as getCurrentSectionPageStylesFromHelper } from './layout/SectionPageStyles';
 import {
   computeAnchorMap as computeAnchorMapFromHelper,
   goToAnchor as goToAnchorFromHelper,
-} from './utils/AnchorNavigation.js';
+} from './utils/AnchorNavigation';
 import {
   getCellPosFromTableHit as getCellPosFromTableHitFromHelper,
   getTablePosFromHit as getTablePosFromHitFromHelper,
   hitTestTable as hitTestTableFromHelper,
   shouldUseCellSelection as shouldUseCellSelectionFromHelper,
-} from './tables/TableSelectionUtilities.js';
-import { DragDropManager } from './input/DragDropManager.js';
-import { processAndInsertImageFile } from '@extensions/image/imageHelpers/processAndInsertImageFile.js';
-import { HeaderFooterSessionManager } from './header-footer/HeaderFooterSessionManager.js';
+} from './tables/TableSelectionUtilities';
+import { DragDropManager } from './input/DragDropManager';
+import { processAndInsertImageFile } from '@extensions/image/imageHelpers/processAndInsertImageFile';
+import { HeaderFooterSessionManager } from './header-footer/HeaderFooterSessionManager';
 import { toFlowBlocks, ConverterContext, FlowBlockCache } from '@superdoc/pm-adapter';
-import { readSettingsRoot, readDefaultTableStyle } from '../../document-api-adapters/document-settings.js';
+import { readSettingsRoot, readDefaultTableStyle } from '../../document-api-adapters/document-settings';
 import {
   incrementalLayout,
   selectionToRects,
@@ -103,15 +103,15 @@ import type {
 } from '@superdoc/contracts';
 import { extractHeaderFooterSpace as _extractHeaderFooterSpace } from '@superdoc/contracts';
 // TrackChangesBasePluginKey is used by #syncTrackedChangesPreferences and getTrackChangesPluginState.
-import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/index.js';
+import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/index';
 
 // Collaboration cursor imports
 import { ySyncPluginKey } from 'y-prosemirror';
 import type * as Y from 'yjs';
-import type { HeaderFooterDescriptor } from '../header-footer/HeaderFooterRegistry.js';
-import { isInRegisteredSurface } from './utils/uiSurfaceRegistry.js';
-import { buildSemanticFootnoteBlocks } from './semantic-flow-footnotes.js';
-import { splitRunsAtDecorationBoundaries } from './layout/SplitRunsAtDecorationBoundaries.js';
+import type { HeaderFooterDescriptor } from '../header-footer/HeaderFooterRegistry';
+import { isInRegisteredSurface } from './utils/uiSurfaceRegistry';
+import { buildSemanticFootnoteBlocks } from './semantic-flow-footnotes';
+import { splitRunsAtDecorationBoundaries } from './layout/SplitRunsAtDecorationBoundaries';
 
 // Types
 import type {
@@ -146,7 +146,7 @@ import type {
   EditorViewWithScrollFlag,
   PotentiallyMockedFunction,
   ResolvedLayoutOptions,
-} from './types.js';
+} from './types';
 
 // Re-export public types for backward compatibility
 export type {
@@ -164,11 +164,11 @@ export type {
   ImageSelectedEvent,
   ImageDeselectedEvent,
   TelemetryEvent,
-} from './types.js';
+} from './types';
 
 // Mark name constants
-import { CommentMarkName } from '@extensions/comment/comments-constants.js';
-import { TrackInsertMarkName, TrackDeleteMarkName, TrackFormatMarkName } from '@extensions/track-changes/constants.js';
+import { CommentMarkName } from '@extensions/comment/comments-constants';
+import { TrackInsertMarkName, TrackDeleteMarkName, TrackFormatMarkName } from '@extensions/track-changes/constants';
 
 const DEFAULT_PAGE_SIZE: PageSize = { w: 612, h: 792 }; // Letter @ 72dpi
 const DEFAULT_MARGINS: PageMargins = { top: 72, right: 72, bottom: 72, left: 72 };

@@ -1,14 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch, nextTick, computed, markRaw } from 'vue';
-import { ContextMenuPluginKey } from '../../extensions/context-menu/context-menu.js';
-import { getPropsByItemId } from './utils.js';
-import { shouldBypassContextMenu } from '../../utils/contextmenu-helpers.js';
-import { moveCursorToMouseEvent } from '../cursor-helpers.js';
-import { getEditorSurfaceElement } from '../../core/helpers/editorSurface.js';
-import { getItems } from './menuItems.js';
-import { getEditorContext } from './utils.js';
-import { CONTEXT_MENU_HANDLED_FLAG } from './event-flags.js';
-import { isMacOS } from '../../core/utilities/isMacOS.js';
+import { ContextMenuPluginKey } from '../../extensions/context-menu/context-menu';
+import { getPropsByItemId } from './utils';
+import { shouldBypassContextMenu } from '../../utils/contextmenu-helpers';
+import { moveCursorToMouseEvent } from '../cursor-helpers';
+import { getEditorSurfaceElement } from '../../core/helpers/editorSurface';
+import { getItems } from './menuItems';
+import { getEditorContext } from './utils';
+import { CONTEXT_MENU_HANDLED_FLAG } from './event-flags';
+import { isMacOS } from '../../core/utilities/isMacOS';
 
 const props = defineProps({
   editor: {

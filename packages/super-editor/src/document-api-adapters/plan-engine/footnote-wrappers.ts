@@ -7,7 +7,7 @@
  * by the notes-part-descriptor's `afterCommit` hook.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   FootnoteListInput,
   FootnotesListResult,
@@ -29,14 +29,14 @@ import {
   resolveFootnoteTarget,
   extractFootnoteInfo,
   buildFootnoteDiscoveryItem,
-} from '../helpers/footnote-resolver.js';
-import { paginate, resolveInlineInsertPosition } from '../helpers/adapter-utils.js';
-import { getRevision, checkRevision } from './revision-tracker.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { mutatePart } from '../../core/parts/mutation/mutate-part.js';
-import { compoundMutation } from '../../core/parts/mutation/compound-mutation.js';
+} from '../helpers/footnote-resolver';
+import { paginate, resolveInlineInsertPosition } from '../helpers/adapter-utils';
+import { getRevision, checkRevision } from './revision-tracker';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { DocumentApiAdapterError } from '../errors';
+import { mutatePart } from '../../core/parts/mutation/mutate-part';
+import { compoundMutation } from '../../core/parts/mutation/compound-mutation';
 import {
   getNotesConfig,
   addNoteElement,
@@ -44,8 +44,8 @@ import {
   removeNoteElement,
   bootstrapNotesPart,
   getNoteElements,
-} from '../../core/parts/adapters/notes-part-descriptor.js';
-import type { NoteEntry } from '../../core/parts/adapters/notes-part-descriptor.js';
+} from '../../core/parts/adapters/notes-part-descriptor';
+import type { NoteEntry } from '../../core/parts/adapters/notes-part-descriptor';
 
 // ---------------------------------------------------------------------------
 // Result helpers

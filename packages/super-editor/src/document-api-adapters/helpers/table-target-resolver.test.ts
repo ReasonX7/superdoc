@@ -1,7 +1,7 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
-import { resolveRowLocator, resolveCellLocator } from './table-target-resolver.js';
+import type { Editor } from '../../core/Editor';
+import { resolveRowLocator, resolveCellLocator } from './table-target-resolver';
 
 vi.mock('prosemirror-tables', () => ({
   TableMap: {

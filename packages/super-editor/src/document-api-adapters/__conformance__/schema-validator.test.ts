@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { validateJsonSchema } from './schema-validator.js';
+import { validateJsonSchema } from './schema-validator';
 
 describe('schema-validator $ref resolution', () => {
   const $defs = {

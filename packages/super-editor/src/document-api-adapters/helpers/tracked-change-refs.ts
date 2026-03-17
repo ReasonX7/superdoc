@@ -1,7 +1,7 @@
-import type { Editor } from '../../core/Editor.js';
-import { TrackInsertMarkName } from '../../extensions/track-changes/constants.js';
-import { buildTrackedChangeCanonicalIdMap } from './tracked-change-resolver.js';
-import { toNonEmptyString } from './value-utils.js';
+import type { Editor } from '../../core/Editor';
+import { TrackInsertMarkName } from '../../extensions/track-changes/constants';
+import { buildTrackedChangeCanonicalIdMap } from './tracked-change-resolver';
+import { toNonEmptyString } from './value-utils';
 
 type ReceiptInsert = { kind: 'entity'; entityType: 'trackedChange'; entityId: string };
 

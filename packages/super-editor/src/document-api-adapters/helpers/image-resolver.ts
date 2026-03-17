@@ -1,6 +1,6 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Types

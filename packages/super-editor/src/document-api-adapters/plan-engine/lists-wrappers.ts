@@ -8,7 +8,7 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   ListInsertInput,
   ListItemInfo,
@@ -41,18 +41,18 @@ import type {
   ReceiptFailureCode,
   PlanReceipt,
 } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
-import { requireEditorCommand, ensureTrackedCapability, rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { compoundMutation } from '../../core/parts/mutation/compound-mutation.js';
-import { clearIndexCache, getBlockIndex } from '../helpers/index-cache.js';
-import { collectTrackInsertRefsInRange } from '../helpers/tracked-change-refs.js';
+import { DocumentApiAdapterError } from '../errors';
+import { requireEditorCommand, ensureTrackedCapability, rejectTrackedMode } from '../helpers/mutation-helpers';
+import { executeDomainCommand } from './plan-wrappers';
+import { compoundMutation } from '../../core/parts/mutation/compound-mutation';
+import { clearIndexCache, getBlockIndex } from '../helpers/index-cache';
+import { collectTrackInsertRefsInRange } from '../helpers/tracked-change-refs';
 import {
   listItemProjectionToInfo,
   listListItems,
   resolveListItem,
   type ListItemProjection,
-} from '../helpers/list-item-resolver.js';
+} from '../helpers/list-item-resolver';
 import {
   resolveBlock,
   resolveBlocksInRange,
@@ -65,9 +65,9 @@ import {
   findPreviousCompatibleSequence,
   evaluateCanJoin,
   evaluateCanContinuePrevious,
-} from '../helpers/list-sequence-helpers.js';
-import { ListHelpers } from '../../core/helpers/list-numbering-helpers.js';
-import { updateNumberingProperties } from '../../core/commands/changeListLevel.js';
+} from '../helpers/list-sequence-helpers';
+import { ListHelpers } from '../../core/helpers/list-numbering-helpers';
+import { updateNumberingProperties } from '../../core/commands/changeListLevel';
 
 // ---------------------------------------------------------------------------
 // Command types

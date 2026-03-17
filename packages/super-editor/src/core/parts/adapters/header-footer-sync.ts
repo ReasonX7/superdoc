@@ -6,15 +6,15 @@
  * - Import: OOXML JSON → PM JSON (for remote apply afterCommit)
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartId } from '../types.js';
-import { mutatePart } from '../mutation/mutate-part.js';
-import { hasPart } from '../store/part-store.js';
+import type { Editor } from '../../Editor';
+import type { PartId } from '../types';
+import { mutatePart } from '../mutation/mutate-part';
+import { hasPart } from '../store/part-store';
 import {
   ensureHeaderFooterDescriptor,
   isHeaderFooterPartId,
   SOURCE_HEADER_FOOTER_LOCAL,
-} from './header-footer-part-descriptor.js';
+} from './header-footer-part-descriptor';
 
 // ---------------------------------------------------------------------------
 // Converter shape

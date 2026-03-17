@@ -2,9 +2,9 @@ import { undoDepth, redoDepth } from 'prosemirror-history';
 import { yUndoPluginKey } from 'y-prosemirror';
 import type { HistoryAdapter, HistoryState, HistoryActionResult, OperationId } from '@superdoc/document-api';
 import { OPERATION_IDS, COMMAND_CATALOG } from '@superdoc/document-api';
-import type { Editor } from '../core/Editor.js';
-import { getRevision } from './plan-engine/revision-tracker.js';
-import { DocumentApiAdapterError } from './errors.js';
+import type { Editor } from '../core/Editor';
+import { getRevision } from './plan-engine/revision-tracker';
+import { DocumentApiAdapterError } from './errors';
 
 function isCollabHistory(editor: Editor): boolean {
   return Boolean(editor.options.collaborationProvider && editor.options.ydoc);

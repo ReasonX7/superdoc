@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import * as Y from 'yjs';
-import { seedPartsFromEditor } from './seed-parts.js';
-import { decodeYjsToEnvelope } from './json-crdt.js';
-import { PARTS_MAP_KEY, META_MAP_KEY, META_PARTS_CAPABILITY_KEY, META_PARTS_SCHEMA_VERSION_KEY } from './constants.js';
+import { seedPartsFromEditor } from './seed-parts';
+import { decodeYjsToEnvelope } from './json-crdt';
+import { PARTS_MAP_KEY, META_MAP_KEY, META_PARTS_CAPABILITY_KEY, META_PARTS_SCHEMA_VERSION_KEY } from './constants';
 
 function createMockEditor(convertedXml: Record<string, unknown>) {
   return { converter: { convertedXml } } as any;

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { Mark, MarkType } from 'prosemirror-model';
 
 vi.mock('@superdoc/url-validation', () => ({
@@ -9,11 +9,11 @@ vi.mock('@superdoc/url-validation', () => ({
   }),
 }));
 
-vi.mock('../../core/parts/adapters/relationships-mutation.js', () => ({
+vi.mock('../../core/parts/adapters/relationships-mutation', () => ({
   findOrCreateRelationship: vi.fn(() => 'rId-mock'),
 }));
 
-vi.mock('./transaction-meta.js', () => ({
+vi.mock('./transaction-meta', () => ({
   applyDirectMutationMeta: vi.fn(),
 }));
 
@@ -25,7 +25,7 @@ import {
   patchLinkMark,
   unwrapLink,
   deleteLinkedText,
-} from './hyperlink-mutation-helper.js';
+} from './hyperlink-mutation-helper';
 
 // ---------------------------------------------------------------------------
 // Mock editor factory

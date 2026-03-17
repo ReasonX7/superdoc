@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import { INLINE_PROPERTY_REGISTRY, OPERATION_IDS, PUBLIC_MUTATION_STEP_OP_IDS } from '@superdoc/document-api';
-import { TrackFormatMarkName } from '../extensions/track-changes/constants.js';
-import { getDocumentApiCapabilities } from './capabilities-adapter.js';
+import { TrackFormatMarkName } from '../extensions/track-changes/constants';
+import { getDocumentApiCapabilities } from './capabilities-adapter';
 
 function makeEditor(overrides: Partial<Editor> = {}): Editor {
   const defaultCommands = {

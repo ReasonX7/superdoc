@@ -15,8 +15,8 @@
 
 import { closeHistory } from 'prosemirror-history';
 import { yUndoPluginKey } from 'y-prosemirror';
-import type { Editor } from '../core/Editor.js';
-import { checkRevision, incrementRevision } from './plan-engine/revision-tracker.js';
+import type { Editor } from '../core/Editor';
+import { checkRevision, incrementRevision } from './plan-engine/revision-tracker';
 
 /** Converter shape accessed from the editor for dirty marking and GUID promotion. */
 interface ConverterForMutation {

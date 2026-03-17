@@ -1,4 +1,4 @@
-import type { ExtensionCommandMap } from '@core/types/ChainedCommands.js';
+import type { ExtensionCommandMap } from '@core/types/ChainedCommands';
 
 type ExpectTrue<T extends true> = T;
 type Equal<A, B> = (<U>() => U extends A ? 1 : 2) extends <U>() => U extends B ? 1 : 2 ? true : false;

@@ -1,5 +1,5 @@
-import type * as CoreCommandExports from './index.js';
-import type { CommandProps } from '../types/ChainedCommands.js';
+import type * as CoreCommandExports from './index';
+import type { CommandProps } from '../types/ChainedCommands';
 
 type ExtractCommandSignature<F> = F extends (...args: infer A) => (props: CommandProps) => infer R
   ? (...args: A) => R
@@ -59,6 +59,6 @@ type CoreCommandSignatures = {
   [K in CoreCommandNames]: ExtractCommandSignature<(typeof CoreCommandExports)[K]>;
 };
 
-declare module '../types/ChainedCommands.js' {
+declare module '../types/ChainedCommands' {
   interface CoreCommandMap extends CoreCommandSignatures {}
 }

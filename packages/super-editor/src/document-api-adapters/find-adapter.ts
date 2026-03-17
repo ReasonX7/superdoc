@@ -1,4 +1,4 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type {
   FindOutput,
   Query,
@@ -11,24 +11,24 @@ import type {
   UnknownNodeDiagnostic,
 } from '@superdoc/document-api';
 import { buildResolvedHandle, buildDiscoveryItem, buildDiscoveryResult } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from './errors.js';
-import { dedupeDiagnostics } from './helpers/adapter-utils.js';
-import { getBlockIndex, getInlineIndex } from './helpers/index-cache.js';
-import { findInlineByAnchor } from './helpers/inline-address-resolver.js';
-import { findBlockByNodeIdOnly } from './helpers/node-address-resolver.js';
-import { resolveIncludedNodes } from './helpers/node-info-resolver.js';
-import { collectUnknownNodeDiagnostics, isInlineQuery, shouldQueryBothKinds } from './find/common.js';
-import { executeBlockSelector } from './find/block-strategy.js';
-import { executeDualKindSelector } from './find/dual-kind-strategy.js';
-import { executeInlineSelector } from './find/inline-strategy.js';
-import { executeTextSelector } from './find/text-strategy.js';
-import { getRevision } from './plan-engine/revision-tracker.js';
+import { DocumentApiAdapterError } from './errors';
+import { dedupeDiagnostics } from './helpers/adapter-utils';
+import { getBlockIndex, getInlineIndex } from './helpers/index-cache';
+import { findInlineByAnchor } from './helpers/inline-address-resolver';
+import { findBlockByNodeIdOnly } from './helpers/node-address-resolver';
+import { resolveIncludedNodes } from './helpers/node-info-resolver';
+import { collectUnknownNodeDiagnostics, isInlineQuery, shouldQueryBothKinds } from './find/common';
+import { executeBlockSelector } from './find/block-strategy';
+import { executeDualKindSelector } from './find/dual-kind-strategy';
+import { executeInlineSelector } from './find/inline-strategy';
+import { executeTextSelector } from './find/text-strategy';
+import { getRevision } from './plan-engine/revision-tracker';
 import {
   projectContentNode,
   projectInlineNode,
   projectMarkBasedInline,
   resolveTextByBlockId,
-} from './helpers/sd-projection.js';
+} from './helpers/sd-projection';
 
 // ---------------------------------------------------------------------------
 // Legacy find — returns FindOutput (used by info-adapter)

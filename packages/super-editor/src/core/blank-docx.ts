@@ -16,7 +16,7 @@ export const BLANK_DOCX_BASE64 = `UEsDBBQAAAAIAAAAIQAykW9XXgEAAKUFAAATABwAW0Nvbn
  *
  * @example
  * ```typescript
- * import { getArrayBufferFromUrl } from '@core/super-converter/helpers.js';
+ * import { getArrayBufferFromUrl } from '@core/super-converter/helpers';
  * const buffer = await getArrayBufferFromUrl(BLANK_DOCX_DATA_URI);
  * ```
  */

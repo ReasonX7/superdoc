@@ -1,4 +1,4 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { CommentInfo, CommentStatus, TextTarget } from '@superdoc/document-api';
 
 const FALLBACK_STORE_KEY = '__documentApiComments';

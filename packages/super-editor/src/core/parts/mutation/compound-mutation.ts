@@ -8,10 +8,10 @@
  * guarantee that parts and document state stay in sync.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartId } from '../types.js';
-import { getRevision, restoreRevision } from '../../../document-api-adapters/plan-engine/revision-tracker.js';
-import { getPart, hasPart, setPart, removePart, clonePart } from '../store/part-store.js';
+import type { Editor } from '../../Editor';
+import type { PartId } from '../types';
+import { getRevision, restoreRevision } from '../../../document-api-adapters/plan-engine/revision-tracker';
+import { getPart, hasPart, setPart, removePart, clonePart } from '../store/part-store';
 
 // ---------------------------------------------------------------------------
 // Converter shape (minimal interface)

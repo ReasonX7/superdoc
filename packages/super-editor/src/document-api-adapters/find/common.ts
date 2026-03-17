@@ -1,4 +1,4 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   MatchContext,
   NodeAddress,
@@ -7,16 +7,16 @@ import type {
   TextAddress,
   UnknownNodeDiagnostic,
 } from '@superdoc/document-api';
-import { toId } from '../helpers/value-utils.js';
-import { getInlineIndex } from '../helpers/index-cache.js';
+import { toId } from '../helpers/value-utils';
+import { getInlineIndex } from '../helpers/index-cache';
 import {
   findBlockById,
   toBlockAddress,
   type BlockCandidate,
   type BlockIndex,
-} from '../helpers/node-address-resolver.js';
-import { findInlineByAnchor, isInlineQueryType } from '../helpers/inline-address-resolver.js';
-import { findCandidateByPos } from '../helpers/adapter-utils.js';
+} from '../helpers/node-address-resolver';
+import { findInlineByAnchor, isInlineQueryType } from '../helpers/inline-address-resolver';
+import { findCandidateByPos } from '../helpers/adapter-utils';
 
 /** Characters of document text to include before and after a match in snippet context. */
 const SNIPPET_PADDING = 30;

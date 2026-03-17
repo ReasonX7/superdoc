@@ -16,7 +16,7 @@ vi.mock('@superdoc/super-editor', () => ({
   Editor: EditorConstructor,
 }));
 
-vi.mock('@extensions/index.js', () => ({
+vi.mock('@extensions/index', () => ({
   getRichTextExtensions: () => [],
   Placeholder: { options: { placeholder: '' } },
 }));

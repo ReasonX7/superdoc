@@ -31,13 +31,13 @@ import {
   textReceiptToSDReceipt,
   INLINE_PROPERTY_BY_KEY,
 } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { CompiledPlan } from './compiler.js';
-import type { CompiledTarget } from './executor-registry.types.js';
-import { executeCompiledPlan } from './executor.js';
-import { getRevision } from './revision-tracker.js';
-import { compoundMutation } from '../../core/parts/mutation/compound-mutation.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import type { CompiledPlan } from './compiler';
+import type { CompiledTarget } from './executor-registry.types';
+import { executeCompiledPlan } from './executor';
+import { getRevision } from './revision-tracker';
+import { compoundMutation } from '../../core/parts/mutation/compound-mutation';
+import { DocumentApiAdapterError } from '../errors';
 import {
   insertParagraphAtEnd,
   resolveDefaultInsertTarget,
@@ -45,24 +45,24 @@ import {
   resolveWriteTarget,
   type ResolvedTextTarget,
   type ResolvedWrite,
-} from '../helpers/adapter-utils.js';
-import { buildTextMutationResolution, readTextAtResolvedRange } from '../helpers/text-mutation-resolution.js';
+} from '../helpers/adapter-utils';
+import { buildTextMutationResolution, readTextAtResolvedRange } from '../helpers/text-mutation-resolution';
 import {
   ensureTrackedCapability,
   requireEditorCommand,
   requireSchemaMark,
   rejectTrackedMode,
-} from '../helpers/mutation-helpers.js';
-import { TrackFormatMarkName } from '../../extensions/track-changes/constants.js';
-import { applyDirectMutationMeta, applyTrackedMutationMeta } from '../helpers/transaction-meta.js';
-import { markdownToPmFragment } from '../../core/helpers/markdown/markdownToPmContent.js';
+} from '../helpers/mutation-helpers';
+import { TrackFormatMarkName } from '../../extensions/track-changes/constants';
+import { applyDirectMutationMeta, applyTrackedMutationMeta } from '../helpers/transaction-meta';
+import { markdownToPmFragment } from '../../core/helpers/markdown/markdownToPmContent';
 import {
   executeStructuralInsert as executeStructuralInsertEngine,
   executeStructuralReplace as executeStructuralReplaceEngine,
   resolveReplaceTarget as resolveStructuralReplaceTarget,
   resolveInsertTarget as resolveStructuralInsertTarget,
   resolvePlacement,
-} from '../structural-write-engine/index.js';
+} from '../structural-write-engine/index';
 
 // ---------------------------------------------------------------------------
 // Helpers

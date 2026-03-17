@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { PlanReceipt } from '@superdoc/document-api';
-import type { ListItemProjection } from '../helpers/list-item-resolver.js';
+import type { ListItemProjection } from '../helpers/list-item-resolver';
 
 // ---------------------------------------------------------------------------
 // Module mocks — hoisted before any imports of the module under test
 // ---------------------------------------------------------------------------
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean): PlanReceipt => {
     const applied = handler();
     return {
@@ -27,12 +27,12 @@ vi.mock('./plan-wrappers.js', () => ({
   }),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getBlockIndex: vi.fn(),
   clearIndexCache: vi.fn(),
 }));
 
-vi.mock('../helpers/list-item-resolver.js', () => ({
+vi.mock('../helpers/list-item-resolver', () => ({
   listItemProjectionToInfo: vi.fn((proj: ListItemProjection, listId: string) => ({
     address: proj.address,
     listId,
@@ -42,7 +42,7 @@ vi.mock('../helpers/list-item-resolver.js', () => ({
   resolveListItem: vi.fn(),
 }));
 
-vi.mock('../helpers/list-sequence-helpers.js', () => ({
+vi.mock('../helpers/list-sequence-helpers', () => ({
   resolveBlock: vi.fn(),
   resolveBlocksInRange: vi.fn(),
   getAbstractNumId: vi.fn(),
@@ -56,7 +56,7 @@ vi.mock('../helpers/list-sequence-helpers.js', () => ({
   evaluateCanContinuePrevious: vi.fn(),
 }));
 
-vi.mock('../../core/helpers/list-numbering-helpers.js', () => ({
+vi.mock('../../core/helpers/list-numbering-helpers', () => ({
   ListHelpers: {
     hasListDefinition: vi.fn(() => true),
     getNewListId: vi.fn(() => 42),
@@ -68,17 +68,17 @@ vi.mock('../../core/helpers/list-numbering-helpers.js', () => ({
   },
 }));
 
-vi.mock('../../core/commands/changeListLevel.js', () => ({
+vi.mock('../../core/commands/changeListLevel', () => ({
   updateNumberingProperties: vi.fn(),
 }));
 
-vi.mock('../helpers/mutation-helpers.js', () => ({
+vi.mock('../helpers/mutation-helpers', () => ({
   requireEditorCommand: vi.fn((cmd: unknown) => cmd),
   ensureTrackedCapability: vi.fn(),
   rejectTrackedMode: vi.fn(),
 }));
 
-vi.mock('../helpers/tracked-change-refs.js', () => ({
+vi.mock('../helpers/tracked-change-refs', () => ({
   collectTrackInsertRefsInRange: vi.fn(() => []),
 }));
 
@@ -107,9 +107,9 @@ import {
   listsConvertToTextWrapper,
   listsIndentWrapper,
   listsOutdentWrapper,
-} from './lists-wrappers.js';
+} from './lists-wrappers';
 
-import { listListItems, resolveListItem } from '../helpers/list-item-resolver.js';
+import { listListItems, resolveListItem } from '../helpers/list-item-resolver';
 import {
   resolveBlock,
   resolveBlocksInRange,
@@ -122,9 +122,9 @@ import {
   evaluateCanJoin,
   evaluateCanContinuePrevious,
   findPreviousCompatibleSequence,
-} from '../helpers/list-sequence-helpers.js';
-import { ListHelpers } from '../../core/helpers/list-numbering-helpers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
+} from '../helpers/list-sequence-helpers';
+import { ListHelpers } from '../../core/helpers/list-numbering-helpers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
 
 // ---------------------------------------------------------------------------
 // Test helpers

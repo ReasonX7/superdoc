@@ -4,21 +4,21 @@ import type {
   SectionAddress,
   SectionMutationResult,
 } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { SectionProjection } from './sections-resolver.js';
+import type { Editor } from '../../core/Editor';
+import type { SectionProjection } from './sections-resolver';
 import {
   getSectPrHeaderFooterRef,
   setSectPrHeaderFooterRef,
   clearSectPrHeaderFooterRef,
   readSectPrHeaderFooterRefs,
   type XmlElement,
-} from './sections-xml.js';
+} from './sections-xml';
 import {
   createHeaderFooterPart,
   hasHeaderFooterRelationship,
   type ConverterWithHeaderFooterParts,
-} from './header-footer-parts.js';
-import { readTargetSectPr } from './section-projection-access.js';
+} from './header-footer-parts';
+import { readTargetSectPr } from './section-projection-access';
 
 // ---------------------------------------------------------------------------
 // Shared resolver

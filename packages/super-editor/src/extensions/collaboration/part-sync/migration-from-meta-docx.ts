@@ -9,9 +9,9 @@
  */
 
 import * as Y from 'yjs';
-import type { PartsMigrationMeta, PartsCapability } from './types.js';
-import { encodeEnvelopeToYjs } from './json-crdt.js';
-import { parseXmlToJson } from '../../../core/super-converter/v2/docxHelper.js';
+import type { PartsMigrationMeta, PartsCapability } from './types';
+import { encodeEnvelopeToYjs } from './json-crdt';
+import { parseXmlToJson } from '../../../core/super-converter/v2/docxHelper';
 import {
   PARTS_MAP_KEY,
   META_MAP_KEY,
@@ -20,7 +20,7 @@ import {
   META_PARTS_SCHEMA_VERSION_KEY,
   EXCLUDED_PART_IDS,
   PARTS_SCHEMA_VERSION,
-} from './constants.js';
+} from './constants';
 
 // ---------------------------------------------------------------------------
 // Types

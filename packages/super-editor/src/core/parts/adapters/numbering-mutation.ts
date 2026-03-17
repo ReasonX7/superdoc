@@ -10,11 +10,11 @@
  *   4. Let `afterCommit` rebuild caches and emit events
  */
 
-import type { Editor } from '../../Editor.js';
-import type { MutatePartResult } from '../types.js';
-import type { NumberingModel } from './numbering-transforms.js';
-import { mutatePart, mutateParts } from '../mutation/mutate-part.js';
-import { syncNumberingToXmlTree, ensureTranslatedNumberingFresh } from './numbering-part-descriptor.js';
+import type { Editor } from '../../Editor';
+import type { MutatePartResult } from '../types';
+import type { NumberingModel } from './numbering-transforms';
+import { mutatePart, mutateParts } from '../mutation/mutate-part';
+import { syncNumberingToXmlTree, ensureTranslatedNumberingFresh } from './numbering-part-descriptor';
 
 // ---------------------------------------------------------------------------
 // Converter access

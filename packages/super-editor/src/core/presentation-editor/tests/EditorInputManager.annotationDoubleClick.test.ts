@@ -4,7 +4,7 @@ import {
   EditorInputManager,
   type EditorInputDependencies,
   type EditorInputCallbacks,
-} from '../pointer-events/EditorInputManager.js';
+} from '../pointer-events/EditorInputManager';
 
 // Mock prosemirror-state to control NodeSelection.create behavior
 vi.mock('prosemirror-state', async (importOriginal) => {

@@ -30,22 +30,22 @@ import {
   buildResolvedHandle,
   buildDiscoveryResult,
 } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { findLegacyAdapter } from '../find-adapter.js';
-import { getBlockIndex } from '../helpers/index-cache.js';
-import { validatePaginationInput } from '../helpers/adapter-utils.js';
-import { captureRunsInRange } from './style-resolver.js';
-import { getRevision } from './revision-tracker.js';
-import { planError } from './errors.js';
+import type { Editor } from '../../core/Editor';
+import { findLegacyAdapter } from '../find-adapter';
+import { getBlockIndex } from '../helpers/index-cache';
+import { validatePaginationInput } from '../helpers/adapter-utils';
+import { captureRunsInRange } from './style-resolver';
+import { getRevision } from './revision-tracker';
+import { planError } from './errors';
 import {
   coalesceRuns,
   toMatchStyle,
   extractRunStyleId,
   assertRunTilingInvariant,
   type CascadeContext,
-} from './match-style-helpers.js';
+} from './match-style-helpers';
 import type { OoxmlResolverParams, ParagraphProperties } from '@superdoc/style-engine/ooxml';
-import { readTranslatedLinkedStyles } from '../../core/parts/adapters/styles-read.js';
+import { readTranslatedLinkedStyles } from '../../core/parts/adapters/styles-read';
 
 // ---------------------------------------------------------------------------
 // V3 ref encoding (D6)

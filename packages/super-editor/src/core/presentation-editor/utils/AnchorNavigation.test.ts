@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { goToAnchor, type GoToAnchorDeps } from './AnchorNavigation.js';
+import { goToAnchor, type GoToAnchorDeps } from './AnchorNavigation';
 
 const mockSelectionToRects = vi.fn(() => []);
 
@@ -7,7 +7,7 @@ vi.mock('@superdoc/layout-bridge', () => ({
   selectionToRects: (...args: unknown[]) => mockSelectionToRects(...args),
 }));
 
-vi.mock('../dom/PageDom.js', () => ({
+vi.mock('../dom/PageDom', () => ({
   getPageElementByIndex: (_host: HTMLElement, pageIndex: number) => {
     // Return a mock page element whose getBoundingClientRect is controlled per-test
     const el = document.createElement('div');

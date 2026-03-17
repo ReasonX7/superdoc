@@ -5,7 +5,7 @@
  * registration (e.g., "word/header*.xml") in v1.
  */
 
-import type { PartId, PartDescriptor } from '../types.js';
+import type { PartId, PartDescriptor } from '../types';
 
 const descriptors = new Map<PartId, PartDescriptor>();
 

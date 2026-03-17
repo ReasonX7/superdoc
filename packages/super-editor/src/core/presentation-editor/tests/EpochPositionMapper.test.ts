@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { StepMap } from 'prosemirror-transform';
 import type { Transaction } from 'prosemirror-state';
 
-import { EpochPositionMapper } from '../layout/EpochPositionMapper.js';
+import { EpochPositionMapper } from '../layout/EpochPositionMapper';
 
 describe('EpochPositionMapper', () => {
   it('starts at epoch 0', () => {

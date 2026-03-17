@@ -1,8 +1,8 @@
 import type { FlowBlock, Layout, Measure } from '@superdoc/contracts';
 import { selectionToRects, type PageGeometryHelper } from '@superdoc/layout-bridge';
 
-import type { RemoteCursorState } from '../types.js';
-import { validateCursorColor } from './RemoteCursorColors.js';
+import type { RemoteCursorState } from '../types';
+import { validateCursorColor } from './RemoteCursorColors';
 
 /**
  * Rectangle in layout space representing a selection highlight area.

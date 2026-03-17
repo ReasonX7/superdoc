@@ -1,18 +1,18 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { BookmarkInsertInput } from '@superdoc/document-api';
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean) => ({
     steps: [{ effect: handler() ? 'changed' : 'noop' }],
   })),
 }));
 
-vi.mock('./revision-tracker.js', () => ({
+vi.mock('./revision-tracker', () => ({
   getRevision: vi.fn(() => 'rev-1'),
 }));
 
-vi.mock('../helpers/adapter-utils.js', () => ({
+vi.mock('../helpers/adapter-utils', () => ({
   paginate: vi.fn((items: unknown[], offset = 0, limit?: number) => {
     const total = items.length;
     const sliced = items.slice(offset, limit ? offset + limit : undefined);
@@ -21,25 +21,25 @@ vi.mock('../helpers/adapter-utils.js', () => ({
   resolveInlineInsertPosition: vi.fn(() => ({ from: 5, to: 8 })),
 }));
 
-vi.mock('../helpers/mutation-helpers.js', () => ({
+vi.mock('../helpers/mutation-helpers', () => ({
   rejectTrackedMode: vi.fn(),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   clearIndexCache: vi.fn(),
 }));
 
-vi.mock('../helpers/bookmark-resolver.js', () => ({
+vi.mock('../helpers/bookmark-resolver', () => ({
   findAllBookmarks: vi.fn(() => []),
   resolveBookmarkTarget: vi.fn(),
   extractBookmarkInfo: vi.fn(),
   buildBookmarkDiscoveryItem: vi.fn(),
 }));
 
-import { bookmarksInsertWrapper } from './bookmark-wrappers.js';
-import { resolveInlineInsertPosition } from '../helpers/adapter-utils.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { findAllBookmarks } from '../helpers/bookmark-resolver.js';
+import { bookmarksInsertWrapper } from './bookmark-wrappers';
+import { resolveInlineInsertPosition } from '../helpers/adapter-utils';
+import { clearIndexCache } from '../helpers/index-cache';
+import { findAllBookmarks } from '../helpers/bookmark-resolver';
 
 type BookmarkNode = {
   type: { name: string };

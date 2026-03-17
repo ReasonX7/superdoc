@@ -7,7 +7,7 @@
  * 3. Node environment gives us a clean slate to test all scenarios
  */
 import { describe, it, expect, beforeEach, afterEach, afterAll, vi } from 'vitest';
-import { canUseDOM, resetDOMCache } from './canUseDOM.js';
+import { canUseDOM, resetDOMCache } from './canUseDOM';
 
 /**
  * Helper to safely override a global property for testing.

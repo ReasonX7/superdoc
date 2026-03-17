@@ -7,7 +7,7 @@
  * @example
  * ```ts
  * // In an extension types file:
- * declare module '@core/types/MarkAttributesMap.js' {
+ * declare module '@core/types/MarkAttributesMap' {
  *   interface MarkAttributesMap {
  *     bold: BoldAttrs;
  *     link: LinkAttrs;

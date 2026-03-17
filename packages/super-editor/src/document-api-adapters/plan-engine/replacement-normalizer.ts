@@ -5,7 +5,7 @@
  * for cross-block (span) targets per D3 normalization rules.
  */
 
-import { planError } from './errors.js';
+import { planError } from './errors';
 
 /**
  * Normalizes a flat replacement string into paragraph blocks for span targets.

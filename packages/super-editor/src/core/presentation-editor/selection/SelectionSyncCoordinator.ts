@@ -1,4 +1,4 @@
-import { EventEmitter } from '../../EventEmitter.js';
+import { EventEmitter } from '../../EventEmitter';
 
 /**
  * Payload emitted with the 'render' event when selection rendering should occur.

@@ -12,7 +12,7 @@ export {
   findAllSdtNodes,
   resolveSdtByTarget,
   type ResolvedSdt,
-} from './target-resolution.js';
+} from './target-resolution';
 
 export {
   resolveControlType,
@@ -24,11 +24,11 @@ export {
   buildContentControlInfoFromAttrs,
   readCheckboxChecked,
   readChoiceListData,
-} from './sdt-info-builder.js';
+} from './sdt-info-builder';
 
-export { assertNotSdtLocked, assertNotContentLocked, assertControlType } from './lock-enforcement.js';
+export { assertNotSdtLocked, assertNotContentLocked, assertControlType } from './lock-enforcement';
 
-export { buildMutationSuccess, buildMutationFailure, applyPagination } from './result-builders.js';
+export { buildMutationSuccess, buildMutationFailure, applyPagination } from './result-builders';
 
 export {
   applyAttrsUpdate,
@@ -43,4 +43,4 @@ export {
   upsertSdtPrChild,
   removeSdtPrChild,
   type SdtPrElement,
-} from './sdt-properties-write.js';
+} from './sdt-properties-write';

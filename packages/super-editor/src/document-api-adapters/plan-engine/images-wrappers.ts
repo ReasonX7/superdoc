@@ -44,19 +44,19 @@ import type {
   UpdateCaptionInput,
   RemoveCaptionInput,
 } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import {
   collectImages,
   findImageById,
   requireFloatingPlacement,
   type ImageCandidate,
-} from '../helpers/image-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { resolveCreateAnchor } from './create-insertion.js';
-import { readImageDimensionsFromDataUri } from '../../core/super-converter/image-dimensions.js';
-import { generateUniqueDocPrId } from '../../extensions/image/imageHelpers/startImageUpload.js';
+} from '../helpers/image-resolver';
+import { DocumentApiAdapterError } from '../errors';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { executeDomainCommand } from './plan-wrappers';
+import { resolveCreateAnchor } from './create-insertion';
+import { readImageDimensionsFromDataUri } from '../../core/super-converter/image-dimensions';
+import { generateUniqueDocPrId } from '../../extensions/image/imageHelpers/startImageUpload';
 
 // ---------------------------------------------------------------------------
 // Shared helpers

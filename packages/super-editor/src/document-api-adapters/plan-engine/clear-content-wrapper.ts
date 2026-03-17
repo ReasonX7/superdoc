@@ -4,10 +4,10 @@
  */
 
 import type { ClearContentInput, Receipt, RevisionGuardOptions } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { executeDomainCommand } from './plan-wrappers.js';
+import type { Editor } from '../../core/Editor';
+import { DocumentApiAdapterError } from '../errors';
+import { clearIndexCache } from '../helpers/index-cache';
+import { executeDomainCommand } from './plan-wrappers';
 
 function isDocumentEmpty(editor: Editor): boolean {
   const { doc } = editor.state;

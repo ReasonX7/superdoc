@@ -1,5 +1,5 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { NodeAddress } from '@superdoc/document-api';
 import {
   buildBlockIndex,
@@ -10,7 +10,7 @@ import {
   toBlockAddress,
   type BlockCandidate,
   type BlockIndex,
-} from './node-address-resolver.js';
+} from './node-address-resolver';
 
 // ---------------------------------------------------------------------------
 // Helpers — lightweight ProseMirror-like stubs

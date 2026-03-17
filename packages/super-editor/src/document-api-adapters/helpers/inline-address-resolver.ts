@@ -1,8 +1,8 @@
 import type { Mark, Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import type { BlockIndex } from './node-address-resolver.js';
+import type { Editor } from '../../core/Editor';
+import type { BlockIndex } from './node-address-resolver';
 import type { InlineAnchor, InlineNodeType, NodeAddress, NodeType } from '@superdoc/document-api';
-import { CommentMarkName } from '../../extensions/comment/comments-constants.js';
+import { CommentMarkName } from '../../extensions/comment/comments-constants';
 
 const LINK_MARK_NAME = 'link';
 const COMMENT_MARK_NAME = CommentMarkName;

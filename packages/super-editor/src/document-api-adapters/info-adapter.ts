@@ -1,8 +1,8 @@
 import type { DocumentInfo, FindOutput, InfoInput, NodeInfo, NodeType } from '@superdoc/document-api';
-import type { Editor } from '../core/Editor.js';
-import { findLegacyAdapter } from './find-adapter.js';
-import { getTextAdapter } from './get-text-adapter.js';
-import { getRevision } from './plan-engine/revision-tracker.js';
+import type { Editor } from '../core/Editor';
+import { findLegacyAdapter } from './find-adapter';
+import { getTextAdapter } from './get-text-adapter';
+import { getRevision } from './plan-engine/revision-tracker';
 
 type HeadingNodeInfo = Extract<NodeInfo, { nodeType: 'heading' }>;
 type CommentNodeInfo = Extract<NodeInfo, { nodeType: 'comment' }>;

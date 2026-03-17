@@ -7,9 +7,9 @@
  */
 
 import type { ContentControlType } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../../errors.js';
-import type { ResolvedSdt } from './target-resolution.js';
-import { resolveControlType, resolveLockMode } from './sdt-info-builder.js';
+import { DocumentApiAdapterError } from '../../errors';
+import type { ResolvedSdt } from './target-resolution';
+import { resolveControlType, resolveLockMode } from './sdt-info-builder';
 
 // ---------------------------------------------------------------------------
 // Lock assertions

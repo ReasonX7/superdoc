@@ -15,7 +15,7 @@ import type {
   DiscoveryItem,
 } from '@superdoc/document-api';
 import { buildDiscoveryItem, buildResolvedHandle } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Types

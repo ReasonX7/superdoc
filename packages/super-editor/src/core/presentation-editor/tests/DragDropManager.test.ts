@@ -8,7 +8,7 @@ import {
   getDropPayloadKind,
   hasPossibleFiles,
   getDroppedImageFiles,
-} from '../input/DragDropManager.js';
+} from '../input/DragDropManager';
 
 // Mock TextSelection.create to avoid needing a real ProseMirror doc
 vi.spyOn(TextSelection, 'create').mockImplementation(() => {

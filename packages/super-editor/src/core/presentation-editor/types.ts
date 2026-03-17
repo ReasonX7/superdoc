@@ -5,7 +5,7 @@
  * both public (exported) and internal types.
  */
 
-import type { Editor } from '../Editor.js';
+import type { Editor } from '../Editor';
 import type { TrackedChangesMode, FlowBlock, Layout, Measure, FlowMode, SectionMetadata } from '@superdoc/contracts';
 import type { LayoutMode, RulerOptions } from '@superdoc/painter-dom';
 import type * as Y from 'yjs';

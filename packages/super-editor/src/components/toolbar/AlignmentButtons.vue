@@ -2,7 +2,7 @@
 import { onMounted, ref, watch } from 'vue';
 import { useHighContrastMode } from '../../composables/use-high-contrast-mode';
 
-import { toolbarIcons } from './toolbarIcons.js';
+import { toolbarIcons } from './toolbarIcons';
 
 const { isHighContrastMode } = useHighContrastMode();
 const emit = defineEmits(['select']);

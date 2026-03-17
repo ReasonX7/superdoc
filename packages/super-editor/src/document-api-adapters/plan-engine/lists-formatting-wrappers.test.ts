@@ -1,16 +1,16 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { PlanReceipt } from '@superdoc/document-api';
-import type { ListItemProjection } from '../helpers/list-item-resolver.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../../core/parts/registry/part-registry.js';
-import { numberingPartDescriptor } from '../../core/parts/adapters/numbering-part-descriptor.js';
-import { clearInvalidationHandlers } from '../../core/parts/invalidation/part-invalidation-registry.js';
+import type { ListItemProjection } from '../helpers/list-item-resolver';
+import { registerPartDescriptor, clearPartDescriptors } from '../../core/parts/registry/part-registry';
+import { numberingPartDescriptor } from '../../core/parts/adapters/numbering-part-descriptor';
+import { clearInvalidationHandlers } from '../../core/parts/invalidation/part-invalidation-registry';
 
 // ---------------------------------------------------------------------------
 // Module mocks — hoisted before any imports of the module under test
 // ---------------------------------------------------------------------------
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean): PlanReceipt => {
     const applied = handler();
     return {
@@ -30,36 +30,36 @@ vi.mock('./plan-wrappers.js', () => ({
   }),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getBlockIndex: vi.fn(),
   clearIndexCache: vi.fn(),
 }));
 
-vi.mock('../helpers/list-item-resolver.js', () => ({
+vi.mock('../helpers/list-item-resolver', () => ({
   resolveListItem: vi.fn(),
 }));
 
-vi.mock('../helpers/list-sequence-helpers.js', () => ({
+vi.mock('../helpers/list-sequence-helpers', () => ({
   getAbstractNumId: vi.fn(),
   getContiguousSequence: vi.fn(() => []),
   findAdjacentSequence: vi.fn(() => null),
 }));
 
-vi.mock('../../core/helpers/list-numbering-helpers.js', () => ({
+vi.mock('../../core/helpers/list-numbering-helpers', () => ({
   ListHelpers: {
     removeLvlOverride: vi.fn(),
   },
 }));
 
-vi.mock('../../core/commands/changeListLevel.js', () => ({
+vi.mock('../../core/commands/changeListLevel', () => ({
   updateNumberingProperties: vi.fn(),
 }));
 
-vi.mock('../helpers/mutation-helpers.js', () => ({
+vi.mock('../helpers/mutation-helpers', () => ({
   rejectTrackedMode: vi.fn(),
 }));
 
-vi.mock('../../core/helpers/list-level-formatting-helpers.js', () => ({
+vi.mock('../../core/helpers/list-level-formatting-helpers', () => ({
   LevelFormattingHelpers: {
     getPresetTemplate: vi.fn(),
     applyTemplateToAbstract: vi.fn(),
@@ -81,13 +81,13 @@ vi.mock('../../core/helpers/list-level-formatting-helpers.js', () => ({
 // Now import wrappers and mocked modules
 // ---------------------------------------------------------------------------
 
-import { listsSetTypeWrapper } from './lists-formatting-wrappers.js';
-import { resolveListItem } from '../helpers/list-item-resolver.js';
-import { getAbstractNumId, getContiguousSequence, findAdjacentSequence } from '../helpers/list-sequence-helpers.js';
-import { LevelFormattingHelpers } from '../../core/helpers/list-level-formatting-helpers.js';
-import { updateNumberingProperties } from '../../core/commands/changeListLevel.js';
-import { ListHelpers } from '../../core/helpers/list-numbering-helpers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
+import { listsSetTypeWrapper } from './lists-formatting-wrappers';
+import { resolveListItem } from '../helpers/list-item-resolver';
+import { getAbstractNumId, getContiguousSequence, findAdjacentSequence } from '../helpers/list-sequence-helpers';
+import { LevelFormattingHelpers } from '../../core/helpers/list-level-formatting-helpers';
+import { updateNumberingProperties } from '../../core/commands/changeListLevel';
+import { ListHelpers } from '../../core/helpers/list-numbering-helpers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
 
 // ---------------------------------------------------------------------------
 // Test helpers

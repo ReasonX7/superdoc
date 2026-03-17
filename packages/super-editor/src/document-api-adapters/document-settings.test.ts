@@ -7,7 +7,7 @@ import {
   readSettingsRoot,
   hasOddEvenHeadersFooters,
   type ConverterWithDocumentSettings,
-} from './document-settings.ts';
+} from './document-settings';
 
 function makeConverter(settingsElements: unknown[] = []): ConverterWithDocumentSettings {
   return {

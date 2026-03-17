@@ -3,7 +3,7 @@
  * to the adapter layer.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   IndexListInput,
   IndexGetInput,
@@ -36,14 +36,14 @@ import {
   extractIndexEntryInfo,
   buildIndexEntryDiscoveryItem,
   parseIndexInstruction,
-} from '../helpers/index-resolver.js';
-import { paginate, resolveInlineInsertPosition, resolveBlockCreatePosition } from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { executeOutOfBandMutation } from '../out-of-band-mutation.js';
-import { DocumentApiAdapterError } from '../errors.js';
+} from '../helpers/index-resolver';
+import { paginate, resolveInlineInsertPosition, resolveBlockCreatePosition } from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
+import { executeDomainCommand } from './plan-wrappers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { executeOutOfBandMutation } from '../out-of-band-mutation';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Result helpers

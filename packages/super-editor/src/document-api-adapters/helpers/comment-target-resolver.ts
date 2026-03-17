@@ -1,8 +1,8 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { TextAddress } from '@superdoc/document-api';
-import { getInlineIndex } from './index-cache.js';
-import type { InlineCandidate } from './inline-address-resolver.js';
-import { resolveCommentIdFromAttrs, toNonEmptyString } from './value-utils.js';
+import { getInlineIndex } from './index-cache';
+import type { InlineCandidate } from './inline-address-resolver';
+import { resolveCommentIdFromAttrs, toNonEmptyString } from './value-utils';
 
 export type CommentAnchorStatus = 'open' | 'resolved';
 

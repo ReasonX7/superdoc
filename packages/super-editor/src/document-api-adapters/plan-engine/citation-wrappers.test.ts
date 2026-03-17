@@ -1,17 +1,17 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean) => ({
     steps: [{ effect: handler() ? 'changed' : 'noop' }],
   })),
 }));
 
-vi.mock('./revision-tracker.js', () => ({
+vi.mock('./revision-tracker', () => ({
   getRevision: vi.fn(() => 'rev-1'),
 }));
 
-vi.mock('../helpers/adapter-utils.js', () => ({
+vi.mock('../helpers/adapter-utils', () => ({
   paginate: vi.fn((items: unknown[], offset = 0, limit?: number) => {
     const total = items.length;
     const sliced = items.slice(offset, limit ? offset + limit : undefined);
@@ -21,15 +21,15 @@ vi.mock('../helpers/adapter-utils.js', () => ({
   resolveBlockCreatePosition: vi.fn(() => 0),
 }));
 
-vi.mock('../helpers/mutation-helpers.js', () => ({
+vi.mock('../helpers/mutation-helpers', () => ({
   rejectTrackedMode: vi.fn(),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   clearIndexCache: vi.fn(),
 }));
 
-vi.mock('../helpers/citation-resolver.js', () => ({
+vi.mock('../helpers/citation-resolver', () => ({
   findAllCitations: vi.fn(() => []),
   resolveCitationTarget: vi.fn(),
   extractCitationInfo: vi.fn(),
@@ -42,8 +42,8 @@ vi.mock('../helpers/citation-resolver.js', () => ({
   resolveSourceTarget: vi.fn(),
 }));
 
-import { citationsInsertWrapper } from './citation-wrappers.js';
-import { resolveInlineInsertPosition } from '../helpers/adapter-utils.js';
+import { citationsInsertWrapper } from './citation-wrappers';
+import { resolveInlineInsertPosition } from '../helpers/adapter-utils';
 
 type MockPmNode = {
   type: { name: string };

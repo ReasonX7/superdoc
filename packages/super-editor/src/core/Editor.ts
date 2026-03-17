@@ -3,67 +3,67 @@ import { Transform } from 'prosemirror-transform';
 import type { EditorView as PmEditorView } from 'prosemirror-view';
 import type { Node as PmNode, Schema } from 'prosemirror-model';
 import type { Doc as YDoc } from 'yjs';
-import type { EditorOptions, User, FieldValue, DocxFileEntry } from './types/EditorConfig.js';
-import type { EditorHelpers, ExtensionStorage, ProseMirrorJSON, PageStyles, Toolbar } from './types/EditorTypes.js';
-import type { ChainableCommandObject, CanObject, EditorCommands } from './types/ChainedCommands.js';
-import type { EditorEventMap, FontsResolvedPayload, Comment } from './types/EditorEvents.js';
-import type { SchemaSummaryJSON } from './types/EditorSchema.js';
+import type { EditorOptions, User, FieldValue, DocxFileEntry } from './types/EditorConfig';
+import type { EditorHelpers, ExtensionStorage, ProseMirrorJSON, PageStyles, Toolbar } from './types/EditorTypes';
+import type { ChainableCommandObject, CanObject, EditorCommands } from './types/ChainedCommands';
+import type { EditorEventMap, FontsResolvedPayload, Comment } from './types/EditorEvents';
+import type { SchemaSummaryJSON } from './types/EditorSchema';
 
 import { EditorState as PmEditorState } from 'prosemirror-state';
 import { DOMSerializer as PmDOMSerializer } from 'prosemirror-model';
 import { yXmlFragmentToProseMirrorRootNode } from 'y-prosemirror';
-import { helpers } from '@core/index.js';
-import { EventEmitter } from './EventEmitter.js';
-import { ExtensionService } from './ExtensionService.js';
-import { CommandService } from './CommandService.js';
-import { Attribute } from './Attribute.js';
-import { SuperConverter } from '@core/super-converter/SuperConverter.js';
-import { Commands, Editable, EditorFocus, Keymap, PositionTrackerExtension } from './extensions/index.js';
-import { createDocument } from './helpers/createDocument.js';
-import { isActive } from './helpers/isActive.js';
-import { trackedTransaction } from '@extensions/track-changes/trackChangesHelpers/trackedTransaction.js';
-import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/index.js';
-import { CommentsPluginKey } from '@extensions/comment/comments-plugin.js';
-import { getNecessaryMigrations } from '@core/migrations/index.js';
-import { getStarterExtensions, getRichTextExtensions } from '../extensions/index.js';
+import { helpers } from '@core/index';
+import { EventEmitter } from './EventEmitter';
+import { ExtensionService } from './ExtensionService';
+import { CommandService } from './CommandService';
+import { Attribute } from './Attribute';
+import { SuperConverter } from '@core/super-converter/SuperConverter';
+import { Commands, Editable, EditorFocus, Keymap, PositionTrackerExtension } from './extensions/index';
+import { createDocument } from './helpers/createDocument';
+import { isActive } from './helpers/isActive';
+import { trackedTransaction } from '@extensions/track-changes/trackChangesHelpers/trackedTransaction';
+import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/index';
+import { CommentsPluginKey } from '@extensions/comment/comments-plugin';
+import { getNecessaryMigrations } from '@core/migrations/index';
+import { getStarterExtensions, getRichTextExtensions } from '../extensions/index';
 import {
   InvalidStateError,
   NoSourcePathError,
   FileSystemNotAvailableError,
   DocumentLoadError,
-} from './errors/index.js';
-import { AnnotatorHelpers } from '@helpers/annotator.js';
-import { prepareCommentsForExport, prepareCommentsForImport } from '@extensions/comment/comments-helpers.js';
-import DocxZipper from '@core/DocxZipper.js';
-import { generateCollaborationData } from '@extensions/collaboration/collaboration.js';
-import { seedPartsFromEditor } from '@extensions/collaboration/part-sync/seed-parts.js';
-import { onCollaborationProviderSynced } from './helpers/collaboration-provider-sync.js';
-import { useHighContrastMode } from '../composables/use-high-contrast-mode.js';
-import { setImageNodeSelection } from './helpers/setImageNodeSelection.js';
-import { canRenderFont } from './helpers/canRenderFont.js';
+} from './errors/index';
+import { AnnotatorHelpers } from '@helpers/annotator';
+import { prepareCommentsForExport, prepareCommentsForImport } from '@extensions/comment/comments-helpers';
+import DocxZipper from '@core/DocxZipper';
+import { generateCollaborationData } from '@extensions/collaboration/collaboration';
+import { seedPartsFromEditor } from '@extensions/collaboration/part-sync/seed-parts';
+import { onCollaborationProviderSynced } from './helpers/collaboration-provider-sync';
+import { useHighContrastMode } from '../composables/use-high-contrast-mode';
+import { setImageNodeSelection } from './helpers/setImageNodeSelection';
+import { canRenderFont } from './helpers/canRenderFont';
 import {
   migrateListsToV2IfNecessary,
   migrateParagraphFieldsListsV2,
-} from '@core/migrations/0.14-listsv2/listsv2migration.js';
-import { createLinkedChildEditor } from '@core/child-editor/index.js';
-import { unflattenListsInHtml } from './inputRules/html/html-helpers.js';
-import { SuperValidator } from '@core/super-validator/index.js';
-import { createDocFromMarkdown, createDocFromHTML } from '@core/helpers/index.js';
-import { COMMENT_FILE_BASENAMES } from '@core/super-converter/constants.js';
-import { isHeadless } from '../utils/headless-helpers.js';
-import { canUseDOM } from '../utils/canUseDOM.js';
-import { buildSchemaSummary } from './schema-summary.js';
-import type { PresentationEditor } from './presentation-editor/index.js';
-import type { EditorRenderer } from './renderers/EditorRenderer.js';
-import { ProseMirrorRenderer } from './renderers/ProseMirrorRenderer.js';
-import { BLANK_DOCX_DATA_URI } from './blank-docx.js';
-import { getArrayBufferFromUrl } from '@core/super-converter/helpers.js';
+} from '@core/migrations/0.14-listsv2/listsv2migration';
+import { createLinkedChildEditor } from '@core/child-editor/index';
+import { unflattenListsInHtml } from './inputRules/html/html-helpers';
+import { SuperValidator } from '@core/super-validator/index';
+import { createDocFromMarkdown, createDocFromHTML } from '@core/helpers/index';
+import { COMMENT_FILE_BASENAMES } from '@core/super-converter/constants';
+import { isHeadless } from '../utils/headless-helpers';
+import { canUseDOM } from '../utils/canUseDOM';
+import { buildSchemaSummary } from './schema-summary';
+import type { PresentationEditor } from './presentation-editor/index';
+import type { EditorRenderer } from './renderers/EditorRenderer';
+import { ProseMirrorRenderer } from './renderers/ProseMirrorRenderer';
+import { BLANK_DOCX_DATA_URI } from './blank-docx';
+import { getArrayBufferFromUrl } from '@core/super-converter/helpers';
 import { Telemetry, COMMUNITY_LICENSE_KEY } from '@superdoc/common';
 import type { DocumentApi } from '@superdoc/document-api';
 import { createDocumentApi } from '@superdoc/document-api';
-import { getDocumentApiAdapters } from '../document-api-adapters/index.js';
-import { initPartsRuntime } from './parts/init-parts-runtime.js';
-import { syncPackageMetadata } from './opc/sync-package-metadata.js';
+import { getDocumentApiAdapters } from '../document-api-adapters/index';
+import { initPartsRuntime } from './parts/init-parts-runtime';
+import { syncPackageMetadata } from './opc/sync-package-metadata';
 
 declare const __APP_VERSION__: string;
 declare const version: string | undefined;
@@ -204,7 +204,7 @@ export class Editor extends EventEmitter<EditorEventMap> {
   /**
    * ProseMirror editor state (exists with or without a view)
    */
-  private _state!: EditorState;
+  _state!: EditorState;
 
   /**
    * Whether the editor instance has been destroyed.
@@ -1151,7 +1151,7 @@ export class Editor extends EventEmitter<EditorEventMap> {
       // @ts-expect-error - Partial navigator object for headless mode
       (global as typeof globalThis & { navigator?: unknown }).navigator = {
         platform: 'node',
-        userAgent: 'Node.js',
+        userAgent: 'Node',
       };
     }
 

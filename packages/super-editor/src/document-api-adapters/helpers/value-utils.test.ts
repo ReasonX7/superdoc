@@ -1,4 +1,4 @@
-import { toNonEmptyString, toFiniteNumber, toId, resolveCommentIdFromAttrs, normalizeExcerpt } from './value-utils.js';
+import { toNonEmptyString, toFiniteNumber, toId, resolveCommentIdFromAttrs, normalizeExcerpt } from './value-utils';
 
 describe('toNonEmptyString', () => {
   it('returns a non-empty string as-is', () => {

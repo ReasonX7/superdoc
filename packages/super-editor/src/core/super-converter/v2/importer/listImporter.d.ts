@@ -124,7 +124,7 @@ export function getAbstractDefinition(
   numId: any,
   docx: any,
   converter: any,
-): import('./numberingCache.js').DocxXmlElement;
+): import('./numberingCache.ts').DocxXmlElement;
 export function generateListPath(level: any, numId: any, styleId: any, levels: any, docx: any): any[];
 export function getListLevelDefinitionTag(numId: string, level: string, pStyleId: any, docx: any): any;
 export namespace docxNumberingHelpers {

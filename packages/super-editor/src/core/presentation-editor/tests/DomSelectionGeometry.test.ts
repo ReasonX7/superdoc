@@ -2,14 +2,14 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { Layout } from '@superdoc/contracts';
 
-import { DomPositionIndex } from '../dom/DomPositionIndex.js';
+import { DomPositionIndex } from '../dom/DomPositionIndex';
 import {
   computeDomCaretPageLocal,
   computeSelectionRectsFromDom,
   deduplicateOverlappingRects,
   type ComputeDomCaretPageLocalOptions,
   type ComputeSelectionRectsFromDomOptions,
-} from '../dom/DomSelectionGeometry.js';
+} from '../dom/DomSelectionGeometry';
 
 /**
  * Helper function to create a DOMRect-like object for testing.

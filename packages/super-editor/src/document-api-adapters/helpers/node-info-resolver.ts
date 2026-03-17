@@ -1,9 +1,9 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { NodeAddress, NodeInfo } from '@superdoc/document-api';
-import { findInlineByAnchor, type InlineIndex } from './inline-address-resolver.js';
-import { getInlineIndex } from './index-cache.js';
-import { findBlockById, type BlockIndex } from './node-address-resolver.js';
-import { mapNodeInfo } from './node-info-mapper.js';
+import { findInlineByAnchor, type InlineIndex } from './inline-address-resolver';
+import { getInlineIndex } from './index-cache';
+import { findBlockById, type BlockIndex } from './node-address-resolver';
+import { mapNodeInfo } from './node-info-mapper';
 
 /**
  * Resolves a single {@link NodeAddress} to its {@link NodeInfo} representation.

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { isCollaborationProviderSynced, onCollaborationProviderSynced } from './collaboration-provider-sync.js';
+import { isCollaborationProviderSynced, onCollaborationProviderSynced } from './collaboration-provider-sync';
 
 type SyncHandler = (synced?: boolean) => void;
 

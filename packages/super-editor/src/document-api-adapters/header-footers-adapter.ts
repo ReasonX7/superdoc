@@ -21,22 +21,22 @@ import type {
   MutationOptions,
 } from '@superdoc/document-api';
 import { buildResolvedHandle, buildDiscoveryItem, buildDiscoveryResult } from '@superdoc/document-api';
-import type { Editor } from '../core/Editor.js';
-import { DocumentApiAdapterError } from './errors.js';
-import { getRevision, checkRevision } from './plan-engine/revision-tracker.js';
-import { resolveSectionProjections, type SectionProjection } from './helpers/sections-resolver.js';
-import { readTargetSectPr } from './helpers/section-projection-access.js';
-import { readSectPrHeaderFooterRefs } from './helpers/sections-xml.js';
-import { validatePaginationInput, paginate } from './helpers/adapter-utils.js';
-import { sectionMutationBySectPr } from './helpers/section-mutation-wrapper.js';
+import type { Editor } from '../core/Editor';
+import { DocumentApiAdapterError } from './errors';
+import { getRevision, checkRevision } from './plan-engine/revision-tracker';
+import { resolveSectionProjections, type SectionProjection } from './helpers/sections-resolver';
+import { readTargetSectPr } from './helpers/section-projection-access';
+import { readSectPrHeaderFooterRefs } from './helpers/sections-xml';
+import { validatePaginationInput, paginate } from './helpers/adapter-utils';
+import { sectionMutationBySectPr } from './helpers/section-mutation-wrapper';
 import {
   resolveEffectiveRef,
   setHeaderFooterRefMutation,
   clearHeaderFooterRefMutation,
   setLinkedToPreviousMutation,
-} from './helpers/header-footer-refs-mutation.js';
-import { createHeaderFooterPart, type ConverterWithHeaderFooterParts } from './helpers/header-footer-parts.js';
-import { rejectTrackedMode } from './helpers/mutation-helpers.js';
+} from './helpers/header-footer-refs-mutation';
+import { createHeaderFooterPart, type ConverterWithHeaderFooterParts } from './helpers/header-footer-parts';
+import { rejectTrackedMode } from './helpers/mutation-helpers';
 
 // ---------------------------------------------------------------------------
 // Constants

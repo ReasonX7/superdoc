@@ -7,12 +7,12 @@
  * list items with a different numId DO.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { CanContinueReason, CanJoinReason, JoinDirection } from '@superdoc/document-api';
-import { type ListItemProjection, projectListItemCandidate } from './list-item-resolver.js';
-import { getBlockIndex } from './index-cache.js';
-import type { BlockCandidate } from './node-address-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import { type ListItemProjection, projectListItemCandidate } from './list-item-resolver';
+import { getBlockIndex } from './index-cache';
+import type { BlockCandidate } from './node-address-resolver';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Block resolution (for BlockAddress targets)

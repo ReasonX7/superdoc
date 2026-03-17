@@ -7,9 +7,9 @@
 
 import type { InlineStylePolicy, SetMarks, MarkKey, InlineToggleDirective } from '@superdoc/document-api';
 import { MARK_KEYS } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { planError } from './errors.js';
-import { TOGGLE_MARK_SPECS, applyDirectiveToMarks } from './mark-directives.js';
+import type { Editor } from '../../core/Editor';
+import { planError } from './errors';
+import { TOGGLE_MARK_SPECS, applyDirectiveToMarks } from './mark-directives';
 
 // ---------------------------------------------------------------------------
 // Run types — describes contiguous spans sharing identical marks within a block

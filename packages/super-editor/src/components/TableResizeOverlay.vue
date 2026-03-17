@@ -50,7 +50,7 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue';
-import { pixelsToTwips, twipsToPixels } from '@core/super-converter/helpers.js';
+import { pixelsToTwips, twipsToPixels } from '@core/super-converter/helpers';
 import { measureCache } from '@superdoc/layout-bridge';
 
 /**

@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import * as Y from 'yjs';
-import { createPartPublisher } from './publisher.js';
-import { PARTS_MAP_KEY } from './constants.js';
-import type { PartChangedEvent } from '../../../core/parts/types.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../../../core/parts/registry/part-registry.js';
-import { clearInvalidationHandlers } from '../../../core/parts/invalidation/part-invalidation-registry.js';
+import { createPartPublisher } from './publisher';
+import { PARTS_MAP_KEY } from './constants';
+import type { PartChangedEvent } from '../../../core/parts/types';
+import { registerPartDescriptor, clearPartDescriptors } from '../../../core/parts/registry/part-registry';
+import { clearInvalidationHandlers } from '../../../core/parts/invalidation/part-invalidation-registry';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -22,12 +22,12 @@ function createMockEditor(ydoc: Y.Doc) {
     converter,
     _compoundDepth: 0,
     emit: vi.fn(),
-  } as unknown as import('../../../core/Editor.js').Editor;
+  } as unknown as import('../../../core/Editor').Editor;
 }
 
 function makeEvent(partId: string, operation: 'mutate' | 'create' | 'delete', source = 'test'): PartChangedEvent {
   return {
-    parts: [{ partId: partId as import('../../../core/parts/types.js').PartId, operation, changedPaths: [] }],
+    parts: [{ partId: partId as import('../../../core/parts/types').PartId, operation, changedPaths: [] }],
     source,
   };
 }

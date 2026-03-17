@@ -1,9 +1,9 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { PlanReceipt } from '@superdoc/document-api';
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean): PlanReceipt => {
     const applied = handler();
     return {
@@ -29,8 +29,8 @@ import {
   tocMarkEntryWrapper,
   tocUnmarkEntryWrapper,
   tocEditEntryWrapper,
-} from './toc-entry-wrappers.js';
-import { DocumentApiAdapterError } from '../errors.js';
+} from './toc-entry-wrappers';
+import { DocumentApiAdapterError } from '../errors';
 import { DocumentApiValidationError } from '@superdoc/document-api';
 
 // ---------------------------------------------------------------------------

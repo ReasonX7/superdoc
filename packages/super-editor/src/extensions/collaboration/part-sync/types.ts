@@ -2,7 +2,7 @@
  * Runtime type contracts for the part-sync collaboration module.
  */
 
-import type { PartId } from '../../../core/parts/types.js';
+import type { PartId } from '../../../core/parts/types';
 
 // ---------------------------------------------------------------------------
 // Yjs Part Envelope

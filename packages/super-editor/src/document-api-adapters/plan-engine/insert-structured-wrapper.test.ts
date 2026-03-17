@@ -1,14 +1,14 @@
 import { beforeAll, beforeEach, afterEach, describe, it, expect, vi } from 'vitest';
 import type { Node as PmNode } from 'prosemirror-model';
-import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import { imageBase64 as largePngDataUri } from '@tests/editor/data/imageBase64.js';
-import type { Editor } from '../../core/Editor.js';
-import { insertStructuredWrapper } from './plan-wrappers.js';
-import { registerBuiltInExecutors } from './register-executors.js';
-import { clearExecutorRegistry } from './executor-registry.js';
-import { resolveTextTarget } from '../helpers/adapter-utils.js';
-import { nodeAllowsSdBlockIdAttr } from '../../extensions/block-node/block-node.js';
-import { getRevision } from './revision-tracker.js';
+import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import { imageBase64 as largePngDataUri } from '@tests/editor/data/imageBase64';
+import type { Editor } from '../../core/Editor';
+import { insertStructuredWrapper } from './plan-wrappers';
+import { registerBuiltInExecutors } from './register-executors';
+import { clearExecutorRegistry } from './executor-registry';
+import { resolveTextTarget } from '../helpers/adapter-utils';
+import { nodeAllowsSdBlockIdAttr } from '../../extensions/block-node/block-node';
+import { getRevision } from './revision-tracker';
 
 let docData: Awaited<ReturnType<typeof loadTestDataForEditorTests>>;
 

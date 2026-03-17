@@ -1,10 +1,10 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { BlockNodeAddress, TableLocator, TableCreateLocation } from '@superdoc/document-api';
 import { TableMap } from 'prosemirror-tables';
-import { getBlockIndex } from './index-cache.js';
-import { findBlockById, findBlockByNodeIdOnly, toBlockAddress, type BlockCandidate } from './node-address-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import { getBlockIndex } from './index-cache';
+import { findBlockById, findBlockByNodeIdOnly, toBlockAddress, type BlockCandidate } from './node-address-resolver';
+import { DocumentApiAdapterError } from '../errors';
 
 /**
  * Resolved table information from a {@link TableLocator}.
@@ -236,7 +236,7 @@ export function resolveRowLocator(
  * Finds the parent table BlockCandidate for a given row position.
  */
 function findParentTable(
-  index: import('./node-address-resolver.js').BlockIndex,
+  index: import('./node-address-resolver').BlockIndex,
   rowCandidate: BlockCandidate,
 ): BlockCandidate | undefined {
   // The table's pos must be less than the row's pos, and its end must be >= row's end.

@@ -4,7 +4,7 @@
  * Phase 2 migration: routes settings mutations through the centralized parts system.
  */
 
-import type { PartDescriptor } from '../types.js';
+import type { PartDescriptor } from '../types';
 
 const SETTINGS_PART_ID = 'word/settings.xml' as const;
 

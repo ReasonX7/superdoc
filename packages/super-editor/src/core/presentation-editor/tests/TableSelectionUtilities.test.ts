@@ -4,7 +4,7 @@ import { EditorState } from 'prosemirror-state';
 import type { FlowBlock, Layout, Measure } from '@superdoc/contracts';
 import type { TableHitResult } from '@superdoc/layout-bridge';
 
-import { getCellPosFromTableHit, shouldUseCellSelection, hitTestTable } from '../tables/TableSelectionUtilities.js';
+import { getCellPosFromTableHit, shouldUseCellSelection, hitTestTable } from '../tables/TableSelectionUtilities';
 
 /**
  * Create a basic table schema for testing.

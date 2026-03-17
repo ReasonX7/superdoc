@@ -8,8 +8,8 @@
  * `stylesDefaultsChanged` so the layout pipeline re-renders.
  */
 
-import type { PartDescriptor, CommitContext } from '../types.js';
-import { translateStyleDefinitions } from '../../super-converter/v2/importer/docxImporter.js';
+import type { PartDescriptor, CommitContext } from '../types';
+import { translateStyleDefinitions } from '../../super-converter/v2/importer/docxImporter';
 
 const STYLES_PART_ID = 'word/styles.xml' as const;
 

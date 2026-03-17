@@ -23,9 +23,9 @@ import type {
   PresenceOptions,
   AwarenessCursorData,
   AwarenessWithSetField,
-} from '../types.js';
-import { normalizeAwarenessStates } from './RemoteCursorAwareness.js';
-import { renderRemoteCursors } from './RemoteCursorRendering.js';
+} from '../types';
+import { normalizeAwarenessStates } from './RemoteCursorAwareness';
+import { renderRemoteCursors } from './RemoteCursorRendering';
 
 /**
  * Minimal interface for collaboration provider with awareness.

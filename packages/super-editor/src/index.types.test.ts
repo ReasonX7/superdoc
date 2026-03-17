@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { PresentationEditor } from './core/presentation-editor/PresentationEditor.js';
+import { PresentationEditor } from './core/presentation-editor/PresentationEditor';
 
 // ============================================
 // EXACT SHAPE VERIFICATION HELPERS
@@ -648,7 +648,7 @@ vi.mock('@superdoc/painter-dom', () => ({
 
 vi.mock('@superdoc/measuring-dom', () => ({ measureBlock: mockMeasureBlock }));
 
-vi.mock('@extensions/pagination/pagination-helpers.js', () => ({
+vi.mock('@extensions/pagination/pagination-helpers', () => ({
   createHeaderFooterEditor: mockCreateHeaderFooterEditor,
   onHeaderFooterDataUpdate: mockOnHeaderFooterDataUpdate,
 }));
@@ -696,7 +696,7 @@ describe('Type Declaration Verification (index.d.ts)', () => {
   // ============================================
 
   describe('getCurrentSectionPageStyles()', () => {
-    it('returns EXACT shape declared in index.d.ts', async () => {
+    it('returns EXACT shape declared in index.d', async () => {
       await createEditor('type-test-section-styles');
       const result = presentation.getCurrentSectionPageStyles();
       assertSectionPageStylesShape(result, 'getCurrentSectionPageStyles()');

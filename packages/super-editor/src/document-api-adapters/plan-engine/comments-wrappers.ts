@@ -7,7 +7,7 @@
  * delegate to editor commands with plan-engine revision tracking.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   AddCommentInput,
   CommentInfo,
@@ -31,12 +31,12 @@ import type {
 import { buildResolvedHandle, buildDiscoveryItem, buildDiscoveryResult } from '@superdoc/document-api';
 import { TextSelection } from 'prosemirror-state';
 import { v4 as uuidv4 } from 'uuid';
-import { DocumentApiAdapterError } from '../errors.js';
-import { requireEditorCommand } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { getRevision } from './revision-tracker.js';
-import { resolveTextTarget, paginate, validatePaginationInput } from '../helpers/adapter-utils.js';
-import { executeDomainCommand } from './plan-wrappers.js';
+import { DocumentApiAdapterError } from '../errors';
+import { requireEditorCommand } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { getRevision } from './revision-tracker';
+import { resolveTextTarget, paginate, validatePaginationInput } from '../helpers/adapter-utils';
+import { executeDomainCommand } from './plan-wrappers';
 import {
   buildCommentJsonFromText,
   extractCommentText,
@@ -46,9 +46,9 @@ import {
   removeCommentEntityTree,
   toCommentInfo,
   upsertCommentEntity,
-} from '../helpers/comment-entity-store.js';
-import { listCommentAnchors, resolveCommentAnchorsById } from '../helpers/comment-target-resolver.js';
-import { normalizeExcerpt, toNonEmptyString } from '../helpers/value-utils.js';
+} from '../helpers/comment-entity-store';
+import { listCommentAnchors, resolveCommentAnchorsById } from '../helpers/comment-target-resolver';
+import { normalizeExcerpt, toNonEmptyString } from '../helpers/value-utils';
 
 // ---------------------------------------------------------------------------
 // Internal helpers

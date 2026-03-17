@@ -1,6 +1,6 @@
 <script setup>
 import { ref, getCurrentInstance, onMounted, onDeactivated, nextTick, computed } from 'vue';
-import { throttle } from './helpers.js';
+import { throttle } from './helpers';
 import ButtonGroup from './ButtonGroup.vue';
 
 /**

@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, onBeforeUnmount, markRaw } from 'vue';
 import { TextSelection } from 'prosemirror-state';
-import { getEditorSurfaceElement } from '../../core/helpers/editorSurface.js';
-import { moveCursorToMouseEvent, selectionHasNodeOrMark } from '../cursor-helpers.js';
+import { getEditorSurfaceElement } from '../../core/helpers/editorSurface';
+import { moveCursorToMouseEvent, selectionHasNodeOrMark } from '../cursor-helpers';
 import LinkInput from '../toolbar/LinkInput.vue';
 
 const props = defineProps({
@@ -239,7 +239,7 @@ const resolveAndOpenPopover = (detail, surface) => {
   // Build resolver context
   const href = detail.href ?? '';
 
-  /** @type {import('../../core/types/EditorConfig.js').LinkPopoverContext} */
+  /** @type {import('../../core/types/EditorConfig').LinkPopoverContext} */
   const ctx = {
     editor: props.editor,
     href,

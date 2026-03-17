@@ -8,7 +8,7 @@
 import type { Placement } from '@superdoc/document-api';
 import { DEFAULT_PLACEMENT } from '@superdoc/document-api';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 
 /**
  * Resolves a placement directive into an absolute ProseMirror insertion position.

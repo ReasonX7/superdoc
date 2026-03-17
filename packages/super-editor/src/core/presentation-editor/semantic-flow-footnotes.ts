@@ -5,8 +5,8 @@
  * All functions are stateless — they depend only on their arguments.
  */
 import type { FlowBlock } from '@superdoc/contracts';
-import type { FootnotesLayoutInput } from './types.js';
-import { SEMANTIC_FOOTNOTES_HEADING_BLOCK_ID, SEMANTIC_FOOTNOTE_BLOCK_ID_PREFIX } from './semantic-flow-constants.js';
+import type { FootnotesLayoutInput } from './types';
+import { SEMANTIC_FOOTNOTES_HEADING_BLOCK_ID, SEMANTIC_FOOTNOTE_BLOCK_ID_PREFIX } from './semantic-flow-constants';
 
 /** Fallback style applied to the synthetic "Footnotes" heading in semantic flow. */
 export const DEFAULT_SEMANTIC_FOOTNOTE_HEADING_STYLE = {

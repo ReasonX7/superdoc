@@ -1,6 +1,6 @@
-import { getExtensionConfigField } from './helpers/getExtensionConfigField.js';
-import { callOrGet } from './utilities/callOrGet.js';
-import type { MaybeGetter } from './utilities/callOrGet.js';
+import { getExtensionConfigField } from './helpers/getExtensionConfigField';
+import { callOrGet } from './utilities/callOrGet';
+import type { MaybeGetter } from './utilities/callOrGet';
 
 /**
  * Base configuration for extensions.

@@ -1,7 +1,7 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type { Query } from '@superdoc/document-api';
-import { findLegacyAdapter } from './find-adapter.js';
+import { findLegacyAdapter } from './find-adapter';
 
 // ---------------------------------------------------------------------------
 // Helpers — lightweight ProseMirror-like stubs

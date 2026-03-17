@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { CapturedStyle, CapturedRun } from './style-resolver.js';
-import { queryMatchAdapter } from './query-match-adapter.js';
+import type { CapturedStyle, CapturedRun } from './style-resolver';
+import { queryMatchAdapter } from './query-match-adapter';
 import { SNIPPET_MAX_LENGTH } from '@superdoc/document-api';
 
 // ---------------------------------------------------------------------------
@@ -14,23 +14,23 @@ const mockedDeps = vi.hoisted(() => ({
   getRevision: vi.fn(() => 'rev-1'),
 }));
 
-vi.mock('../find-adapter.js', () => ({
+vi.mock('../find-adapter', () => ({
   findLegacyAdapter: mockedDeps.findLegacyAdapter,
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getBlockIndex: mockedDeps.getBlockIndex,
 }));
 
-vi.mock('./style-resolver.js', async (importOriginal) => {
-  const orig = await importOriginal<typeof import('./style-resolver.js')>();
+vi.mock('./style-resolver', async (importOriginal) => {
+  const orig = await importOriginal<typeof import('./style-resolver')>();
   return {
     ...orig,
     captureRunsInRange: mockedDeps.captureRunsInRange,
   };
 });
 
-vi.mock('./revision-tracker.js', () => ({
+vi.mock('./revision-tracker', () => ({
   getRevision: mockedDeps.getRevision,
 }));
 

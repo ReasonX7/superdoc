@@ -1,6 +1,6 @@
 import type { Query, QueryResult, UnknownNodeDiagnostic } from '@superdoc/document-api';
-import { addDiagnostic, paginate, resolveWithinScope, scopeByRange } from '../helpers/adapter-utils.js';
-import type { BlockCandidate, BlockIndex } from '../helpers/node-address-resolver.js';
+import { addDiagnostic, paginate, resolveWithinScope, scopeByRange } from '../helpers/adapter-utils';
+import type { BlockCandidate, BlockIndex } from '../helpers/node-address-resolver';
 
 /**
  * Executes a block-level node selector against the block index.

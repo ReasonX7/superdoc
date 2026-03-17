@@ -1,4 +1,4 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type {
   FormatBoldInput,
   FormatItalicInput,
@@ -8,13 +8,13 @@ import type {
   TextAddress,
   TextMutationReceipt,
 } from '@superdoc/document-api';
-import { TrackFormatMarkName } from '../extensions/track-changes/constants.js';
-import { DocumentApiAdapterError } from './errors.js';
-import { requireSchemaMark, ensureTrackedCapability } from './helpers/mutation-helpers.js';
-import { applyDirectMutationMeta, applyTrackedMutationMeta } from './helpers/transaction-meta.js';
-import { resolveTextTarget } from './helpers/adapter-utils.js';
-import { buildTextMutationResolution, readTextAtResolvedRange } from './helpers/text-mutation-resolution.js';
-import { checkRevision } from './plan-engine/revision-tracker.js';
+import { TrackFormatMarkName } from '../extensions/track-changes/constants';
+import { DocumentApiAdapterError } from './errors';
+import { requireSchemaMark, ensureTrackedCapability } from './helpers/mutation-helpers';
+import { applyDirectMutationMeta, applyTrackedMutationMeta } from './helpers/transaction-meta';
+import { resolveTextTarget } from './helpers/adapter-utils';
+import { buildTextMutationResolution, readTextAtResolvedRange } from './helpers/text-mutation-resolution';
+import { checkRevision } from './plan-engine/revision-tracker';
 
 /** Maps each format operation to the display label used in failure messages. */
 const FORMAT_OPERATION_LABEL = {

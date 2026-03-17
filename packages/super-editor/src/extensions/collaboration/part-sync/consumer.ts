@@ -7,17 +7,17 @@
  */
 
 import * as Y from 'yjs';
-import type { Editor } from '../../../core/Editor.js';
-import type { PartId, PartOperation } from '../../../core/parts/types.js';
-import type { FailedPartEntry } from './types.js';
-import { decodeYjsToEnvelope } from './json-crdt.js';
-import { PARTS_MAP_KEY, EXCLUDED_PART_IDS, SOURCE_COLLAB_REMOTE_PARTS } from './constants.js';
-import { hasPart, mutateParts } from '../../../core/parts/index.js';
+import type { Editor } from '../../../core/Editor';
+import type { PartId, PartOperation } from '../../../core/parts/types';
+import type { FailedPartEntry } from './types';
+import { decodeYjsToEnvelope } from './json-crdt';
+import { PARTS_MAP_KEY, EXCLUDED_PART_IDS, SOURCE_COLLAB_REMOTE_PARTS } from './constants';
+import { hasPart, mutateParts } from '../../../core/parts/index';
 import {
   isHeaderFooterPartId,
   ensureHeaderFooterDescriptor,
-} from '../../../core/parts/adapters/header-footer-part-descriptor.js';
-import { resolveHeaderFooterRId } from '../../../core/parts/adapters/header-footer-sync.js';
+} from '../../../core/parts/adapters/header-footer-part-descriptor';
+import { resolveHeaderFooterRId } from '../../../core/parts/adapters/header-footer-sync';
 
 // ---------------------------------------------------------------------------
 // Consumer State

@@ -8,7 +8,7 @@
 import type { NestingPolicy, SDFragment, SDContentNode } from '@superdoc/document-api';
 import { DEFAULT_NESTING_POLICY } from '@superdoc/document-api';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 
 /**
  * Returns true if the fragment contains any table nodes (at any depth).

@@ -29,28 +29,28 @@ import type {
   StyleApplyInput,
 } from '@superdoc/document-api';
 import { INLINE_PROPERTY_BY_KEY } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { CompiledPlan } from './compiler.js';
+import type { Editor } from '../../core/Editor';
+import type { CompiledPlan } from './compiler';
 import type {
   CompiledTarget,
   CompiledRangeTarget,
   CompiledSpanTarget,
   ExecuteContext,
-} from './executor-registry.types.js';
-import { getStepExecutor } from './executor-registry.js';
-import { planError } from './errors.js';
+} from './executor-registry.types';
+import { getStepExecutor } from './executor-registry';
+import { planError } from './errors';
 import { closeHistory } from 'prosemirror-history';
 import { yUndoPluginKey } from 'y-prosemirror';
-import { checkRevision, getRevision } from './revision-tracker.js';
-import { compilePlan } from './compiler.js';
-import { getBlockIndex } from '../helpers/index-cache.js';
-import { resolveBlockInsertionPos } from './create-insertion.js';
-import { applyDirectMutationMeta, applyTrackedMutationMeta } from '../helpers/transaction-meta.js';
-import { captureRunsInRange, resolveInlineStyle } from './style-resolver.js';
-import { TOGGLE_MARK_SPECS } from './mark-directives.js';
-import { mapBlockNodeType } from '../helpers/node-address-resolver.js';
-import { resolveWithinScope, scopeByRange } from '../helpers/adapter-utils.js';
-import { normalizeReplacementText } from './replacement-normalizer.js';
+import { checkRevision, getRevision } from './revision-tracker';
+import { compilePlan } from './compiler';
+import { getBlockIndex } from '../helpers/index-cache';
+import { resolveBlockInsertionPos } from './create-insertion';
+import { applyDirectMutationMeta, applyTrackedMutationMeta } from '../helpers/transaction-meta';
+import { captureRunsInRange, resolveInlineStyle } from './style-resolver';
+import { TOGGLE_MARK_SPECS } from './mark-directives';
+import { mapBlockNodeType } from '../helpers/node-address-resolver';
+import { resolveWithinScope, scopeByRange } from '../helpers/adapter-utils';
+import { normalizeReplacementText } from './replacement-normalizer';
 import { Fragment, Slice } from 'prosemirror-model';
 import type { Mark as ProseMirrorMark, MarkType, Node as ProseMirrorNode, NodeType } from 'prosemirror-model';
 import type { Transaction } from 'prosemirror-state';

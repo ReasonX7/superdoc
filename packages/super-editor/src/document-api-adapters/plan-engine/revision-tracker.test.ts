@@ -1,7 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { getRevision, incrementRevision, initRevision, checkRevision, trackRevisions } from './revision-tracker.js';
-import { PlanError } from './errors.js';
-import type { Editor } from '../../core/Editor.js';
+import { getRevision, incrementRevision, initRevision, checkRevision, trackRevisions } from './revision-tracker';
+import { PlanError } from './errors';
+import type { Editor } from '../../core/Editor';
 
 // ---------------------------------------------------------------------------
 // Helpers

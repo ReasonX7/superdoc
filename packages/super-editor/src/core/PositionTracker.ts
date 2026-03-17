@@ -4,7 +4,7 @@ import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { v4 as uuidv4 } from 'uuid';
 
-import type { Editor } from './Editor.js';
+import type { Editor } from './Editor';
 
 export type TrackedRangeSpec = {
   id: string;

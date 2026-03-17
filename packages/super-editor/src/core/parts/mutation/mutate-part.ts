@@ -18,7 +18,7 @@
 import { closeHistory } from 'prosemirror-history';
 import { yUndoPluginKey } from 'y-prosemirror';
 
-import type { Editor } from '../../Editor.js';
+import type { Editor } from '../../Editor';
 import type {
   PartId,
   PartDescriptor,
@@ -30,13 +30,13 @@ import type {
   MutatePartsResult,
   MutatePartResult,
   PartChangedEvent,
-} from '../types.js';
-import { getPartDescriptor } from '../registry/part-registry.js';
-import { getPart, hasPart, setPart, removePart, clonePart } from '../store/part-store.js';
-import { diffPartPaths } from './diff-part-paths.js';
-import { checkRevision, incrementRevision } from '../../../document-api-adapters/plan-engine/revision-tracker.js';
-import { applyPartInvalidation } from '../invalidation/part-invalidation-registry.js';
-import { markPartCacheStale } from '../cache-staleness.js';
+} from '../types';
+import { getPartDescriptor } from '../registry/part-registry';
+import { getPart, hasPart, setPart, removePart, clonePart } from '../store/part-store';
+import { diffPartPaths } from './diff-part-paths';
+import { checkRevision, incrementRevision } from '../../../document-api-adapters/plan-engine/revision-tracker';
+import { applyPartInvalidation } from '../invalidation/part-invalidation-registry';
+import { markPartCacheStale } from '../cache-staleness';
 
 // ---------------------------------------------------------------------------
 // Converter shape (minimal interface to avoid importing SuperConverter)

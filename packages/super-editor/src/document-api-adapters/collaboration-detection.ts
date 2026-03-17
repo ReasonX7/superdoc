@@ -18,7 +18,7 @@
  * | Provider destroyed/removed             | `false` | Collaboration fully torn down.           |
  */
 
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 
 /** Minimal shape of a Yjs collaboration provider as seen on editor.options. */
 interface CollaborationProvider {

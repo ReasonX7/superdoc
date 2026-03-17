@@ -4,7 +4,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   TocAddress,
   TocGetInput,
@@ -29,21 +29,21 @@ import {
   areTocConfigsEqual,
   deriveIncludePageNumbers,
   DEFAULT_TOC_CONFIG,
-} from '../../core/super-converter/field-references/shared/toc-switches.js';
+} from '../../core/super-converter/field-references/shared/toc-switches';
 import {
   findAllTocNodes,
   resolveTocTarget,
   resolvePostMutationTocId,
   extractTocInfo,
   buildTocDiscoveryItem,
-} from '../helpers/toc-resolver.js';
-import { collectTocSources, buildTocEntryParagraphs, type EntryParagraphJson } from '../helpers/toc-entry-builder.js';
-import { paginate } from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { resolveCreateAnchor } from './create-insertion.js';
+} from '../helpers/toc-resolver';
+import { collectTocSources, buildTocEntryParagraphs, type EntryParagraphJson } from '../helpers/toc-entry-builder';
+import { paginate } from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
+import { executeDomainCommand } from './plan-wrappers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { resolveCreateAnchor } from './create-insertion';
 
 // ---------------------------------------------------------------------------
 // Typed patch helper

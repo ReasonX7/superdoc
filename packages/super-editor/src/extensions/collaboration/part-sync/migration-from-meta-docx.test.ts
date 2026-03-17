@@ -1,15 +1,15 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import * as Y from 'yjs';
-import { isMigrationNeeded, migrateMetaDocxToParts } from './migration-from-meta-docx.js';
-import { decodeYjsToEnvelope } from './json-crdt.js';
-import { parseXmlToJson } from '../../../core/super-converter/v2/docxHelper.js';
+import { isMigrationNeeded, migrateMetaDocxToParts } from './migration-from-meta-docx';
+import { decodeYjsToEnvelope } from './json-crdt';
+import { parseXmlToJson } from '../../../core/super-converter/v2/docxHelper';
 import {
   PARTS_MAP_KEY,
   META_MAP_KEY,
   META_PARTS_MIGRATION_KEY,
   META_PARTS_CAPABILITY_KEY,
   META_PARTS_SCHEMA_VERSION_KEY,
-} from './constants.js';
+} from './constants';
 
 describe('migration-from-meta-docx', () => {
   let ydoc: Y.Doc;

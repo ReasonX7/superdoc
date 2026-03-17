@@ -221,6 +221,6 @@ export interface CommentCommands {
   addCommentReply: (options: AddCommentReplyOptions) => boolean;
 }
 
-declare module '../../core/types/ChainedCommands.js' {
+declare module '../../core/types/ChainedCommands' {
   interface ExtensionCommandMap extends CommentCommands {}
 }

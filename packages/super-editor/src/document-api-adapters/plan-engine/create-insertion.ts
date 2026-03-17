@@ -13,10 +13,10 @@
  */
 
 import type { BlockNodeAddress } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { getBlockIndex } from '../helpers/index-cache.js';
-import { findBlockByNodeIdOnly, type BlockCandidate } from '../helpers/node-address-resolver.js';
-import { planError } from './errors.js';
+import type { Editor } from '../../core/Editor';
+import { getBlockIndex } from '../helpers/index-cache';
+import { findBlockByNodeIdOnly, type BlockCandidate } from '../helpers/node-address-resolver';
+import { planError } from './errors';
 
 /**
  * Resolves the PM insertion position for a create-step from an anchor block ID

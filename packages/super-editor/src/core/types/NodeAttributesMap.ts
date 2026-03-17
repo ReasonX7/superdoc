@@ -7,7 +7,7 @@
  * @example
  * ```ts
  * // In an extension types file:
- * declare module '@core/types/NodeAttributesMap.js' {
+ * declare module '@core/types/NodeAttributesMap' {
  *   interface NodeAttributesMap {
  *     paragraph: ParagraphAttrs;
  *     table: TableAttrs;

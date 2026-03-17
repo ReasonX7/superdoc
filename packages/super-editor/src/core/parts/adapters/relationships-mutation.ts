@@ -10,9 +10,9 @@
  *   - Collision-free rId allocation
  */
 
-import type { Editor } from '../../Editor.js';
-import { mutatePart } from '../mutation/mutate-part.js';
-import { RELATIONSHIP_TYPES } from '../../super-converter/docx-helpers/docx-constants.js';
+import type { Editor } from '../../Editor';
+import { mutatePart } from '../mutation/mutate-part';
+import { RELATIONSHIP_TYPES } from '../../super-converter/docx-helpers/docx-constants';
 
 const RELS_PART_ID = 'word/_rels/document.xml.rels' as const;
 

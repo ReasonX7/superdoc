@@ -4,11 +4,11 @@ import '@superdoc/common/styles/common-styles.css';
 
 import { ref, computed, onMounted } from 'vue';
 import { SuperEditor } from '@superdoc/super-editor';
-import { PresentationEditor } from '@core/presentation-editor/index.js';
+import { PresentationEditor } from '@core/presentation-editor/index';
 import { getFileObject } from '@superdoc/common/helpers/get-file-object';
 import { DOCX } from '@superdoc/common';
 import { SuperToolbar } from '@components/toolbar/super-toolbar';
-import { PaginationPluginKey } from '@extensions/pagination/pagination-helpers.js';
+import { PaginationPluginKey } from '@extensions/pagination/pagination-helpers';
 import BasicUpload from './BasicUpload.vue';
 import BlankDOCX from '@superdoc/common/data/blank.docx?url';
 

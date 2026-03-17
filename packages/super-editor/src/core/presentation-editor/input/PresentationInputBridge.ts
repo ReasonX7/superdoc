@@ -1,5 +1,5 @@
-import { isInRegisteredSurface } from '../utils/uiSurfaceRegistry.js';
-import { CONTEXT_MENU_HANDLED_FLAG } from '../../../components/context-menu/event-flags.js';
+import { isInRegisteredSurface } from '../utils/uiSurfaceRegistry';
+import { CONTEXT_MENU_HANDLED_FLAG } from '../../../components/context-menu/event-flags';
 
 export class PresentationInputBridge {
   #windowRoot: Window;

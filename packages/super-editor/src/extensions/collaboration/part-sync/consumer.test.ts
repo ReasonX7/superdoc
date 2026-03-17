@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import * as Y from 'yjs';
-import { createPartConsumer, isApplyingRemotePartChanges } from './consumer.js';
-import { encodeEnvelopeToYjs } from './json-crdt.js';
-import { PARTS_MAP_KEY } from './constants.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../../../core/parts/registry/part-registry.js';
-import { clearInvalidationHandlers } from '../../../core/parts/invalidation/part-invalidation-registry.js';
+import { createPartConsumer, isApplyingRemotePartChanges } from './consumer';
+import { encodeEnvelopeToYjs } from './json-crdt';
+import { PARTS_MAP_KEY } from './constants';
+import { registerPartDescriptor, clearPartDescriptors } from '../../../core/parts/registry/part-registry';
+import { clearInvalidationHandlers } from '../../../core/parts/invalidation/part-invalidation-registry';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -27,7 +27,7 @@ function createMockEditor() {
     emit: vi.fn(),
     on: vi.fn(),
     off: vi.fn(),
-  } as unknown as import('../../../core/Editor.js').Editor;
+  } as unknown as import('../../../core/Editor').Editor;
 }
 
 function writeRemoteEnvelope(localDoc: Y.Doc, partId: string, data: unknown, v = 1) {

@@ -1,10 +1,10 @@
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 import {
   requireEditorCommand,
   requireSchemaMark,
   ensureTrackedCapability,
   rejectTrackedMode,
-} from './mutation-helpers.js';
+} from './mutation-helpers';
 
 function makeEditor(overrides: Record<string, unknown> = {}): any {
   return {

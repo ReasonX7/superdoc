@@ -1,13 +1,13 @@
 /* @vitest-environment jsdom */
 
 import { afterEach, beforeAll, describe, expect, it } from 'vitest';
-import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import DocxZipper from '@core/DocxZipper.js';
-import type { Editor } from '../core/Editor.js';
-import { createTableAdapter, tablesSplitAdapter } from './tables-adapter.js';
-import { insertStructuredWrapper } from './plan-engine/plan-wrappers.js';
-import { clearExecutorRegistry } from './plan-engine/executor-registry.js';
-import { registerBuiltInExecutors } from './plan-engine/register-executors.js';
+import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import DocxZipper from '@core/DocxZipper';
+import type { Editor } from '../core/Editor';
+import { createTableAdapter, tablesSplitAdapter } from './tables-adapter';
+import { insertStructuredWrapper } from './plan-engine/plan-wrappers';
+import { clearExecutorRegistry } from './plan-engine/executor-registry';
+import { registerBuiltInExecutors } from './plan-engine/register-executors';
 
 type LoadedDocData = Awaited<ReturnType<typeof loadTestDataForEditorTests>>;
 

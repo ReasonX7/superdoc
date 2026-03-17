@@ -9,17 +9,17 @@
  */
 
 import * as Y from 'yjs';
-import type { Editor } from '../../../core/Editor.js';
-import type { PartChangedEvent } from '../../../core/parts/types.js';
-import type { BufferedPartEvent, ConcurrentOverwriteTelemetry } from './types.js';
-import { encodeEnvelopeToYjs, readEnvelopeVersion } from './json-crdt.js';
+import type { Editor } from '../../../core/Editor';
+import type { PartChangedEvent } from '../../../core/parts/types';
+import type { BufferedPartEvent, ConcurrentOverwriteTelemetry } from './types';
+import { encodeEnvelopeToYjs, readEnvelopeVersion } from './json-crdt';
 import {
   PARTS_MAP_KEY,
   EXCLUDED_PART_IDS,
   SOURCE_COLLAB_REMOTE_PREFIX,
   DEFAULT_STALENESS_WINDOW_MS,
-} from './constants.js';
-import { getPart } from '../../../core/parts/index.js';
+} from './constants';
+import { getPart } from '../../../core/parts/index';
 
 // ---------------------------------------------------------------------------
 // Publisher State

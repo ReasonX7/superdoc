@@ -1,8 +1,8 @@
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { Doc as YDoc } from 'yjs';
-import { Editor } from './Editor.js';
-import { getStarterExtensions } from '@extensions/index.js';
-import { getTestDataAsFileBuffer, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
+import { Editor } from './Editor';
+import { getStarterExtensions } from '@extensions/index';
+import { getTestDataAsFileBuffer, loadTestDataForEditorTests } from '@tests/helpers/helpers';
 
 type SyncHandler = (synced?: boolean) => void;
 

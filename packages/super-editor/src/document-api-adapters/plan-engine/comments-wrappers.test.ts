@@ -1,28 +1,28 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
-import type { CommentAnchor } from '../helpers/comment-target-resolver.js';
-import type { CommentEntityRecord } from '../helpers/comment-entity-store.js';
-import { createCommentsWrapper } from './comments-wrappers.js';
+import type { Editor } from '../../core/Editor';
+import type { CommentAnchor } from '../helpers/comment-target-resolver';
+import type { CommentEntityRecord } from '../helpers/comment-entity-store';
+import { createCommentsWrapper } from './comments-wrappers';
 
-vi.mock('../helpers/comment-target-resolver.js', () => ({
+vi.mock('../helpers/comment-target-resolver', () => ({
   listCommentAnchors: vi.fn(() => []),
   resolveCommentAnchorsById: vi.fn(() => []),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getInlineIndex: vi.fn(() => ({ byType: new Map() })),
   clearIndexCache: vi.fn(),
 }));
 
-vi.mock('./revision-tracker.js', () => ({
+vi.mock('./revision-tracker', () => ({
   getRevision: vi.fn(() => 'rev-1'),
 }));
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn(),
 }));
 
-import { listCommentAnchors } from '../helpers/comment-target-resolver.js';
+import { listCommentAnchors } from '../helpers/comment-target-resolver';
 
 function makeAnchor(
   overrides: Partial<CommentAnchor> & { commentId: string; pos: number; end: number },

@@ -7,12 +7,12 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import type { CreateTableInput, CreateTableResult, MutationOptions, MutationStep } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { CompiledPlan } from './compiler.js';
-import { executeCompiledPlan } from './executor.js';
-import { checkRevision, getRevision } from './revision-tracker.js';
-import { STUB_WHERE } from './plan-wrappers.js';
-import { createTableAdapter } from '../tables-adapter.js';
+import type { Editor } from '../../core/Editor';
+import type { CompiledPlan } from './compiler';
+import { executeCompiledPlan } from './executor';
+import { checkRevision, getRevision } from './revision-tracker';
+import { STUB_WHERE } from './plan-wrappers';
+import { createTableAdapter } from '../tables-adapter';
 
 export function createTableWrapper(
   editor: Editor,

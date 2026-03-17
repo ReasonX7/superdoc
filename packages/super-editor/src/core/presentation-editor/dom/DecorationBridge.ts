@@ -2,15 +2,15 @@ import { DecorationSet } from 'prosemirror-view';
 import type { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 
-import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/index.js';
-import { CommentsPluginKey } from '@extensions/comment/comments-plugin.js';
-import { customSearchHighlightsKey } from '@extensions/search/search.js';
-import { AiPluginKey } from '@extensions/ai/ai-plugin.js';
-import { CustomSelectionPluginKey } from '@extensions/custom-selection/custom-selection.js';
-import { LinkedStylesPluginKey } from '@extensions/linked-styles/plugin.js';
-import { NodeResizerKey } from '@extensions/noderesizer/noderesizer.js';
+import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/index';
+import { CommentsPluginKey } from '@extensions/comment/comments-plugin';
+import { customSearchHighlightsKey } from '@extensions/search/search';
+import { AiPluginKey } from '@extensions/ai/ai-plugin';
+import { CustomSelectionPluginKey } from '@extensions/custom-selection/custom-selection';
+import { LinkedStylesPluginKey } from '@extensions/linked-styles/plugin';
+import { NodeResizerKey } from '@extensions/noderesizer/noderesizer';
 
-import type { DomPositionIndex } from './DomPositionIndex.js';
+import type { DomPositionIndex } from './DomPositionIndex';
 
 // ---------------------------------------------------------------------------
 // Types

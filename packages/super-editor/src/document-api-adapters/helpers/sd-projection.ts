@@ -40,11 +40,11 @@ import type {
   SDReadOptions,
   SectionDomain,
 } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { ParagraphAttrs, TableAttrs, TableCellAttrs, ImageAttrs } from '../../extensions/types/node-attributes.js';
-import { getHeadingLevel } from './node-address-resolver.js';
-import { parseTocInstruction } from '../../core/super-converter/field-references/shared/toc-switches.js';
-import { resolveSectionProjections, type SectionProjection } from './sections-resolver.js';
+import type { Editor } from '../../core/Editor';
+import type { ParagraphAttrs, TableAttrs, TableCellAttrs, ImageAttrs } from '../../extensions/types/node-attributes';
+import { getHeadingLevel } from './node-address-resolver';
+import { parseTocInstruction } from '../../core/super-converter/field-references/shared/toc-switches';
+import { resolveSectionProjections, type SectionProjection } from './sections-resolver';
 
 // ---------------------------------------------------------------------------
 // Public API

@@ -9,8 +9,8 @@
  * `converter.headerIds`/`footerIds`, and `converter.headerFooterModified`.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartDescriptor } from '../types.js';
+import type { Editor } from '../../Editor';
+import type { PartDescriptor } from '../types';
 
 const RELS_PART_ID = 'word/_rels/document.xml.rels' as const;
 const RELS_XMLNS = 'http://schemas.openxmlformats.org/package/2006/relationships';

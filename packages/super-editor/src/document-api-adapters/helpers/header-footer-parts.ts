@@ -1,9 +1,9 @@
 import type { SectionHeaderFooterKind, SectionHeaderFooterVariant } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { PartId, PartOperation } from '../../core/parts/types.js';
-import { mutateParts } from '../../core/parts/mutation/mutate-part.js';
-import { registerHeaderFooterInvalidation } from '../../core/parts/invalidation/invalidation-handlers.js';
-import type { XmlElement } from './sections-xml.js';
+import type { Editor } from '../../core/Editor';
+import type { PartId, PartOperation } from '../../core/parts/types';
+import { mutateParts } from '../../core/parts/mutation/mutate-part';
+import { registerHeaderFooterInvalidation } from '../../core/parts/invalidation/invalidation-handlers';
+import type { XmlElement } from './sections-xml';
 
 const DOCUMENT_RELS_PATH = 'word/_rels/document.xml.rels';
 const RELS_XMLNS = 'http://schemas.openxmlformats.org/package/2006/relationships';

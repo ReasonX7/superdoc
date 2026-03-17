@@ -5,7 +5,7 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import type { BookmarkAddress, BookmarkDomain, BookmarkInfo, DiscoveryItem, Position } from '@superdoc/document-api';
 import { buildDiscoveryItem, buildResolvedHandle } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Types

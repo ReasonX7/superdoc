@@ -1,4 +1,4 @@
-import { DocumentApiAdapterError, isDocumentApiAdapterError } from './errors.js';
+import { DocumentApiAdapterError, isDocumentApiAdapterError } from './errors';
 
 describe('DocumentApiAdapterError', () => {
   it('extends Error with name, code, and message', () => {

@@ -1,12 +1,12 @@
 import { extractIdentifierFromConverter } from '@superdoc/layout-bridge';
 import type { HeaderFooterIdentifier } from '@superdoc/layout-bridge';
-import type { Editor } from '@core/Editor.js';
+import type { Editor } from '@core/Editor';
 import {
   HeaderFooterEditorManager,
   HeaderFooterLayoutAdapter,
   type HeaderFooterDescriptor,
-} from './HeaderFooterRegistry.js';
-import { EditorOverlayManager } from './EditorOverlayManager.js';
+} from './HeaderFooterRegistry';
+import { EditorOverlayManager } from './EditorOverlayManager';
 
 export type InitHeaderFooterRegistryDeps = {
   painterHost: HTMLElement;

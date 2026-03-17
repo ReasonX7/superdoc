@@ -1,13 +1,13 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 
 // ---------------------------------------------------------------------------
 // Mocks — the new wrappers use mutatePart/compoundMutation instead of
 // executeDomainCommand/executeOutOfBandMutation. We mock the parts system.
 // ---------------------------------------------------------------------------
 
-vi.mock('./revision-tracker.js', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('./revision-tracker.js')>();
+vi.mock('./revision-tracker', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('./revision-tracker')>();
   return {
     ...actual,
     getRevision: vi.fn(() => 'rev-1'),
@@ -17,7 +17,7 @@ vi.mock('./revision-tracker.js', async (importOriginal) => {
   };
 });
 
-vi.mock('../helpers/adapter-utils.js', () => ({
+vi.mock('../helpers/adapter-utils', () => ({
   paginate: vi.fn((items: unknown[], offset = 0, limit?: number) => {
     const total = items.length;
     const sliced = items.slice(offset, limit ? offset + limit : undefined);
@@ -26,16 +26,16 @@ vi.mock('../helpers/adapter-utils.js', () => ({
   resolveInlineInsertPosition: vi.fn(() => ({ from: 5, to: 5 })),
 }));
 
-vi.mock('../helpers/mutation-helpers.js', () => ({
+vi.mock('../helpers/mutation-helpers', () => ({
   rejectTrackedMode: vi.fn(),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   clearIndexCache: vi.fn(),
 }));
 
 // Mock mutatePart to execute the mutation callback directly against the part
-vi.mock('../../core/parts/mutation/mutate-part.js', () => ({
+vi.mock('../../core/parts/mutation/mutate-part', () => ({
   mutatePart: vi.fn(
     (request: { mutate?: (ctx: { part: unknown; dryRun: boolean }) => unknown; editor: Editor; partId: string }) => {
       const converter = (
@@ -59,21 +59,21 @@ vi.mock('../../core/parts/mutation/mutate-part.js', () => ({
 }));
 
 // Mock compoundMutation to execute immediately
-vi.mock('../../core/parts/mutation/compound-mutation.js', () => ({
+vi.mock('../../core/parts/mutation/compound-mutation', () => ({
   compoundMutation: vi.fn((request: { execute: () => boolean }) => {
     const success = request.execute();
     return { success };
   }),
 }));
 
-import { checkRevision } from './revision-tracker.js';
+import { checkRevision } from './revision-tracker';
 import {
   footnotesInsertWrapper,
   footnotesGetWrapper,
   footnotesUpdateWrapper,
   footnotesRemoveWrapper,
   footnotesConfigureWrapper,
-} from './footnote-wrappers.js';
+} from './footnote-wrappers';
 
 // ---------------------------------------------------------------------------
 // Test helpers

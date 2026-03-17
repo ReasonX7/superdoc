@@ -1,4 +1,4 @@
-import type { AttributeValue } from '../Attribute.js';
+import type { AttributeValue } from '../Attribute';
 
 export type SchemaSummaryAttribute = {
   default: AttributeValue;

@@ -9,7 +9,7 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import type { FieldAddress, FieldDomain, FieldInfo, DiscoveryItem } from '@superdoc/document-api';
 import { buildDiscoveryItem, buildResolvedHandle } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Types

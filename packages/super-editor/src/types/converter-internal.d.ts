@@ -6,12 +6,12 @@
  * minimal type declarations to satisfy TypeScript's module resolution.
  */
 
-declare module '@superdoc/super-editor/converter/internal/v3/handlers/w/pPr/index.js' {
+declare module '@superdoc/super-editor/converter/internal/v3/handlers/w/pPr/index' {
   import type { OoxmlTranslator } from '@superdoc/style-engine/ooxml';
   export const translator: OoxmlTranslator;
 }
 
-declare module '@superdoc/super-editor/converter/internal/v3/handlers/w/rpr/index.js' {
+declare module '@superdoc/super-editor/converter/internal/v3/handlers/w/rpr/index' {
   import type { OoxmlTranslator } from '@superdoc/style-engine/ooxml';
   export const translator: OoxmlTranslator;
 }

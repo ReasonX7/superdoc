@@ -1,9 +1,9 @@
 /* @vitest-environment jsdom */
 
 import { afterEach, beforeAll, describe, expect, it } from 'vitest';
-import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import DocxZipper from '@core/DocxZipper.js';
-import type { Editor } from '../core/Editor.js';
+import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import DocxZipper from '@core/DocxZipper';
+import type { Editor } from '../core/Editor';
 
 type LoadedDocData = Awaited<ReturnType<typeof loadTestDataForEditorTests>>;
 

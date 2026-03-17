@@ -1,9 +1,9 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue';
-import { toolbarIcons } from './toolbarIcons.js';
+import { toolbarIcons } from './toolbarIcons';
 import { useHighContrastMode } from '../../composables/use-high-contrast-mode';
 import { TextSelection } from 'prosemirror-state';
-import { getMarkRange } from '@core/helpers/getMarkRange.js';
+import { getMarkRange } from '@core/helpers/getMarkRange';
 
 const props = defineProps({
   showInput: {

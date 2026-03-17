@@ -1,7 +1,7 @@
 import type { EditorState, Transaction } from 'prosemirror-state';
 import type { EditorView as PmEditorView, EditorProps } from 'prosemirror-view';
-import type { Editor } from '../Editor.js';
-import type { EditorOptions } from '../types/EditorConfig.js';
+import type { Editor } from '../Editor';
+import type { EditorOptions } from '../types/EditorConfig';
 
 /**
  * Parameters required to attach a renderer to a DOM element.

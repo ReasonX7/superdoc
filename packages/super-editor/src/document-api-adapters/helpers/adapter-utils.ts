@@ -8,19 +8,19 @@ import type {
   WriteRequest,
 } from '@superdoc/document-api';
 import { DocumentApiValidationError } from '@superdoc/document-api';
-import { getBlockIndex } from './index-cache.js';
+import { getBlockIndex } from './index-cache';
 import {
   findBlockById,
   findBlockByNodeIdOnly,
   isTextBlockCandidate,
   type BlockCandidate,
   type BlockIndex,
-} from './node-address-resolver.js';
-import { computeTextContentLength, resolveTextRangeInBlock } from './text-offset-resolver.js';
-import { buildTextMutationResolution, readTextAtResolvedRange } from './text-mutation-resolution.js';
+} from './node-address-resolver';
+import { computeTextContentLength, resolveTextRangeInBlock } from './text-offset-resolver';
+import { buildTextMutationResolution, readTextAtResolvedRange } from './text-mutation-resolution';
 import type { Transaction } from 'prosemirror-state';
-import type { Editor } from '../../core/Editor.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import { DocumentApiAdapterError } from '../errors';
 
 export type WithinResult = { ok: true; range: { start: number; end: number } | undefined } | { ok: false };
 export type ResolvedTextTarget = { from: number; to: number };

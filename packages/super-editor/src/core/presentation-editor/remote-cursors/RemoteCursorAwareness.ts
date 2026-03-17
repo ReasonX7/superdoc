@@ -2,8 +2,8 @@ import type { EditorState } from 'prosemirror-state';
 import { relativePositionToAbsolutePosition, ySyncPluginKey } from 'y-prosemirror';
 import * as Y from 'yjs';
 
-import { getFallbackCursorColor } from './RemoteCursorColors.js';
-import type { RemoteCursorState } from '../types.js';
+import { getFallbackCursorColor } from './RemoteCursorColors';
+import type { RemoteCursorState } from '../types';
 
 /**
  * Minimal interface for Yjs awareness object.

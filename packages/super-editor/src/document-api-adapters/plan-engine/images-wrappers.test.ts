@@ -1,8 +1,8 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { describe, expect, it, beforeEach, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
-import { registerBuiltInExecutors } from './register-executors.js';
-import { imagesScaleWrapper, imagesReplaceSourceWrapper, imagesSetAltTextWrapper } from './images-wrappers.js';
+import type { Editor } from '../../core/Editor';
+import { registerBuiltInExecutors } from './register-executors';
+import { imagesScaleWrapper, imagesReplaceSourceWrapper, imagesSetAltTextWrapper } from './images-wrappers';
 
 // Ensure the domain.command executor is registered for executeDomainCommand
 registerBuiltInExecutors();

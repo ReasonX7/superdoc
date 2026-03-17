@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { FlowBlock, ListBlock, ParagraphBlock, TableBlock, TextRun, ImageRun } from '@superdoc/contracts';
-import { splitRunsAtDecorationBoundaries, type DecorationRange } from './SplitRunsAtDecorationBoundaries.js';
+import { splitRunsAtDecorationBoundaries, type DecorationRange } from './SplitRunsAtDecorationBoundaries';
 
 // ---------------------------------------------------------------------------
 // Helpers

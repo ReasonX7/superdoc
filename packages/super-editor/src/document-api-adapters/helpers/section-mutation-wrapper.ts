@@ -1,19 +1,19 @@
 import type { SectionAddress, SectionMutationResult, MutationOptions } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { applyDirectMutationMeta } from './transaction-meta.js';
-import { checkRevision } from '../plan-engine/revision-tracker.js';
-import { clearIndexCache } from './index-cache.js';
-import { rejectTrackedMode } from './mutation-helpers.js';
-import { resolveSectionProjections, getBodySectPrFromEditor, type SectionProjection } from './sections-resolver.js';
+import type { Editor } from '../../core/Editor';
+import { DocumentApiAdapterError } from '../errors';
+import { applyDirectMutationMeta } from './transaction-meta';
+import { checkRevision } from '../plan-engine/revision-tracker';
+import { clearIndexCache } from './index-cache';
+import { rejectTrackedMode } from './mutation-helpers';
+import { resolveSectionProjections, getBodySectPrFromEditor, type SectionProjection } from './sections-resolver';
 import {
   ensureSectPrElement,
   cloneXmlElement,
   readSectPrMargins,
   readSectPrPageSetup,
   type XmlElement,
-} from './sections-xml.js';
-import { readTargetSectPr } from './section-projection-access.js';
+} from './sections-xml';
+import { readTargetSectPr } from './section-projection-access';
 
 function toSectionFailure(
   code: 'NO_OP' | 'INVALID_TARGET' | 'CAPABILITY_UNAVAILABLE',

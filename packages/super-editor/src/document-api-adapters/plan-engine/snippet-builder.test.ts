@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildSnippet } from './snippet-builder.js';
+import { buildSnippet } from './snippet-builder';
 import { SNIPPET_MAX_LENGTH, SNIPPET_CONTEXT_CHARS } from '@superdoc/document-api';
 
 // ---------------------------------------------------------------------------

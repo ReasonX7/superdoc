@@ -1,11 +1,11 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import type { BlockNodeAttributes } from '../../core/types/NodeCategories.js';
+import type { Editor } from '../../core/Editor';
+import type { BlockNodeAttributes } from '../../core/types/NodeCategories';
 import type { BlockNodeAddress, BlockNodeType, NodeAddress, NodeType } from '@superdoc/document-api';
-import type { ParagraphAttrs } from '../../extensions/types/node-attributes.js';
-import { toId } from './value-utils.js';
-import { resolvePublicTocNodeId } from './toc-node-id.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { ParagraphAttrs } from '../../extensions/types/node-attributes';
+import { toId } from './value-utils';
+import { resolvePublicTocNodeId } from './toc-node-id';
+import { DocumentApiAdapterError } from '../errors';
 
 /** Superset of all possible ID attributes across block node types. */
 type BlockIdAttrs = BlockNodeAttributes & {

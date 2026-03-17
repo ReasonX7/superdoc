@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue';
-import { toolbarIcons } from './toolbarIcons.js';
-import { generateLinkedStyleString, getQuickFormatList } from '@extensions/linked-styles/index.js';
+import { toolbarIcons } from './toolbarIcons';
+import { generateLinkedStyleString, getQuickFormatList } from '@extensions/linked-styles/index';
 
 const emit = defineEmits(['select']);
 const styleRefs = ref([]);

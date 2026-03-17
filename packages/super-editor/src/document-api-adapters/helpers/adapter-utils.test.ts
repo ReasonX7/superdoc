@@ -1,5 +1,5 @@
 import type { UnknownNodeDiagnostic } from '@superdoc/document-api';
-import { addDiagnostic, dedupeDiagnostics, findCandidateByPos, paginate, scopeByRange } from './adapter-utils.js';
+import { addDiagnostic, dedupeDiagnostics, findCandidateByPos, paginate, scopeByRange } from './adapter-utils';
 
 // ---------------------------------------------------------------------------
 // paginate

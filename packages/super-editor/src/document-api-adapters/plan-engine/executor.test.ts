@@ -1,8 +1,8 @@
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { TextRewriteStep, TextInsertStep, StyleApplyStep, AssertStep } from '@superdoc/document-api';
-import type { CompiledTarget } from './executor-registry.types.js';
-import type { CompiledPlan } from './compiler.js';
+import type { CompiledTarget } from './executor-registry.types';
+import type { CompiledPlan } from './compiler';
 import {
   executeCompiledPlan,
   executeCreateStep,
@@ -12,9 +12,9 @@ import {
   executeStyleApply,
   executeSpanStyleApply,
   runMutationsOnTransaction,
-} from './executor.js';
-import { registerBuiltInExecutors } from './register-executors.js';
-import { PlanError } from './errors.js';
+} from './executor';
+import { registerBuiltInExecutors } from './register-executors';
+import { PlanError } from './errors';
 import { Schema } from 'prosemirror-model';
 
 // ---------------------------------------------------------------------------
@@ -34,31 +34,31 @@ const mockedDeps = vi.hoisted(() => ({
   mapBlockNodeType: vi.fn(),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getBlockIndex: mockedDeps.getBlockIndex,
 }));
 
-vi.mock('../helpers/text-offset-resolver.js', () => ({
+vi.mock('../helpers/text-offset-resolver', () => ({
   resolveTextRangeInBlock: mockedDeps.resolveTextRangeInBlock,
 }));
 
-vi.mock('./revision-tracker.js', () => ({
+vi.mock('./revision-tracker', () => ({
   getRevision: mockedDeps.getRevision,
   checkRevision: mockedDeps.checkRevision,
   incrementRevision: mockedDeps.incrementRevision,
 }));
 
-vi.mock('./style-resolver.js', () => ({
+vi.mock('./style-resolver', () => ({
   captureRunsInRange: mockedDeps.captureRunsInRange,
   resolveInlineStyle: mockedDeps.resolveInlineStyle,
 }));
 
-vi.mock('../helpers/transaction-meta.js', () => ({
+vi.mock('../helpers/transaction-meta', () => ({
   applyDirectMutationMeta: mockedDeps.applyDirectMutationMeta,
   applyTrackedMutationMeta: mockedDeps.applyTrackedMutationMeta,
 }));
 
-vi.mock('../helpers/node-address-resolver.js', () => ({
+vi.mock('../helpers/node-address-resolver', () => ({
   mapBlockNodeType: mockedDeps.mapBlockNodeType,
   findBlockById: (index: any, address: { nodeType: string; nodeId: string }) =>
     index.byId.get(`${address.nodeType}:${address.nodeId}`),

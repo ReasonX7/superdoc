@@ -1,4 +1,4 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type { GetHtmlInput } from '@superdoc/document-api';
 
 const DEFAULT_UNFLATTEN_LISTS = true;

@@ -9,8 +9,8 @@
  * direct editor edits, collaboration updates, and plugin-generated changes.
  */
 
-import type { Editor } from '../../core/Editor.js';
-import { PlanError } from './errors.js';
+import type { Editor } from '../../core/Editor';
+import { PlanError } from './errors';
 
 const revisionMap = new WeakMap<Editor, number>();
 const subscribedEditors = new WeakSet<Editor>();

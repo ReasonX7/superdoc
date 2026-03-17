@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
-import { listListItems, resolveListItem } from './list-item-resolver.js';
+import type { Editor } from '../../core/Editor';
+import { listListItems, resolveListItem } from './list-item-resolver';
 
 type MockParagraphOptions = {
   id: string;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildTocEntryParagraphs, type TocSource } from './toc-entry-builder.js';
+import { buildTocEntryParagraphs, type TocSource } from './toc-entry-builder';
 import type { TocSwitchConfig } from '@superdoc/document-api';
 
 const BASE_SOURCE: TocSource = {

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { readTranslatedLinkedStyles } from './styles-read.js';
-import type { Editor } from '../../Editor.js';
+import { readTranslatedLinkedStyles } from './styles-read';
+import type { Editor } from '../../Editor';
 
 function editorWithStyles(styles: unknown): Editor {
   return { converter: { translatedLinkedStyles: styles } } as unknown as Editor;

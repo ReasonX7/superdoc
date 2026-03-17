@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { PresentationEditor } from '../PresentationEditor.js';
+import { PresentationEditor } from '../PresentationEditor';
 import type { Awareness } from 'y-protocols/awareness';
 
 // Create hoisted mocks

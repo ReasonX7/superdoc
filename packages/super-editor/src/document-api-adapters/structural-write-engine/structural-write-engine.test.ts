@@ -1,15 +1,15 @@
 import { beforeAll, beforeEach, afterEach, describe, it, expect, vi } from 'vitest';
-import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import type { Editor } from '../../core/Editor.js';
-import { registerBuiltInExecutors } from '../plan-engine/register-executors.js';
-import { clearExecutorRegistry } from '../plan-engine/executor-registry.js';
-import { insertStructuredWrapper, replaceStructuredWrapper } from '../plan-engine/plan-wrappers.js';
-import { executePlan } from '../plan-engine/executor.js';
-import { markdownToFragmentAdapter } from '../markdown-to-fragment-adapter.js';
-import { executeStructuralInsert, executeStructuralReplace, materializeFragment } from './index.js';
-import { enforceNestingPolicy } from './nesting-guard.js';
+import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import type { Editor } from '../../core/Editor';
+import { registerBuiltInExecutors } from '../plan-engine/register-executors';
+import { clearExecutorRegistry } from '../plan-engine/executor-registry';
+import { insertStructuredWrapper, replaceStructuredWrapper } from '../plan-engine/plan-wrappers';
+import { executePlan } from '../plan-engine/executor';
+import { markdownToFragmentAdapter } from '../markdown-to-fragment-adapter';
+import { executeStructuralInsert, executeStructuralReplace, materializeFragment } from './index';
+import { enforceNestingPolicy } from './nesting-guard';
 import { validateDocumentFragment } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 import type { SDFragment } from '@superdoc/document-api';
 
 let docData: Awaited<ReturnType<typeof loadTestDataForEditorTests>>;

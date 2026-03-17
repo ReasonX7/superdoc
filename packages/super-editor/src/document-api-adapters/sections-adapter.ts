@@ -27,22 +27,22 @@ import type {
   SectionInfo,
 } from '@superdoc/document-api';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../core/Editor.js';
-import { DocumentApiAdapterError } from './errors.js';
-import { applyDirectMutationMeta } from './helpers/transaction-meta.js';
-import { checkRevision } from './plan-engine/revision-tracker.js';
-import { resolveBlockInsertionPos } from './plan-engine/create-insertion.js';
-import { clearIndexCache } from './helpers/index-cache.js';
-import { rejectTrackedMode } from './helpers/mutation-helpers.js';
-import { mutatePart } from '../core/parts/mutation/mutate-part.js';
-import type { PartId } from '../core/parts/types.js';
+import type { Editor } from '../core/Editor';
+import { DocumentApiAdapterError } from './errors';
+import { applyDirectMutationMeta } from './helpers/transaction-meta';
+import { checkRevision } from './plan-engine/revision-tracker';
+import { resolveBlockInsertionPos } from './plan-engine/create-insertion';
+import { clearIndexCache } from './helpers/index-cache';
+import { rejectTrackedMode } from './helpers/mutation-helpers';
+import { mutatePart } from '../core/parts/mutation/mutate-part';
+import type { PartId } from '../core/parts/types';
 import {
   ensureSettingsRoot,
   readSettingsRoot,
   hasOddEvenHeadersFooters,
   setOddEvenHeadersFooters as setOddEvenHeadersInSettings,
   type ConverterWithDocumentSettings,
-} from './document-settings.js';
+} from './document-settings';
 import {
   getBodySectPrFromEditor,
   getDefaultSectionAddress,
@@ -50,13 +50,13 @@ import {
   sectionsGetAdapter,
   sectionsListAdapter as listSectionsFromProjection,
   type SectionProjection,
-} from './helpers/sections-resolver.js';
-import { type ConverterWithHeaderFooterParts } from './helpers/header-footer-parts.js';
+} from './helpers/sections-resolver';
+import { type ConverterWithHeaderFooterParts } from './helpers/header-footer-parts';
 import {
   setHeaderFooterRefMutation,
   clearHeaderFooterRefMutation,
   setLinkedToPreviousMutation,
-} from './helpers/header-footer-refs-mutation.js';
+} from './helpers/header-footer-refs-mutation';
 import {
   clearSectPrPageBorders,
   cloneXmlElement,
@@ -76,7 +76,7 @@ import {
   writeSectPrTitlePage,
   writeSectPrVerticalAlign,
   type XmlElement,
-} from './helpers/sections-xml.js';
+} from './helpers/sections-xml';
 
 interface ConverterWithSections extends ConverterWithDocumentSettings, ConverterWithHeaderFooterParts {
   bodySectPr?: unknown;

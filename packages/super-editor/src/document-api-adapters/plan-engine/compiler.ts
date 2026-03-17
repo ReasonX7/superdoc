@@ -16,22 +16,22 @@ import type {
   TextAddress,
 } from '@superdoc/document-api';
 import { MAX_PLAN_STEPS, MAX_PLAN_RESOLVED_TARGETS, isPublicMutationStepOp } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   CompiledTarget,
   CompiledRangeTarget,
   CompiledSpanTarget,
   CompiledSegment,
-} from './executor-registry.types.js';
-import { planError } from './errors.js';
-import { hasStepExecutor } from './executor-registry.js';
-import { captureRunsInRange } from './style-resolver.js';
-import { getBlockIndex } from '../helpers/index-cache.js';
-import { getRevision } from './revision-tracker.js';
-import { executeTextSelector } from '../find/text-strategy.js';
-import { executeBlockSelector } from '../find/block-strategy.js';
-import { isTextBlockCandidate, type BlockCandidate, type BlockIndex } from '../helpers/node-address-resolver.js';
-import { resolveTextRangeInBlock } from '../helpers/text-offset-resolver.js';
+} from './executor-registry.types';
+import { planError } from './errors';
+import { hasStepExecutor } from './executor-registry';
+import { captureRunsInRange } from './style-resolver';
+import { getBlockIndex } from '../helpers/index-cache';
+import { getRevision } from './revision-tracker';
+import { executeTextSelector } from '../find/text-strategy';
+import { executeBlockSelector } from '../find/block-strategy';
+import { isTextBlockCandidate, type BlockCandidate, type BlockIndex } from '../helpers/node-address-resolver';
+import { resolveTextRangeInBlock } from '../helpers/text-offset-resolver';
 
 export interface CompiledStep {
   step: MutationStep;

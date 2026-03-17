@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyDirectiveToMarks, deriveToggleState } from './mark-directives.js';
+import { applyDirectiveToMarks, deriveToggleState } from './mark-directives';
 
 function mockMark(name: string, attrs: Record<string, unknown> = {}) {
   return {

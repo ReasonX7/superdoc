@@ -1,6 +1,6 @@
 import type { DocumentApiAdapters } from '@superdoc/document-api';
-import type { Editor } from '../core/Editor.js';
-import { assembleDocumentApiAdapters } from './assemble-adapters.js';
+import type { Editor } from '../core/Editor';
+import { assembleDocumentApiAdapters } from './assemble-adapters';
 
 /**
  * Backward-compatible adapter entry point used by Editor.

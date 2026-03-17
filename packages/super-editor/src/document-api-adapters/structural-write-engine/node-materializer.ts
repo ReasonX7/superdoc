@@ -16,7 +16,7 @@ import { Fragment } from 'prosemirror-model';
 import type { Mark as ProseMirrorMark, Node as ProseMirrorNode, Schema } from 'prosemirror-model';
 import type { SDFragment, SDContentNode } from '@superdoc/document-api';
 import { v4 as uuidv4 } from 'uuid';
-import { DocumentApiAdapterError } from '../errors.js';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Types

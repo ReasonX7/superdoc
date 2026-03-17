@@ -6,7 +6,7 @@ import {
   areTocConfigsEqual,
   DEFAULT_TOC_INSTRUCTION,
   DEFAULT_TOC_CONFIG,
-} from './toc-switches.js';
+} from './toc-switches';
 
 describe('parseTocInstruction', () => {
   it('parses Word default instruction', () => {

@@ -13,9 +13,9 @@ import type { MatchStyle, MatchRun } from '@superdoc/document-api';
 import { derivePropertyStateFromDirect } from '@superdoc/document-api';
 import { resolveRunProperties } from '@superdoc/style-engine/ooxml';
 import type { OoxmlResolverParams, RunProperties, ParagraphProperties } from '@superdoc/style-engine/ooxml';
-import type { CapturedRun } from './style-resolver.js';
-import { planError } from './errors.js';
-import { deriveToggleState, isSimpleToggleOffValue } from './mark-directives.js';
+import type { CapturedRun } from './style-resolver';
+import { planError } from './errors';
+import { deriveToggleState, isSimpleToggleOffValue } from './mark-directives';
 
 /** A PM mark as visible on CapturedRun.marks — minimal shape for style extraction. */
 type PmMark = CapturedRun['marks'][number];

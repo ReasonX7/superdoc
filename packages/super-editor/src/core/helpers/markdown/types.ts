@@ -3,7 +3,7 @@
  */
 
 import type { Node as PmNode, Fragment, Schema } from 'prosemirror-model';
-import type { Editor } from '../../Editor.js';
+import type { Editor } from '../../Editor';
 
 // ---------------------------------------------------------------------------
 // Conversion options

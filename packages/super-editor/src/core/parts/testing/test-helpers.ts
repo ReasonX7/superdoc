@@ -5,9 +5,9 @@
  * Existing tests are migrated opportunistically.
  */
 
-import type { PartId, PartDescriptor } from '../types.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../registry/part-registry.js';
-import { clearInvalidationHandlers } from '../invalidation/part-invalidation-registry.js';
+import type { PartId, PartDescriptor } from '../types';
+import { registerPartDescriptor, clearPartDescriptors } from '../registry/part-registry';
+import { clearInvalidationHandlers } from '../invalidation/part-invalidation-registry';
 
 interface MockConverterOptions {
   convertedXml?: Record<string, unknown>;

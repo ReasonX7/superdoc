@@ -1,16 +1,16 @@
 import type { Query, FindOutput, FindItemDomain } from '@superdoc/document-api';
 import { buildResolvedHandle, buildDiscoveryItem, buildDiscoveryResult } from '@superdoc/document-api';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../core/Editor.js';
-import { findLegacyAdapter } from './find-adapter.js';
-import { getTextAdapter } from './get-text-adapter.js';
-import { infoAdapter } from './info-adapter.js';
+import type { Editor } from '../core/Editor';
+import { findLegacyAdapter } from './find-adapter';
+import { getTextAdapter } from './get-text-adapter';
+import { infoAdapter } from './info-adapter';
 
-vi.mock('./find-adapter.js', () => ({
+vi.mock('./find-adapter', () => ({
   findLegacyAdapter: vi.fn(),
 }));
 
-vi.mock('./get-text-adapter.js', () => ({
+vi.mock('./get-text-adapter', () => ({
   getTextAdapter: vi.fn(),
 }));
 

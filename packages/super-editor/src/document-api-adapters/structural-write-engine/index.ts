@@ -12,15 +12,15 @@
 
 import type { SDFragment, SDContentNode, NestingPolicy, Placement, TextAddress } from '@superdoc/document-api';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import { materializeFragment, type SDWriteOp } from './node-materializer.js';
-import { resolveInsertTarget, resolveReplaceTarget } from './target-resolver.js';
-import { resolvePlacement } from './placement-resolver.js';
-import { enforceNestingPolicy } from './nesting-guard.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { applyTrackedMutationMeta, applyDirectMutationMeta } from '../helpers/transaction-meta.js';
-import { resolveSectionProjections } from '../helpers/sections-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import { materializeFragment, type SDWriteOp } from './node-materializer';
+import { resolveInsertTarget, resolveReplaceTarget } from './target-resolver';
+import { resolvePlacement } from './placement-resolver';
+import { enforceNestingPolicy } from './nesting-guard';
+import { clearIndexCache } from '../helpers/index-cache';
+import { applyTrackedMutationMeta, applyDirectMutationMeta } from '../helpers/transaction-meta';
+import { resolveSectionProjections } from '../helpers/sections-resolver';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Public API
@@ -242,7 +242,7 @@ function collectBlockIds(fragment: { childCount: number; child: (index: number) 
 }
 
 // Re-export submodules for direct access
-export { materializeFragment } from './node-materializer.js';
-export { resolveInsertTarget, resolveReplaceTarget } from './target-resolver.js';
-export { resolvePlacement } from './placement-resolver.js';
-export { enforceNestingPolicy } from './nesting-guard.js';
+export { materializeFragment } from './node-materializer';
+export { resolveInsertTarget, resolveReplaceTarget } from './target-resolver';
+export { resolvePlacement } from './placement-resolver';
+export { enforceNestingPolicy } from './nesting-guard';

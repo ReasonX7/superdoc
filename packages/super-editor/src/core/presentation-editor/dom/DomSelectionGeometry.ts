@@ -1,8 +1,8 @@
 import type { Layout } from '@superdoc/contracts';
 import { DOM_CLASS_NAMES } from '@superdoc/painter-dom';
 
-import type { DomPositionIndex, DomPositionIndexEntry } from './DomPositionIndex.js';
-import { debugLog, getSelectionDebugConfig } from '../selection/SelectionDebug.js';
+import type { DomPositionIndex, DomPositionIndexEntry } from './DomPositionIndex';
+import { debugLog, getSelectionDebugConfig } from '../selection/SelectionDebug';
 
 /**
  * A rectangle representing a selection highlight in document layout coordinates.

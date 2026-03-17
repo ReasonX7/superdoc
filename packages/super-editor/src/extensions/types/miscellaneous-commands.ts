@@ -283,6 +283,6 @@ export interface MiscellaneousCommands {
   getDocumentStats: () => DocumentStats;
 }
 
-declare module '../../core/types/ChainedCommands.js' {
+declare module '../../core/types/ChainedCommands' {
   interface ExtensionCommandMap extends MiscellaneousCommands {}
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { normalizeFixedWidthTables } from './normalizeFixedWidthTables.js';
+import { normalizeFixedWidthTables } from './normalizeFixedWidthTables';
 
 // ---------------------------------------------------------------------------
 // Helpers

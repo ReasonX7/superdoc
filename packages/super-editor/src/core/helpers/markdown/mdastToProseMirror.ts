@@ -33,10 +33,10 @@ import type {
   ListItem as MdastListItem,
 } from 'mdast';
 import { v4 as uuidv4 } from 'uuid';
-import { ListHelpers } from '../list-numbering-helpers.js';
-import { generateDocxRandomId } from '../generateDocxRandomId.js';
-import { readImageDimensionsFromDataUri } from '../../super-converter/image-dimensions.js';
-import type { MdastConversionContext, MarkdownDiagnostic } from './types.js';
+import { ListHelpers } from '../list-numbering-helpers';
+import { generateDocxRandomId } from '../generateDocxRandomId';
+import { readImageDimensionsFromDataUri } from '../../super-converter/image-dimensions';
+import type { MdastConversionContext, MarkdownDiagnostic } from './types';
 
 // ---------------------------------------------------------------------------
 // Public entry point

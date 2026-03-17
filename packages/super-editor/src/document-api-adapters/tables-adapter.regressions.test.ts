@@ -1,7 +1,7 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { describe, expect, it, vi } from 'vitest';
 import { TableMap } from 'prosemirror-tables';
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import {
   tablesClearBorderAdapter,
   tablesClearShadingAdapter,
@@ -12,7 +12,7 @@ import {
   tablesSetShadingAdapter,
   tablesSplitCellAdapter,
   tablesSplitAdapter,
-} from './tables-adapter.js';
+} from './tables-adapter';
 
 vi.mock('prosemirror-tables', () => ({
   TableMap: {

@@ -1,10 +1,10 @@
 import { beforeAll, beforeEach, afterEach, describe, it, expect } from 'vitest';
-import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import type { Editor } from '../../core/Editor.js';
-import { projectContentNode, projectInlineNode, projectDocument } from './sd-projection.js';
-import { executeStructuralInsert, materializeFragment } from '../structural-write-engine/index.js';
-import { sdFindAdapter } from '../find-adapter.js';
-import { markdownToPmFragment } from '../../core/helpers/markdown/markdownToPmContent.js';
+import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import type { Editor } from '../../core/Editor';
+import { projectContentNode, projectInlineNode, projectDocument } from './sd-projection';
+import { executeStructuralInsert, materializeFragment } from '../structural-write-engine/index';
+import { sdFindAdapter } from '../find-adapter';
+import { markdownToPmFragment } from '../../core/helpers/markdown/markdownToPmContent';
 import type { SDFragment, SDParagraph, SDHeading, SDTable, SDRun, SDHyperlink, SDSdt } from '@superdoc/document-api';
 
 let docData: Awaited<ReturnType<typeof loadTestDataForEditorTests>>;

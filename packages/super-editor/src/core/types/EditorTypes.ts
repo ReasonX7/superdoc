@@ -1,4 +1,4 @@
-import type { Editor } from '../Editor.js';
+import type { Editor } from '../Editor';
 
 /**
  * A map of plugin names to their helper API objects.
@@ -88,5 +88,5 @@ export interface Toolbar {
 /**
  * Re-export commonly used types
  */
-export type * from '../OxmlNode.js';
-export type * from './EditorConfig.js';
+export type * from '../OxmlNode';
+export type * from './EditorConfig';

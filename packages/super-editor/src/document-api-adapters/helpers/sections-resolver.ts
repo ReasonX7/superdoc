@@ -8,13 +8,13 @@ import type {
   SectionsListResult,
 } from '@superdoc/document-api';
 import { buildDiscoveryItem, buildDiscoveryResult, buildResolvedHandle } from '@superdoc/document-api';
-import { analyzeSectionRanges } from '@superdoc/pm-adapter/sections/analysis.js';
-import { SectionType, type SectionRange } from '@superdoc/pm-adapter/sections/types.js';
-import type { Editor } from '../../core/Editor.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { getRevision } from '../plan-engine/revision-tracker.js';
-import { paginate, validatePaginationInput } from './adapter-utils.js';
-import { toId } from './value-utils.js';
+import { analyzeSectionRanges } from '@superdoc/pm-adapter/sections/analysis';
+import { SectionType, type SectionRange } from '@superdoc/pm-adapter/sections/types';
+import type { Editor } from '../../core/Editor';
+import { DocumentApiAdapterError } from '../errors';
+import { getRevision } from '../plan-engine/revision-tracker';
+import { paginate, validatePaginationInput } from './adapter-utils';
+import { toId } from './value-utils';
 import {
   cloneXmlElement,
   isSectPrElement,
@@ -27,7 +27,7 @@ import {
   readSectPrPageSetup,
   readSectPrVerticalAlign,
   type XmlElement,
-} from './sections-xml.js';
+} from './sections-xml';
 
 export type SectionMutationTarget =
   | {

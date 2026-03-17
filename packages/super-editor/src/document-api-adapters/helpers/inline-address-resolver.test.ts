@@ -1,7 +1,7 @@
 import type { Node as ProseMirrorNode, Mark as ProseMirrorMark } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import type { BlockIndex } from './node-address-resolver.js';
-import { buildInlineIndex, findInlineByType } from './inline-address-resolver.js';
+import type { Editor } from '../../core/Editor';
+import type { BlockIndex } from './node-address-resolver';
+import { buildInlineIndex, findInlineByType } from './inline-address-resolver';
 
 function makeMark(name: string, attrs: Record<string, unknown> = {}): ProseMirrorMark {
   return { type: { name }, attrs } as unknown as ProseMirrorMark;

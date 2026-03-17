@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import * as Y from 'yjs';
-import { bootstrapPartSync } from './bootstrap.js';
-import { META_MAP_KEY, META_PARTS_CAPABILITY_KEY, PARTS_MAP_KEY } from './constants.js';
-import { encodeEnvelopeToYjs } from './json-crdt.js';
-import { clearPartDescriptors, registerPartDescriptor } from '../../../core/parts/registry/part-registry.js';
-import { clearInvalidationHandlers } from '../../../core/parts/invalidation/part-invalidation-registry.js';
-import { stylesPartDescriptor } from '../../../core/parts/adapters/styles-part-descriptor.js';
-import { settingsPartDescriptor } from '../../../core/parts/adapters/settings-part-descriptor.js';
+import { bootstrapPartSync } from './bootstrap';
+import { META_MAP_KEY, META_PARTS_CAPABILITY_KEY, PARTS_MAP_KEY } from './constants';
+import { encodeEnvelopeToYjs } from './json-crdt';
+import { clearPartDescriptors, registerPartDescriptor } from '../../../core/parts/registry/part-registry';
+import { clearInvalidationHandlers } from '../../../core/parts/invalidation/part-invalidation-registry';
+import { stylesPartDescriptor } from '../../../core/parts/adapters/styles-part-descriptor';
+import { settingsPartDescriptor } from '../../../core/parts/adapters/settings-part-descriptor';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -35,7 +35,7 @@ function createMockEditor(opts: Record<string, unknown> = {}) {
     emit: vi.fn(),
     on: vi.fn(),
     off: vi.fn(),
-  } as unknown as import('../../../core/Editor.js').Editor;
+  } as unknown as import('../../../core/Editor').Editor;
 }
 
 // ---------------------------------------------------------------------------

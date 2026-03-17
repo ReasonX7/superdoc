@@ -1,6 +1,6 @@
-import type { Editor } from '../../core/Editor.js';
-import { getBodySectPrFromEditor, type SectionProjection } from './sections-resolver.js';
-import type { XmlElement } from './sections-xml.js';
+import type { Editor } from '../../core/Editor';
+import { getBodySectPrFromEditor, type SectionProjection } from './sections-resolver';
+import type { XmlElement } from './sections-xml';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 
 function readParagraphSectPr(node: ProseMirrorNode): XmlElement | null {

@@ -6,8 +6,8 @@
  * Import/export phases are exempt.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartId } from '../types.js';
+import type { Editor } from '../../Editor';
+import type { PartId } from '../types';
 
 interface ConvertedXmlHost {
   convertedXml?: Record<string, unknown>;

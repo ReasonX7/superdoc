@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isCollaborationActive } from './collaboration-detection.js';
+import { isCollaborationActive } from './collaboration-detection';
 
 function makeEditor(collaborationProvider: unknown) {
   return { options: { collaborationProvider } } as Parameters<typeof isCollaborationActive>[0];

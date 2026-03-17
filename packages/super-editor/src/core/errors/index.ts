@@ -4,4 +4,4 @@ export {
   NoSourcePathError,
   FileSystemNotAvailableError,
   DocumentLoadError,
-} from './EditorErrors.js';
+} from './EditorErrors';

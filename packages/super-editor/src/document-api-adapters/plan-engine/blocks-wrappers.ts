@@ -7,7 +7,7 @@
  */
 
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import {
   DELETABLE_BLOCK_NODE_TYPES,
   type BlockNodeAddress,
@@ -21,18 +21,18 @@ import {
   type DeletedBlockSummary,
   type MutationOptions,
 } from '@superdoc/document-api';
-import { clearIndexCache, getBlockIndex } from '../helpers/index-cache.js';
+import { clearIndexCache, getBlockIndex } from '../helpers/index-cache';
 import {
   findBlockByIdStrict,
   mapBlockNodeType,
   resolveBlockNodeId,
   type BlockCandidate,
   type BlockIndex,
-} from '../helpers/node-address-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { requireEditorCommand, rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { getRevision } from './revision-tracker.js';
+} from '../helpers/node-address-resolver';
+import { DocumentApiAdapterError } from '../errors';
+import { requireEditorCommand, rejectTrackedMode } from '../helpers/mutation-helpers';
+import { executeDomainCommand } from './plan-wrappers';
+import { getRevision } from './revision-tracker';
 
 // ---------------------------------------------------------------------------
 // Constants

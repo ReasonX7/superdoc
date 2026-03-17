@@ -1,13 +1,13 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../core/Editor.js';
-import { TrackFormatMarkName } from '../extensions/track-changes/constants.js';
+import type { Editor } from '../core/Editor';
+import { TrackFormatMarkName } from '../extensions/track-changes/constants';
 import {
   formatBoldAdapter,
   formatItalicAdapter,
   formatUnderlineAdapter,
   formatStrikethroughAdapter,
-} from './format-adapter.js';
+} from './format-adapter';
 
 type NodeOptions = {
   attrs?: Record<string, unknown>;

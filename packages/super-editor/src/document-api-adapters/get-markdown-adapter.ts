@@ -1,9 +1,9 @@
 import { unified } from 'unified';
 import remarkGfm from 'remark-gfm';
 import remarkStringify from 'remark-stringify';
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type { GetMarkdownInput } from '@superdoc/document-api';
-import { proseMirrorDocToMdast } from '../core/helpers/markdown/proseMirrorToMdast.js';
+import { proseMirrorDocToMdast } from '../core/helpers/markdown/proseMirrorToMdast';
 
 const remarkProcessor = unified().use(remarkGfm).use(remarkStringify, { bullet: '-', fences: true });
 

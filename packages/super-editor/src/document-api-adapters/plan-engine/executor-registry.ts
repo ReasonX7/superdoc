@@ -5,7 +5,7 @@
  * matching the step's `op` field against registered prefixes.
  */
 
-import type { StepExecutor } from './executor-registry.types.js';
+import type { StepExecutor } from './executor-registry.types';
 
 const registry = new Map<string, StepExecutor>();
 

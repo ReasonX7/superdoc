@@ -1,23 +1,23 @@
 import type { DocumentApiAdapters } from '@superdoc/document-api';
-import type { Editor } from '../core/Editor.js';
-import { getAdapter } from './get-adapter.js';
-import { sdFindAdapter, findLegacyAdapter } from './find-adapter.js';
-import { getNodeAdapter, getNodeByIdAdapter } from './get-node-adapter.js';
-import { getTextAdapter } from './get-text-adapter.js';
-import { getMarkdownAdapter } from './get-markdown-adapter.js';
-import { getHtmlAdapter } from './get-html-adapter.js';
-import { markdownToFragmentAdapter } from './markdown-to-fragment-adapter.js';
-import { infoAdapter } from './info-adapter.js';
-import { getDocumentApiCapabilities } from './capabilities-adapter.js';
-import { createCommentsWrapper } from './plan-engine/comments-wrappers.js';
+import type { Editor } from '../core/Editor';
+import { getAdapter } from './get-adapter';
+import { sdFindAdapter, findLegacyAdapter } from './find-adapter';
+import { getNodeAdapter, getNodeByIdAdapter } from './get-node-adapter';
+import { getTextAdapter } from './get-text-adapter';
+import { getMarkdownAdapter } from './get-markdown-adapter';
+import { getHtmlAdapter } from './get-html-adapter';
+import { markdownToFragmentAdapter } from './markdown-to-fragment-adapter';
+import { infoAdapter } from './info-adapter';
+import { getDocumentApiCapabilities } from './capabilities-adapter';
+import { createCommentsWrapper } from './plan-engine/comments-wrappers';
 import {
   writeWrapper,
   insertStructuredWrapper,
   replaceStructuredWrapper,
   styleApplyWrapper,
-} from './plan-engine/plan-wrappers.js';
-import { clearContentWrapper } from './plan-engine/clear-content-wrapper.js';
-import { stylesApplyAdapter } from './styles-adapter.js';
+} from './plan-engine/plan-wrappers';
+import { clearContentWrapper } from './plan-engine/clear-content-wrapper';
+import { stylesApplyAdapter } from './styles-adapter';
 import {
   paragraphsSetStyleWrapper,
   paragraphsClearStyleWrapper,
@@ -38,7 +38,7 @@ import {
   paragraphsClearBorderWrapper,
   paragraphsSetShadingWrapper,
   paragraphsClearShadingWrapper,
-} from './plan-engine/paragraphs-wrappers.js';
+} from './plan-engine/paragraphs-wrappers';
 import {
   trackChangesListWrapper,
   trackChangesGetWrapper,
@@ -46,9 +46,9 @@ import {
   trackChangesRejectWrapper,
   trackChangesAcceptAllWrapper,
   trackChangesRejectAllWrapper,
-} from './plan-engine/track-changes-wrappers.js';
-import { createParagraphWrapper, createHeadingWrapper } from './plan-engine/create-wrappers.js';
-import { blocksListWrapper, blocksDeleteWrapper, blocksDeleteRangeWrapper } from './plan-engine/blocks-wrappers.js';
+} from './plan-engine/track-changes-wrappers';
+import { createParagraphWrapper, createHeadingWrapper } from './plan-engine/create-wrappers';
+import { blocksListWrapper, blocksDeleteWrapper, blocksDeleteRangeWrapper } from './plan-engine/blocks-wrappers';
 import {
   listsListWrapper,
   listsGetWrapper,
@@ -67,7 +67,7 @@ import {
   listsCanContinuePreviousWrapper,
   listsSetLevelRestartWrapper,
   listsConvertToTextWrapper,
-} from './plan-engine/lists-wrappers.js';
+} from './plan-engine/lists-wrappers';
 import {
   listsApplyTemplateWrapper,
   listsApplyPresetWrapper,
@@ -81,18 +81,18 @@ import {
   listsSetLevelTrailingCharacterWrapper,
   listsSetLevelMarkerFontWrapper,
   listsClearLevelOverridesWrapper,
-} from './plan-engine/lists-formatting-wrappers.js';
-import { executePlan } from './plan-engine/executor.js';
-import { previewPlan } from './plan-engine/preview.js';
-import { queryMatchAdapter } from './plan-engine/query-match-adapter.js';
-import { initRevision, trackRevisions } from './plan-engine/revision-tracker.js';
-import { registerBuiltInExecutors } from './plan-engine/register-executors.js';
-import { registerPartDescriptor } from '../core/parts/registry/part-registry.js';
-import { stylesPartDescriptor } from '../core/parts/adapters/styles-part-descriptor.js';
-import { settingsPartDescriptor } from '../core/parts/adapters/settings-part-descriptor.js';
-import { relsPartDescriptor } from '../core/parts/adapters/rels-part-descriptor.js';
-import { numberingPartDescriptor } from '../core/parts/adapters/numbering-part-descriptor.js';
-import { createTableWrapper } from './plan-engine/create-table-wrapper.js';
+} from './plan-engine/lists-formatting-wrappers';
+import { executePlan } from './plan-engine/executor';
+import { previewPlan } from './plan-engine/preview';
+import { queryMatchAdapter } from './plan-engine/query-match-adapter';
+import { initRevision, trackRevisions } from './plan-engine/revision-tracker';
+import { registerBuiltInExecutors } from './plan-engine/register-executors';
+import { registerPartDescriptor } from '../core/parts/registry/part-registry';
+import { stylesPartDescriptor } from '../core/parts/adapters/styles-part-descriptor';
+import { settingsPartDescriptor } from '../core/parts/adapters/settings-part-descriptor';
+import { relsPartDescriptor } from '../core/parts/adapters/rels-part-descriptor';
+import { numberingPartDescriptor } from '../core/parts/adapters/numbering-part-descriptor';
+import { createTableWrapper } from './plan-engine/create-table-wrapper';
 import {
   createSectionBreakAdapter,
   sectionsListAdapter,
@@ -113,7 +113,7 @@ import {
   sectionsSetLinkToPreviousAdapter,
   sectionsSetPageBordersAdapter,
   sectionsClearPageBordersAdapter,
-} from './sections-adapter.js';
+} from './sections-adapter';
 import {
   tablesDeleteWrapper,
   tablesClearContentsWrapper,
@@ -151,7 +151,7 @@ import {
   tablesSetCellPaddingWrapper,
   tablesSetCellSpacingWrapper,
   tablesClearCellSpacingWrapper,
-} from './plan-engine/tables-wrappers.js';
+} from './plan-engine/tables-wrappers';
 import {
   tablesGetAdapter,
   tablesGetCellsAdapter,
@@ -159,8 +159,8 @@ import {
   tablesGetStylesAdapter,
   tablesSetDefaultStyleAdapter,
   tablesClearDefaultStyleAdapter,
-} from './tables-adapter.js';
-import { createHistoryAdapter } from './history-adapter.js';
+} from './tables-adapter';
+import { createHistoryAdapter } from './history-adapter';
 import {
   tocListWrapper,
   tocGetWrapper,
@@ -168,14 +168,14 @@ import {
   tocUpdateWrapper,
   tocRemoveWrapper,
   createTableOfContentsWrapper,
-} from './plan-engine/toc-wrappers.js';
+} from './plan-engine/toc-wrappers';
 import {
   tocListEntriesWrapper,
   tocGetEntryWrapper,
   tocMarkEntryWrapper,
   tocUnmarkEntryWrapper,
   tocEditEntryWrapper,
-} from './plan-engine/toc-entry-wrappers.js';
+} from './plan-engine/toc-entry-wrappers';
 import {
   createImageWrapper,
   imagesListWrapper,
@@ -205,7 +205,7 @@ import {
   imagesInsertCaptionWrapper,
   imagesUpdateCaptionWrapper,
   imagesRemoveCaptionWrapper,
-} from './plan-engine/images-wrappers.js';
+} from './plan-engine/images-wrappers';
 import {
   hyperlinksListWrapper,
   hyperlinksGetWrapper,
@@ -213,8 +213,8 @@ import {
   hyperlinksInsertWrapper,
   hyperlinksPatchWrapper,
   hyperlinksRemoveWrapper,
-} from './plan-engine/hyperlinks-wrappers.js';
-import { createContentControlsAdapter } from './plan-engine/content-controls-wrappers.js';
+} from './plan-engine/hyperlinks-wrappers';
+import { createContentControlsAdapter } from './plan-engine/content-controls-wrappers';
 import {
   headerFootersListAdapter,
   headerFootersGetAdapter,
@@ -225,14 +225,14 @@ import {
   headerFootersPartsListAdapter,
   headerFootersPartsCreateAdapter,
   headerFootersPartsDeleteAdapter,
-} from './header-footers-adapter.js';
+} from './header-footers-adapter';
 import {
   bookmarksListWrapper,
   bookmarksGetWrapper,
   bookmarksInsertWrapper,
   bookmarksRenameWrapper,
   bookmarksRemoveWrapper,
-} from './plan-engine/bookmark-wrappers.js';
+} from './plan-engine/bookmark-wrappers';
 
 import {
   footnotesListWrapper,
@@ -241,14 +241,14 @@ import {
   footnotesUpdateWrapper,
   footnotesRemoveWrapper,
   footnotesConfigureWrapper,
-} from './plan-engine/footnote-wrappers.js';
+} from './plan-engine/footnote-wrappers';
 import {
   crossRefsListWrapper,
   crossRefsGetWrapper,
   crossRefsInsertWrapper,
   crossRefsRebuildWrapper,
   crossRefsRemoveWrapper,
-} from './plan-engine/crossref-wrappers.js';
+} from './plan-engine/crossref-wrappers';
 import {
   indexListWrapper,
   indexGetWrapper,
@@ -261,7 +261,7 @@ import {
   indexEntriesInsertWrapper,
   indexEntriesUpdateWrapper,
   indexEntriesRemoveWrapper,
-} from './plan-engine/index-wrappers.js';
+} from './plan-engine/index-wrappers';
 import {
   captionsListWrapper,
   captionsGetWrapper,
@@ -269,14 +269,14 @@ import {
   captionsUpdateWrapper,
   captionsRemoveWrapper,
   captionsConfigureWrapper,
-} from './plan-engine/caption-wrappers.js';
+} from './plan-engine/caption-wrappers';
 import {
   fieldsListWrapper,
   fieldsGetWrapper,
   fieldsInsertWrapper,
   fieldsRebuildWrapper,
   fieldsRemoveWrapper,
-} from './plan-engine/field-wrappers.js';
+} from './plan-engine/field-wrappers';
 import {
   citationsListWrapper,
   citationsGetWrapper,
@@ -293,7 +293,7 @@ import {
   bibliographyConfigureWrapper,
   bibliographyRebuildWrapper,
   bibliographyRemoveWrapper,
-} from './plan-engine/citation-wrappers.js';
+} from './plan-engine/citation-wrappers';
 import {
   authoritiesListWrapper,
   authoritiesGetWrapper,
@@ -306,7 +306,7 @@ import {
   authorityEntriesInsertWrapper,
   authorityEntriesUpdateWrapper,
   authorityEntriesRemoveWrapper,
-} from './plan-engine/authority-wrappers.js';
+} from './plan-engine/authority-wrappers';
 
 /**
  * Assembles all document-api adapters for the given editor instance.

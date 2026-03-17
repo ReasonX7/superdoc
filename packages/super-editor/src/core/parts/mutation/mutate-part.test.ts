@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { mutatePart, mutateParts } from './mutate-part.js';
-import { createTestEditor, withPart, withDescriptor, cleanupParts } from '../testing/test-helpers.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../registry/part-registry.js';
-import { registerInvalidationHandler, clearInvalidationHandlers } from '../invalidation/part-invalidation-registry.js';
-import { initRevision, getRevision } from '../../../document-api-adapters/plan-engine/revision-tracker.js';
-import type { Editor } from '../../Editor.js';
-import type { PartId, PartChangedEvent, MutatePartRequest } from '../types.js';
+import { mutatePart, mutateParts } from './mutate-part';
+import { createTestEditor, withPart, withDescriptor, cleanupParts } from '../testing/test-helpers';
+import { registerPartDescriptor, clearPartDescriptors } from '../registry/part-registry';
+import { registerInvalidationHandler, clearInvalidationHandlers } from '../invalidation/part-invalidation-registry';
+import { initRevision, getRevision } from '../../../document-api-adapters/plan-engine/revision-tracker';
+import type { Editor } from '../../Editor';
+import type { PartId, PartChangedEvent, MutatePartRequest } from '../types';
 
 function asEditor(mock: ReturnType<typeof createTestEditor>): Editor {
   return mock as unknown as Editor;

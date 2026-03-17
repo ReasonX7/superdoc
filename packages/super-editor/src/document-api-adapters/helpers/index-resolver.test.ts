@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import { extractIndexEntryInfo, buildIndexEntryDiscoveryItem, type ResolvedIndexEntry } from './index-resolver.js';
+import { extractIndexEntryInfo, buildIndexEntryDiscoveryItem, type ResolvedIndexEntry } from './index-resolver';
 
 function makeDoc(blockId = 'p-entry'): ProseMirrorNode {
   return {

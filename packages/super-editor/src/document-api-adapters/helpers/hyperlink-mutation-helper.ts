@@ -6,11 +6,11 @@
  * (auto-underline, selection expansion, display text fallback).
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { MarkType, Mark } from 'prosemirror-model';
-import { findOrCreateRelationship } from '../../core/parts/adapters/relationships-mutation.js';
+import { findOrCreateRelationship } from '../../core/parts/adapters/relationships-mutation';
 import { sanitizeHref } from '@superdoc/url-validation';
-import { applyDirectMutationMeta } from './transaction-meta.js';
+import { applyDirectMutationMeta } from './transaction-meta';
 
 // ---------------------------------------------------------------------------
 // Types

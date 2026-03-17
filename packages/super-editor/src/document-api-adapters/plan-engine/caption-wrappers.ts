@@ -2,7 +2,7 @@
  * Caption plan-engine wrappers — bridge captions.* operations.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   CaptionListInput,
   CaptionGetInput,
@@ -23,13 +23,13 @@ import {
   resolveCaptionTarget,
   extractCaptionInfo,
   buildCaptionDiscoveryItem,
-} from '../helpers/caption-resolver.js';
-import { paginate, resolveBlockCreatePosition } from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { DocumentApiAdapterError } from '../errors.js';
+} from '../helpers/caption-resolver';
+import { paginate, resolveBlockCreatePosition } from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
+import { executeDomainCommand } from './plan-wrappers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Result helpers

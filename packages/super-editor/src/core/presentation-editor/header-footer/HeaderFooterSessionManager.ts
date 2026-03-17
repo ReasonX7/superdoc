@@ -15,7 +15,7 @@ import type { Layout, FlowBlock, Measure, Page, SectionMetadata, Fragment } from
 import type { PageDecorationProvider } from '@superdoc/painter-dom';
 import { selectionToRects } from '@superdoc/layout-bridge';
 
-import type { Editor } from '../../Editor.js';
+import type { Editor } from '../../Editor';
 import type {
   HeaderFooterMode,
   HeaderFooterSession,
@@ -23,15 +23,15 @@ import type {
   HeaderFooterLayoutContext,
   LayoutRect,
   EditorWithConverter,
-} from '../types.js';
+} from '../types';
 import {
   HeaderFooterEditorManager,
   HeaderFooterLayoutAdapter,
   type HeaderFooterDescriptor,
-} from '../../header-footer/HeaderFooterRegistry.js';
-import { EditorOverlayManager } from '../../header-footer/EditorOverlayManager.js';
-import { initHeaderFooterRegistry } from '../../header-footer/HeaderFooterRegistryInit.js';
-import { layoutPerRIdHeaderFooters } from '../../header-footer/HeaderFooterPerRidLayout.js';
+} from '../../header-footer/HeaderFooterRegistry';
+import { EditorOverlayManager } from '../../header-footer/EditorOverlayManager';
+import { initHeaderFooterRegistry } from '../../header-footer/HeaderFooterRegistryInit';
+import { layoutPerRIdHeaderFooters } from '../../header-footer/HeaderFooterPerRidLayout';
 import {
   extractIdentifierFromConverter,
   getHeaderFooterType,

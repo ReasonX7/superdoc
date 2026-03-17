@@ -1,8 +1,8 @@
-import { getExtensionConfigField } from './helpers/getExtensionConfigField.js';
-import { getNodeType } from './helpers/getNodeType.js';
-import { getMarkType } from './helpers/getMarkType.js';
-import { getSchemaTypeNameByName } from './helpers/getSchemaTypeNameByName.js';
-import { getMarksFromSelection } from './helpers/getMarksFromSelection.js';
+import { getExtensionConfigField } from './helpers/getExtensionConfigField';
+import { getNodeType } from './helpers/getNodeType';
+import { getMarkType } from './helpers/getMarkType';
+import { getSchemaTypeNameByName } from './helpers/getSchemaTypeNameByName';
+import { getMarksFromSelection } from './helpers/getMarksFromSelection';
 import type { Node as PmNode, Mark as PmMark, MarkType, NodeType, ParseRule as PmParseRule } from 'prosemirror-model';
 import type { EditorState } from 'prosemirror-state';
 

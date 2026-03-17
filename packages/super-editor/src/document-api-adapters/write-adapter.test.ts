@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../core/Editor.js';
-import { writeAdapter } from './write-adapter.js';
-import * as trackedChangeResolver from './helpers/tracked-change-resolver.js';
+import type { Editor } from '../core/Editor';
+import { writeAdapter } from './write-adapter';
+import * as trackedChangeResolver from './helpers/tracked-change-resolver';
 
 type NodeOptions = {
   attrs?: Record<string, unknown>;

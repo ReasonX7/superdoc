@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, beforeAll } from 'vitest';
-import { Editor } from './Editor.js';
-import { loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import { getStarterExtensions } from '@extensions/index.js';
+import { Editor } from './Editor';
+import { loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import { getStarterExtensions } from '@extensions/index';
 
 /**
  * Tests for web layout mode (OOXML ST_View 'web').

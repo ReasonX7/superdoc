@@ -14,8 +14,8 @@ import type {
   ContentControlProperties,
   LockMode,
 } from '@superdoc/document-api';
-import type { ResolvedSdt } from './target-resolution.js';
-import { findSdtPrChild, getSdtPrChildAttrs, type SdtPrElement } from './sdt-properties-write.js';
+import type { ResolvedSdt } from './target-resolution';
+import { findSdtPrChild, getSdtPrChildAttrs, type SdtPrElement } from './sdt-properties-write';
 
 // ---------------------------------------------------------------------------
 // Enum resolution

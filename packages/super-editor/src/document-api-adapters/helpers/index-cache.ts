@@ -1,7 +1,7 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import { buildInlineIndex, type InlineIndex } from './inline-address-resolver.js';
-import { buildBlockIndex, type BlockIndex } from './node-address-resolver.js';
+import type { Editor } from '../../core/Editor';
+import { buildInlineIndex, type InlineIndex } from './inline-address-resolver';
+import { buildBlockIndex, type BlockIndex } from './node-address-resolver';
 
 type CacheEntry = {
   doc: ProseMirrorNode;

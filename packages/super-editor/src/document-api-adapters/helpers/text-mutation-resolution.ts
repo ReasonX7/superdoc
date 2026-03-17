@@ -1,6 +1,6 @@
 import type { TextAddress, TextMutationResolution } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { ResolvedTextTarget } from './adapter-utils.js';
+import type { Editor } from '../../core/Editor';
+import type { ResolvedTextTarget } from './adapter-utils';
 
 /** Unicode Object Replacement Character — used as placeholder for leaf inline nodes in textBetween(). */
 const OBJECT_REPLACEMENT_CHAR = '\ufffc';

@@ -13,7 +13,7 @@ import type {
   TextContainerAttributes,
   InlineNodeAttributes,
   ShapeNodeAttributes,
-} from '../../core/types/NodeCategories.js';
+} from '../../core/types/NodeCategories';
 import type { StructuredContentLockMode } from '@superdoc/contracts';
 
 // ============================================
@@ -1155,7 +1155,7 @@ export interface FootnoteReferenceAttrs extends InlineNodeAttributes {
 // MODULE AUGMENTATION
 // ============================================
 
-declare module '../../core/types/NodeAttributesMap.js' {
+declare module '../../core/types/NodeAttributesMap' {
   interface NodeAttributesMap {
     // Document structure
     doc: DocumentAttrs;

@@ -7,8 +7,8 @@
  *   3. No invalidation logic in transport adapters or command helpers.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartId, PartChangedEvent } from '../types.js';
+import type { Editor } from '../../Editor';
+import type { PartId, PartChangedEvent } from '../types';
 
 type InvalidationHandler = (editor: Editor, event: PartChangedEvent) => void;
 

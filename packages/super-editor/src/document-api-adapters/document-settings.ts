@@ -1,4 +1,4 @@
-import type { XmlElement } from './helpers/sections-xml.js';
+import type { XmlElement } from './helpers/sections-xml';
 
 const SETTINGS_PART_PATH = 'word/settings.xml';
 

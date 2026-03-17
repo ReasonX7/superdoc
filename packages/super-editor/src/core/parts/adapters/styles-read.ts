@@ -9,7 +9,7 @@
  * Consumers: query-match-adapter, tables-adapter, normalizeNewTableAttrs.
  */
 
-import type { Editor } from '../../Editor.js';
+import type { Editor } from '../../Editor';
 import type { StylesDocumentProperties } from '@superdoc/style-engine/ooxml';
 
 interface ConverterWithStyles {

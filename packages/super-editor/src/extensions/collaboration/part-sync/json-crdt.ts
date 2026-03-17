@@ -10,7 +10,7 @@
  */
 
 import * as Y from 'yjs';
-import type { PartEnvelope } from './types.js';
+import type { PartEnvelope } from './types';
 
 // ---------------------------------------------------------------------------
 // Encode: JSON → Yjs

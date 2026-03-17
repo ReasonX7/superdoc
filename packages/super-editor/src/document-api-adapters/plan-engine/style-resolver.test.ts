@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { captureRunsInRange, resolveInlineStyle } from './style-resolver.js';
-import { coalesceRuns, assertRunTilingInvariant } from './match-style-helpers.js';
-import type { Editor } from '../../core/Editor.js';
+import { captureRunsInRange, resolveInlineStyle } from './style-resolver';
+import { coalesceRuns, assertRunTilingInvariant } from './match-style-helpers';
+import type { Editor } from '../../core/Editor';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import type { MatchRun } from '@superdoc/document-api';
 

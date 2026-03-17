@@ -7,7 +7,7 @@
 
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import type { ContentControlTarget } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from '../../errors.js';
+import { DocumentApiAdapterError } from '../../errors';
 
 // ---------------------------------------------------------------------------
 // Constants

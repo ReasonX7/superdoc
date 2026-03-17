@@ -1,22 +1,44 @@
 import type { Transaction } from 'prosemirror-state';
-import type { Editor } from '../Editor.js';
-import type { DefaultEventMap } from '../EventEmitter.js';
-import type { PartChangedEvent } from '../parts/types.js';
+import type { Editor } from '../Editor';
+import type { DefaultEventMap } from '../EventEmitter';
+import type { PartChangedEvent } from '../parts/types';
 
 /**
  * Payload for fonts-resolved events
  */
 export interface FontsResolvedPayload {
-  documentFonts: string[];
-  unsupportedFonts: string[];
+  readonly documentFonts: string[];
+  readonly unsupportedFonts: string[];
 }
 
 /**
+ * TODO: These types should be rechecked.
+ *
+ * Editor's element described as an object
+ */
+export interface SuperElement {
+  readonly content?: SuperElement[];
+  readonly text?: string;
+  readonly type: string;
+  [key: string]: unknown;
+}
+
+/**
+ * TODO: These types should be rechecked.
+ *
  * Comment data structure
  */
 export interface Comment {
-  id: string;
-  [key: string]: unknown;
+  readonly id: string;
+  readonly commentId: string;
+  readonly commentJSON?: unknown;
+  readonly createdTime: number;
+  readonly creatorEmail: string;
+  readonly creatorName: string;
+  readonly elements: SuperElement[];
+  readonly importedId: string;
+  readonly isDone: boolean;
+  readonly parentCommentId: string;
 }
 
 /**

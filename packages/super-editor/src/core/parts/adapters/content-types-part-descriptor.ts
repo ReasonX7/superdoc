@@ -6,7 +6,7 @@
  * structural operations add new media or part types.
  */
 
-import type { PartDescriptor } from '../types.js';
+import type { PartDescriptor } from '../types';
 
 const CONTENT_TYPES_PART_ID = '[Content_Types].xml' as const;
 const CONTENT_TYPES_NS = 'http://schemas.openxmlformats.org/package/2006/content-types';

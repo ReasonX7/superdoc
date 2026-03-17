@@ -26,7 +26,7 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import type { Mock } from 'vitest';
-import { PresentationEditor } from '../PresentationEditor.js';
+import { PresentationEditor } from '../PresentationEditor';
 
 const {
   createDefaultConverter,
@@ -261,7 +261,7 @@ vi.mock('@superdoc/measuring-dom', () => ({
   measureBlock: mockMeasureBlock,
 }));
 
-vi.mock('@extensions/pagination/pagination-helpers.js', () => ({
+vi.mock('@extensions/pagination/pagination-helpers', () => ({
   createHeaderFooterEditor: mockCreateHeaderFooterEditor,
   onHeaderFooterDataUpdate: mockOnHeaderFooterDataUpdate,
 }));

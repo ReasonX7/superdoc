@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseTcInstruction, serializeTcInstruction, applyTcPatch, areTcConfigsEqual } from './tc-switches.js';
+import { parseTcInstruction, serializeTcInstruction, applyTcPatch, areTcConfigsEqual } from './tc-switches';
 
 describe('parseTcInstruction', () => {
   it('parses basic TC entry with quoted text', () => {

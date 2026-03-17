@@ -9,7 +9,7 @@
  * This avoids permanently degraded state from transient afterCommit failures.
  */
 
-import type { Editor } from '../Editor.js';
+import type { Editor } from '../Editor';
 
 const stalePartIds = new WeakMap<Editor, Set<string>>();
 

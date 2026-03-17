@@ -1,8 +1,8 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import { getHeadingLevel, type BlockCandidate } from './node-address-resolver.js';
-import type { InlineCandidate } from './inline-address-resolver.js';
-import { resolveCommentIdFromAttrs, toFiniteNumber } from './value-utils.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import { getHeadingLevel, type BlockCandidate } from './node-address-resolver';
+import type { InlineCandidate } from './inline-address-resolver';
+import { resolveCommentIdFromAttrs, toFiniteNumber } from './value-utils';
+import { DocumentApiAdapterError } from '../errors';
 import type {
   BookmarkNodeInfo,
   CommentNodeInfo,
@@ -33,9 +33,9 @@ import type {
   TableAttrs,
   TableCellAttrs,
   TableMeasurement,
-} from '../../extensions/types/node-attributes.js';
-import { parseTocInstruction } from '../../core/super-converter/field-references/shared/toc-switches.js';
-import { buildContentControlInfoFromAttrs } from './content-controls/sdt-info-builder.js';
+} from '../../extensions/types/node-attributes';
+import { parseTocInstruction } from '../../core/super-converter/field-references/shared/toc-switches';
+import { buildContentControlInfoFromAttrs } from './content-controls/sdt-info-builder';
 
 function resolveMeasurement(value: number | TableMeasurement | null | undefined): number | undefined {
   if (typeof value === 'number') return value;

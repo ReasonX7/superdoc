@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { PresentationEditor } from '../PresentationEditor.js';
+import { PresentationEditor } from '../PresentationEditor';
 
 /**
  * Regression test for SD-1313: Images not rendering when loading from persisted YDoc

@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { PresentationEditor } from '../PresentationEditor.js';
+import { PresentationEditor } from '../PresentationEditor';
 const {
   createDefaultConverter,
   mockClickToPosition,
@@ -66,7 +66,7 @@ const {
   };
 });
 
-vi.mock('../../Editor.js', () => {
+vi.mock('../../Editor', () => {
   return {
     Editor: vi.fn().mockImplementation(() => {
       const domElement = document.createElement('div');
@@ -169,7 +169,7 @@ vi.mock('@superdoc/painter-dom', () => ({
   },
 }));
 
-vi.mock('../../header-footer/EditorOverlayManager.js', () => ({
+vi.mock('../../header-footer/EditorOverlayManager', () => ({
   EditorOverlayManager: mockEditorOverlayManager,
 }));
 

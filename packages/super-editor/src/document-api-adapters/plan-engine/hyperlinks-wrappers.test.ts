@@ -1,15 +1,15 @@
 import type { Node as ProseMirrorNode, Mark } from 'prosemirror-model';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type { PlanReceipt, HyperlinkTarget, InlineAnchor } from '@superdoc/document-api';
-import type { InlineCandidate, InlineIndex } from '../helpers/inline-address-resolver.js';
-import type { BlockIndex } from '../helpers/node-address-resolver.js';
+import type { InlineCandidate, InlineIndex } from '../helpers/inline-address-resolver';
+import type { BlockIndex } from '../helpers/node-address-resolver';
 
 // ---------------------------------------------------------------------------
 // Module mocks — must come before imports of the module under test
 // ---------------------------------------------------------------------------
 
-vi.mock('./plan-wrappers.js', () => ({
+vi.mock('./plan-wrappers', () => ({
   executeDomainCommand: vi.fn((_editor: Editor, handler: () => boolean): PlanReceipt => {
     const applied = handler();
     return {
@@ -29,16 +29,16 @@ vi.mock('./plan-wrappers.js', () => ({
   }),
 }));
 
-vi.mock('./revision-tracker.js', () => ({
+vi.mock('./revision-tracker', () => ({
   getRevision: vi.fn(() => '42'),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getBlockIndex: vi.fn((): BlockIndex => ({ candidates: [] }) as unknown as BlockIndex),
   clearIndexCache: vi.fn(),
 }));
 
-vi.mock('../helpers/mutation-helpers.js', () => ({
+vi.mock('../helpers/mutation-helpers', () => ({
   rejectTrackedMode: vi.fn((opName: string, options?: { changeMode?: string }) => {
     if (options?.changeMode === 'tracked') {
       const err = new Error(`${opName} does not support tracked mode`);
@@ -51,7 +51,7 @@ vi.mock('../helpers/mutation-helpers.js', () => ({
   }),
 }));
 
-vi.mock('../helpers/hyperlink-mutation-helper.js', () => ({
+vi.mock('../helpers/hyperlink-mutation-helper', () => ({
   wrapWithLink: vi.fn(() => true),
   insertLinkedText: vi.fn(() => true),
   patchLinkMark: vi.fn(() => true),
@@ -68,7 +68,7 @@ vi.mock('../helpers/hyperlink-mutation-helper.js', () => ({
 // Store a reference we can control per-test
 let mockCandidates: InlineCandidate[] = [];
 
-vi.mock('../helpers/inline-address-resolver.js', () => ({
+vi.mock('../helpers/inline-address-resolver', () => ({
   buildInlineIndex: vi.fn(
     (): InlineIndex => ({
       candidates: mockCandidates,
@@ -89,7 +89,7 @@ vi.mock('../helpers/inline-address-resolver.js', () => ({
   }),
 }));
 
-vi.mock('../helpers/adapter-utils.js', () => ({
+vi.mock('../helpers/adapter-utils', () => ({
   paginate: vi.fn((items: unknown[], offset = 0, limit?: number) => {
     const total = items.length;
     const sliced = items.slice(offset, limit ? offset + limit : undefined);
@@ -116,8 +116,8 @@ import {
   hyperlinksInsertWrapper,
   hyperlinksPatchWrapper,
   hyperlinksRemoveWrapper,
-} from './hyperlinks-wrappers.js';
-import { DocumentApiAdapterError } from '../errors.js';
+} from './hyperlinks-wrappers';
+import { DocumentApiAdapterError } from '../errors';
 import {
   wrapWithLink,
   insertLinkedText,
@@ -125,7 +125,7 @@ import {
   unwrapLink,
   deleteLinkedText,
   sanitizeHrefOrThrow,
-} from '../helpers/hyperlink-mutation-helper.js';
+} from '../helpers/hyperlink-mutation-helper';
 
 // ---------------------------------------------------------------------------
 // Test helpers
@@ -383,7 +383,7 @@ describe('hyperlinksInsertWrapper', () => {
   it('uses resolveDefaultInsertTarget when target is omitted', async () => {
     mockCandidates = [];
     const editor = makeEditor();
-    const { resolveDefaultInsertTarget } = await import('../helpers/adapter-utils.js');
+    const { resolveDefaultInsertTarget } = await import('../helpers/adapter-utils');
 
     const result = hyperlinksInsertWrapper(
       editor,

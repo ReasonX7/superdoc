@@ -14,11 +14,11 @@
 
 import type { TextAddress } from '@superdoc/document-api';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import type { Editor } from '../../core/Editor.js';
-import { resolveDefaultInsertTarget } from '../helpers/adapter-utils.js';
-import { getBlockIndex } from '../helpers/index-cache.js';
-import { findBlockByNodeIdOnly } from '../helpers/node-address-resolver.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import { resolveDefaultInsertTarget } from '../helpers/adapter-utils';
+import { getBlockIndex } from '../helpers/index-cache';
+import { findBlockByNodeIdOnly } from '../helpers/node-address-resolver';
+import { DocumentApiAdapterError } from '../errors';
 
 /** Resolved insertion target with absolute ProseMirror position. */
 export interface ResolvedInsertTarget {

@@ -1,6 +1,6 @@
 import type { TextAddress } from '@superdoc/document-api';
-import { buildTextMutationResolution, readTextAtResolvedRange } from './text-mutation-resolution.js';
-import type { Editor } from '../../core/Editor.js';
+import { buildTextMutationResolution, readTextAtResolvedRange } from './text-mutation-resolution';
+import type { Editor } from '../../core/Editor';
 
 function makeEditor(text: string): Editor {
   return {

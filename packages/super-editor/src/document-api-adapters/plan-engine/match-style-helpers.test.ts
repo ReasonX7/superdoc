@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { CapturedRun } from './style-resolver.js';
+import type { CapturedRun } from './style-resolver';
 import {
   marksEqual,
   coalesceRuns,
@@ -9,7 +9,7 @@ import {
   parseFontSizePt,
   assertRunTilingInvariant,
   type CascadeContext,
-} from './match-style-helpers.js';
+} from './match-style-helpers';
 import type { MatchRun } from '@superdoc/document-api';
 
 // Mock style-engine resolveRunProperties for cascade context tests

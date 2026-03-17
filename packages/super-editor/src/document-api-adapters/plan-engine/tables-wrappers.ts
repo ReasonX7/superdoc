@@ -8,7 +8,7 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   MutationOptions,
   MutationStep,
@@ -50,10 +50,10 @@ import type {
   TablesClearCellSpacingInput,
 } from '@superdoc/document-api';
 
-import type { CompiledPlan } from './compiler.js';
-import { executeCompiledPlan } from './executor.js';
-import { checkRevision, getRevision } from './revision-tracker.js';
-import { STUB_WHERE } from './plan-wrappers.js';
+import type { CompiledPlan } from './compiler';
+import { executeCompiledPlan } from './executor';
+import { checkRevision, getRevision } from './revision-tracker';
+import { STUB_WHERE } from './plan-wrappers';
 
 import {
   tablesDeleteAdapter,
@@ -92,7 +92,7 @@ import {
   tablesSetCellPaddingAdapter,
   tablesSetCellSpacingAdapter,
   tablesClearCellSpacingAdapter,
-} from '../tables-adapter.js';
+} from '../tables-adapter';
 
 // ---------------------------------------------------------------------------
 // Plan-engine table command helper

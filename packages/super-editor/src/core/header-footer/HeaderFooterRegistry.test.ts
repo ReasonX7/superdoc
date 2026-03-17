@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import type { Editor as EditorType } from '@core/Editor.js';
-import { HeaderFooterEditorManager, HeaderFooterLayoutAdapter } from './HeaderFooterRegistry.js';
+import type { Editor as EditorType } from '@core/Editor';
+import { HeaderFooterEditorManager, HeaderFooterLayoutAdapter } from './HeaderFooterRegistry';
 
 type MockEditorEmitter = {
   on: (event: string, handler: (payload?: unknown) => void) => void;
@@ -85,7 +85,7 @@ const { mockCreateHeaderFooterEditor, mockOnHeaderFooterDataUpdate, mockToFlowBl
   },
 );
 
-vi.mock('@extensions/pagination/pagination-helpers.js', () => ({
+vi.mock('@extensions/pagination/pagination-helpers', () => ({
   createHeaderFooterEditor: mockCreateHeaderFooterEditor,
   onHeaderFooterDataUpdate: mockOnHeaderFooterDataUpdate,
 }));

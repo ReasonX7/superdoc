@@ -1,4 +1,4 @@
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   MatchContext,
   NodeAddress,
@@ -14,11 +14,11 @@ import {
   toBlockAddress,
   type BlockCandidate,
   type BlockIndex,
-} from '../helpers/node-address-resolver.js';
-import { addDiagnostic, findCandidateByPos, paginate, resolveWithinScope } from '../helpers/adapter-utils.js';
-import { buildTextContext, toTextAddress } from './common.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { requireEditorCommand } from '../helpers/mutation-helpers.js';
+} from '../helpers/node-address-resolver';
+import { addDiagnostic, findCandidateByPos, paginate, resolveWithinScope } from '../helpers/adapter-utils';
+import { buildTextContext, toTextAddress } from './common';
+import { DocumentApiAdapterError } from '../errors';
+import { requireEditorCommand } from '../helpers/mutation-helpers';
 
 /** Shape returned by `editor.commands.search`. */
 type SearchMatch = {

@@ -1,10 +1,10 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type { BlockNodeType, GetNodeByIdInput, NodeAddress, SDNodeResult, SDAddress } from '@superdoc/document-api';
-import type { BlockCandidate, BlockIndex } from './helpers/node-address-resolver.js';
-import { getBlockIndex, getInlineIndex } from './helpers/index-cache.js';
-import { findInlineByAnchor } from './helpers/inline-address-resolver.js';
-import { projectContentNode, projectInlineNode, projectMarkBasedInline } from './helpers/sd-projection.js';
-import { DocumentApiAdapterError } from './errors.js';
+import type { BlockCandidate, BlockIndex } from './helpers/node-address-resolver';
+import { getBlockIndex, getInlineIndex } from './helpers/index-cache';
+import { findInlineByAnchor } from './helpers/inline-address-resolver';
+import { projectContentNode, projectInlineNode, projectMarkBasedInline } from './helpers/sd-projection';
+import { DocumentApiAdapterError } from './errors';
 
 function findBlocksByTypeAndId(blockIndex: BlockIndex, nodeType: BlockNodeType, nodeId: string): BlockCandidate[] {
   // Fast path: check the byId map which includes alias entries (e.g., sdBlockId

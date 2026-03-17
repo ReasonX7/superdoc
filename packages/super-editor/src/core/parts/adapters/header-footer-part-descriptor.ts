@@ -10,10 +10,10 @@
  * applies, and triggers sub-editor refresh and layout invalidation.
  */
 
-import type { Editor } from '../../Editor.js';
-import type { PartDescriptor, CommitContext, DeleteContext, PartId } from '../types.js';
-import { registerPartDescriptor, hasPartDescriptor } from '../registry/part-registry.js';
-import { registerInvalidationHandler } from '../invalidation/part-invalidation-registry.js';
+import type { Editor } from '../../Editor';
+import type { PartDescriptor, CommitContext, DeleteContext, PartId } from '../types';
+import { registerPartDescriptor, hasPartDescriptor } from '../registry/part-registry';
+import { registerInvalidationHandler } from '../invalidation/part-invalidation-registry';
 
 // ---------------------------------------------------------------------------
 // Converter shape

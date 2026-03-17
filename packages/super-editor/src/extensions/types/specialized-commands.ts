@@ -1,4 +1,4 @@
-import type { ProseMirrorJSON } from '../../core/types/EditorTypes.js';
+import type { ProseMirrorJSON } from '../../core/types/EditorTypes';
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 
 type BookmarkConfig = {
@@ -99,6 +99,6 @@ export interface SpecializedCommandAugmentations {
   appendRowsToStructuredContentTable: (options: StructuredContentTableAppendOptions) => boolean;
 }
 
-declare module '../../core/types/ChainedCommands.js' {
+declare module '../../core/types/ChainedCommands' {
   interface ExtensionCommandMap extends SpecializedCommandAugmentations {}
 }

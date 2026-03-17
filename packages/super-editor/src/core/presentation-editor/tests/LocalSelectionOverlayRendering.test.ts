@@ -7,7 +7,7 @@ import {
   type RenderCaretOverlayDeps,
   type LayoutRect,
   type CaretLayoutRect,
-} from '../selection/LocalSelectionOverlayRendering.js';
+} from '../selection/LocalSelectionOverlayRendering';
 
 describe('renderSelectionRects', () => {
   let localSelectionLayer: HTMLElement;

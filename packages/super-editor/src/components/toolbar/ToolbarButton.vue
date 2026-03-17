@@ -1,7 +1,7 @@
 <script setup>
 import ToolbarButtonIcon from './ToolbarButtonIcon.vue';
 import { ref, computed, nextTick } from 'vue';
-import { toolbarIcons } from './toolbarIcons.js';
+import { toolbarIcons } from './toolbarIcons';
 import { useHighContrastMode } from '../../composables/use-high-contrast-mode';
 const emit = defineEmits(['buttonClick', 'textSubmit']);
 

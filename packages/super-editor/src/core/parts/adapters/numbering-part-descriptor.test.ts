@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { syncNumberingToXmlTree } from './numbering-part-descriptor.js';
+import { syncNumberingToXmlTree } from './numbering-part-descriptor';
 
 describe('syncNumberingToXmlTree', () => {
   it('preserves non-abstract/definition children like w:numPicBullet', () => {

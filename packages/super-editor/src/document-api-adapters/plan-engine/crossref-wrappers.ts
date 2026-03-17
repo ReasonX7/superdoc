@@ -2,7 +2,7 @@
  * Cross-reference plan-engine wrappers — bridge crossRefs.* operations.
  */
 
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   CrossRefListInput,
   CrossRefGetInput,
@@ -21,13 +21,13 @@ import {
   resolveCrossRefTarget,
   extractCrossRefInfo,
   buildCrossRefDiscoveryItem,
-} from '../helpers/crossref-resolver.js';
-import { paginate, resolveInlineInsertPosition } from '../helpers/adapter-utils.js';
-import { getRevision } from './revision-tracker.js';
-import { executeDomainCommand } from './plan-wrappers.js';
-import { rejectTrackedMode } from '../helpers/mutation-helpers.js';
-import { clearIndexCache } from '../helpers/index-cache.js';
-import { DocumentApiAdapterError } from '../errors.js';
+} from '../helpers/crossref-resolver';
+import { paginate, resolveInlineInsertPosition } from '../helpers/adapter-utils';
+import { getRevision } from './revision-tracker';
+import { executeDomainCommand } from './plan-wrappers';
+import { rejectTrackedMode } from '../helpers/mutation-helpers';
+import { clearIndexCache } from '../helpers/index-cache';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Result helpers

@@ -1,8 +1,8 @@
 import type { Node as ProseMirrorNode, Mark as ProseMirrorMark } from 'prosemirror-model';
-import type { BlockCandidate } from './node-address-resolver.js';
-import type { InlineCandidate } from './inline-address-resolver.js';
+import type { BlockCandidate } from './node-address-resolver';
+import type { InlineCandidate } from './inline-address-resolver';
 import type { InlineAnchor, InlineNodeType, NodeType } from '@superdoc/document-api';
-import { mapNodeInfo } from './node-info-mapper.js';
+import { mapNodeInfo } from './node-info-mapper';
 
 // ---------------------------------------------------------------------------
 // Helpers

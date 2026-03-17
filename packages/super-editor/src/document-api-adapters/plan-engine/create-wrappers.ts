@@ -7,7 +7,7 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
-import type { Editor } from '../../core/Editor.js';
+import type { Editor } from '../../core/Editor';
 import type {
   CreateParagraphInput,
   CreateParagraphResult,
@@ -17,13 +17,13 @@ import type {
   CreateHeadingSuccessResult,
   MutationOptions,
 } from '@superdoc/document-api';
-import { clearIndexCache, getBlockIndex } from '../helpers/index-cache.js';
-import { type BlockCandidate } from '../helpers/node-address-resolver.js';
-import { resolveCreateAnchor } from './create-insertion.js';
-import { collectTrackInsertRefsInRange } from '../helpers/tracked-change-refs.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { requireEditorCommand, ensureTrackedCapability } from '../helpers/mutation-helpers.js';
-import { executeDomainCommand } from './plan-wrappers.js';
+import { clearIndexCache, getBlockIndex } from '../helpers/index-cache';
+import { type BlockCandidate } from '../helpers/node-address-resolver';
+import { resolveCreateAnchor } from './create-insertion';
+import { collectTrackInsertRefsInRange } from '../helpers/tracked-change-refs';
+import { DocumentApiAdapterError } from '../errors';
+import { requireEditorCommand, ensureTrackedCapability } from '../helpers/mutation-helpers';
+import { executeDomainCommand } from './plan-wrappers';
 
 // ---------------------------------------------------------------------------
 // Command types (internal to the wrapper)

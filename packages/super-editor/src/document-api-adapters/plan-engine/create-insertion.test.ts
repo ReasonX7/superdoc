@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
-import { resolveBlockInsertionPos, resolveCreateAnchor } from './create-insertion.js';
-import { PlanError } from './errors.js';
-import { DocumentApiAdapterError } from '../errors.js';
+import type { Editor } from '../../core/Editor';
+import { resolveBlockInsertionPos, resolveCreateAnchor } from './create-insertion';
+import { PlanError } from './errors';
+import { DocumentApiAdapterError } from '../errors';
 
 // ---------------------------------------------------------------------------
 // Module mocks
@@ -13,11 +13,11 @@ const mockedDeps = vi.hoisted(() => ({
   findBlockByNodeIdOnly: vi.fn(),
 }));
 
-vi.mock('../helpers/index-cache.js', () => ({
+vi.mock('../helpers/index-cache', () => ({
   getBlockIndex: mockedDeps.getBlockIndex,
 }));
 
-vi.mock('../helpers/node-address-resolver.js', async (importOriginal) => {
+vi.mock('../helpers/node-address-resolver', async (importOriginal) => {
   const actual = (await importOriginal()) as Record<string, unknown>;
   return {
     ...actual,

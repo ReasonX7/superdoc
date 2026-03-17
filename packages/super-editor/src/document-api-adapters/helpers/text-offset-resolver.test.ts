@@ -1,5 +1,5 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
-import { computeTextContentLength, resolveTextRangeInBlock } from './text-offset-resolver.js';
+import { computeTextContentLength, resolveTextRangeInBlock } from './text-offset-resolver';
 
 type NodeOptions = {
   text?: string;

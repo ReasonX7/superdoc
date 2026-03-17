@@ -5,9 +5,9 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import type { TocAddress, TocDomain, DiscoveryItem, TocInfo } from '@superdoc/document-api';
 import { buildDiscoveryItem, buildResolvedHandle } from '@superdoc/document-api';
-import { parseTocInstruction } from '../../core/super-converter/field-references/shared/toc-switches.js';
-import { DocumentApiAdapterError } from '../errors.js';
-import { resolvePublicTocNodeId } from './toc-node-id.js';
+import { parseTocInstruction } from '../../core/super-converter/field-references/shared/toc-switches';
+import { DocumentApiAdapterError } from '../errors';
+import { resolvePublicTocNodeId } from './toc-node-id';
 
 // ---------------------------------------------------------------------------
 // Node resolution

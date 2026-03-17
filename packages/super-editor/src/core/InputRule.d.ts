@@ -1,7 +1,7 @@
 import type { Plugin } from 'prosemirror-state';
 import type { EditorState, Transaction } from 'prosemirror-state';
 import type { EditorView } from 'prosemirror-view';
-import type { Editor } from './Editor.js';
+import type { Editor } from './Editor.ts';
 
 /**
  * Match result from input rule matching

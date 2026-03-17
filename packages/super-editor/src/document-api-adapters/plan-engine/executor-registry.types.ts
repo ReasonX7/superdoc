@@ -8,8 +8,8 @@
 import type { Transaction } from 'prosemirror-state';
 import type { Mapping } from 'prosemirror-transform';
 import type { StepOutcome, StepOutcomeData, MutationStep } from '@superdoc/document-api';
-import type { Editor } from '../../core/Editor.js';
-import type { CapturedStyle } from './style-resolver.js';
+import type { Editor } from '../../core/Editor';
+import type { CapturedStyle } from './style-resolver';
 
 // ---------------------------------------------------------------------------
 // Compiled target model — discriminated union (D2)

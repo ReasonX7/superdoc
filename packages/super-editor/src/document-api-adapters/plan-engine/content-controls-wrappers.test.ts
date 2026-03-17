@@ -1,12 +1,12 @@
 import type { Node as ProseMirrorNode } from 'prosemirror-model';
 import { describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../../core/Editor.js';
-import { registerBuiltInExecutors } from './register-executors.js';
-import { createContentControlsAdapter } from './content-controls-wrappers.js';
+import type { Editor } from '../../core/Editor';
+import { registerBuiltInExecutors } from './register-executors';
+import { createContentControlsAdapter } from './content-controls-wrappers';
 import {
   buildContentControlInfoFromNode,
   buildContentControlInfoFromAttrs,
-} from '../helpers/content-controls/index.js';
+} from '../helpers/content-controls/index';
 
 registerBuiltInExecutors();
 

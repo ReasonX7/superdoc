@@ -1,4 +1,4 @@
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type { GetTextInput } from '@superdoc/document-api';
 
 /**

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { Editor } from '../core/Editor.js';
-import { getTextAdapter } from './get-text-adapter.js';
+import type { Editor } from '../core/Editor';
+import { getTextAdapter } from './get-text-adapter';
 
 function makeEditor(textContent: string): Editor {
   return {

@@ -12,17 +12,17 @@
 
 import { Fragment } from 'prosemirror-model';
 import type { Node as PmNode } from 'prosemirror-model';
-import type { Editor } from '../../Editor.js';
-import { parseMarkdownToAst } from './parseMarkdownAst.js';
-import { convertMdastToBlocks } from './mdastToProseMirror.js';
-import { normalizeFixedWidthTables } from './normalizeFixedWidthTables.js';
-import { wrapTextsInRuns } from '../../inputRules/docx-paste/docx-paste.js';
+import type { Editor } from '../../Editor';
+import { parseMarkdownToAst } from './parseMarkdownAst';
+import { convertMdastToBlocks } from './mdastToProseMirror';
+import { normalizeFixedWidthTables } from './normalizeFixedWidthTables';
+import { wrapTextsInRuns } from '../../inputRules/docx-paste/docx-paste';
 import type {
   MarkdownConversionOptions,
   MarkdownConversionResult,
   MarkdownFragmentResult,
   MdastConversionContext,
-} from './types.js';
+} from './types';
 
 // ---------------------------------------------------------------------------
 // Full document conversion (for body replacement in doc.open)

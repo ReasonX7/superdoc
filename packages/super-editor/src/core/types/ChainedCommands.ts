@@ -1,6 +1,6 @@
 import type { Transaction, EditorState } from 'prosemirror-state';
 import type { EditorView } from 'prosemirror-view';
-import type { Editor } from '../Editor.js';
+import type { Editor } from '../Editor';
 
 /**
  * Map of built-in command names to their parameter signatures.
@@ -19,7 +19,7 @@ export interface CoreCommandMap {}
  * Extensions should augment this interface via module augmentation, e.g.:
  *
  * ```ts
- * declare module '@core/types/ChainedCommands.js' {
+ * declare module '@core/types/ChainedCommands' {
  *   interface ExtensionCommandMap {
  *     setFontSize: (fontSize: string | number) => boolean;
  *   }

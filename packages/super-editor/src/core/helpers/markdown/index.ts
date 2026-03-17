@@ -8,13 +8,13 @@
  *  - `proseMirrorDocToMdast` — ProseMirror → mdast conversion (for export)
  */
 
-export { markdownToPmDoc, markdownToPmFragment } from './markdownToPmContent.js';
-export { parseMarkdownToAst } from './parseMarkdownAst.js';
-export { proseMirrorDocToMdast } from './proseMirrorToMdast.js';
-export { normalizeFixedWidthTables } from './normalizeFixedWidthTables.js';
+export { markdownToPmDoc, markdownToPmFragment } from './markdownToPmContent';
+export { parseMarkdownToAst } from './parseMarkdownAst';
+export { proseMirrorDocToMdast } from './proseMirrorToMdast';
+export { normalizeFixedWidthTables } from './normalizeFixedWidthTables';
 export type {
   MarkdownConversionOptions,
   MarkdownConversionResult,
   MarkdownFragmentResult,
   MarkdownDiagnostic,
-} from './types.js';
+} from './types';

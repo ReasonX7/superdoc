@@ -7,8 +7,8 @@
  * @example
  * ```typescript
  * // In a TypeScript file:
- * import { defineNode } from '@core/defineNode.js';
- * import type { ParagraphAttrs } from '@extensions/types/node-attributes.js';
+ * import { defineNode } from '@core/defineNode';
+ * import type { ParagraphAttrs } from '@extensions/types/node-attributes';
  *
  * interface ParagraphOptions {
  *   headingLevels: number[];
@@ -29,10 +29,10 @@
  * @example
  * ```javascript
  * // In a JavaScript file with JSDoc:
- * import { defineNode } from '@core/defineNode.js';
+ * import { defineNode } from '@core/defineNode';
  *
  * /**
- *  * @typedef {import('@extensions/types/node-attributes.js').ParagraphAttrs} ParagraphAttrs
+ *  * @typedef {import('@extensions/types/node-attributes').ParagraphAttrs} ParagraphAttrs
  *  *\/
  *
  * export const Paragraph = defineNode({
@@ -44,7 +44,7 @@
  * @module defineNode
  */
 
-import { Node, type NodeConfig } from './Node.js';
+import { Node, type NodeConfig } from './Node';
 
 /**
  * Type-safe factory for creating Node extensions.

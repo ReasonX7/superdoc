@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import type { Editor } from '../core/Editor.js';
+import type { Editor } from '../core/Editor';
 import type {
   MutationOptions,
   ReceiptFailure,
@@ -7,12 +7,12 @@ import type {
   TextMutationReceipt,
   WriteRequest,
 } from '@superdoc/document-api';
-import { DocumentApiAdapterError } from './errors.js';
-import { ensureTrackedCapability } from './helpers/mutation-helpers.js';
-import { applyDirectMutationMeta, applyTrackedMutationMeta } from './helpers/transaction-meta.js';
-import { checkRevision } from './plan-engine/revision-tracker.js';
-import { insertParagraphAtEnd, resolveWriteTarget, type ResolvedWrite } from './helpers/adapter-utils.js';
-import { toCanonicalTrackedChangeId } from './helpers/tracked-change-resolver.js';
+import { DocumentApiAdapterError } from './errors';
+import { ensureTrackedCapability } from './helpers/mutation-helpers';
+import { applyDirectMutationMeta, applyTrackedMutationMeta } from './helpers/transaction-meta';
+import { checkRevision } from './plan-engine/revision-tracker';
+import { insertParagraphAtEnd, resolveWriteTarget, type ResolvedWrite } from './helpers/adapter-utils';
+import { toCanonicalTrackedChangeId } from './helpers/tracked-change-resolver';
 
 function validateWriteRequest(request: WriteRequest, resolvedTarget: ResolvedWrite): ReceiptFailure | null {
   if (request.kind === 'insert') {

@@ -1,9 +1,9 @@
 /* @vitest-environment jsdom */
 
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers.js';
-import DocxZipper from '@core/DocxZipper.js';
-import type { Editor } from '../core/Editor.js';
+import { initTestEditor, loadTestDataForEditorTests } from '@tests/helpers/helpers';
+import DocxZipper from '@core/DocxZipper';
+import type { Editor } from '../core/Editor';
 import {
   createSectionBreakAdapter,
   sectionsClearHeaderFooterRefAdapter,
@@ -11,11 +11,11 @@ import {
   sectionsSetLinkToPreviousAdapter,
   sectionsSetOddEvenHeadersFootersAdapter,
   sectionsSetPageSetupAdapter,
-} from './sections-adapter.js';
-import { resolveSectionProjections } from './helpers/sections-resolver.js';
-import { registerPartDescriptor, clearPartDescriptors } from '../core/parts/registry/part-registry.js';
-import { settingsPartDescriptor } from '../core/parts/adapters/settings-part-descriptor.js';
-import { clearInvalidationHandlers } from '../core/parts/invalidation/part-invalidation-registry.js';
+} from './sections-adapter';
+import { resolveSectionProjections } from './helpers/sections-resolver';
+import { registerPartDescriptor, clearPartDescriptors } from '../core/parts/registry/part-registry';
+import { settingsPartDescriptor } from '../core/parts/adapters/settings-part-descriptor';
+import { clearInvalidationHandlers } from '../core/parts/invalidation/part-invalidation-registry';
 
 type LoadedDocData = Awaited<ReturnType<typeof loadTestDataForEditorTests>>;
 

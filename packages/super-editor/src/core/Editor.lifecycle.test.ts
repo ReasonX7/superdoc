@@ -1,15 +1,15 @@
 import { describe, it, expect, vi, beforeEach, afterEach, beforeAll } from 'vitest';
-import { Editor } from './Editor.js';
+import { Editor } from './Editor';
 import {
   InvalidStateError,
   NoSourcePathError,
   FileSystemNotAvailableError,
   DocumentLoadError,
-} from './errors/index.js';
-import { loadTestDataForEditorTests, getMinimalTranslatedLinkedStyles } from '@tests/helpers/helpers.js';
-import { getStarterExtensions } from '@extensions/index.js';
-import { SuperConverter } from './super-converter/SuperConverter.js';
-import { BLANK_DOCX_BASE64, BLANK_DOCX_DATA_URI } from './blank-docx.js';
+} from './errors/index';
+import { loadTestDataForEditorTests, getMinimalTranslatedLinkedStyles } from '@tests/helpers/helpers';
+import { getStarterExtensions } from '@extensions/index';
+import { SuperConverter } from './super-converter/SuperConverter';
+import { BLANK_DOCX_BASE64, BLANK_DOCX_DATA_URI } from './blank-docx';
 
 /**
  * Comprehensive test suite for the Editor Document Lifecycle API.

@@ -11,7 +11,7 @@
  *   3. Let `afterCommit` handle event emission and cache rebuild
  */
 
-import { baseBulletList, baseOrderedListDef } from '../../helpers/baseListDefinitions.js';
+import { baseBulletList, baseOrderedListDef } from '../../helpers/baseListDefinitions';
 
 // ---------------------------------------------------------------------------
 // Types

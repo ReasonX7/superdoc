@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import type { EditorState } from 'prosemirror-state';
-import { buildFootnotesInput, type ConverterLike } from '../layout/FootnotesBuilder.js';
+import { buildFootnotesInput, type ConverterLike } from '../layout/FootnotesBuilder';
 import type { ConverterContext } from '@superdoc/pm-adapter';
 
 // Mock toFlowBlocks

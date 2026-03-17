@@ -6,7 +6,7 @@
  */
 
 // Main class
-export { PresentationEditor } from './PresentationEditor.js';
+export { PresentationEditor } from './PresentationEditor';
 
 // Public types
 export type {
@@ -25,4 +25,4 @@ export type {
   ImageSelectedEvent,
   ImageDeselectedEvent,
   TelemetryEvent,
-} from './types.js';
+} from './types';
