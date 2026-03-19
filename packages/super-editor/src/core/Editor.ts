@@ -26,12 +26,7 @@ import { TrackChangesBasePluginKey } from '@extensions/track-changes/plugins/ind
 import { CommentsPluginKey } from '@extensions/comment/comments-plugin';
 import { getNecessaryMigrations } from '@core/migrations/index';
 import { getStarterExtensions, getRichTextExtensions } from '../extensions/index';
-import {
-  InvalidStateError,
-  NoSourcePathError,
-  FileSystemNotAvailableError,
-  DocumentLoadError,
-} from './errors/index';
+import { InvalidStateError, NoSourcePathError, FileSystemNotAvailableError, DocumentLoadError } from './errors/index';
 import { AnnotatorHelpers } from '@helpers/annotator';
 import { prepareCommentsForExport, prepareCommentsForImport } from '@extensions/comment/comments-helpers';
 import DocxZipper from '@core/DocxZipper';
@@ -74,6 +69,17 @@ declare const version: string | undefined;
 const PIXELS_PER_INCH = 96;
 const MAX_HEIGHT_BUFFER_PX = 50;
 const MAX_WIDTH_BUFFER_PX = 20;
+
+interface ExportDocxParams {
+  isFinalDoc?: boolean;
+  commentsType?: string;
+  exportJsonOnly?: boolean;
+  exportXmlOnly?: boolean;
+  comments?: Comment[];
+  getUpdatedDocs?: boolean;
+  fieldsHighlightColor?: string | null;
+  compression?: 'DEFLATE' | 'STORE';
+}
 
 /**
  * Image storage structure used by the image extension
@@ -2640,6 +2646,9 @@ export class Editor extends EventEmitter<EditorEventMap> {
   /**
    * Export the editor document to DOCX.
    */
+  exportDocx(params: ExportDocxParams): Promise<Blob>;
+  exportDocx(params: ExportDocxParams & { exportXmlOnly: true }): Promise<string>;
+  exportDocx(params: ExportDocxParams & { exportJsonOnly: true }): Promise<Record<string, string | null>>;
   async exportDocx({
     isFinalDoc = false,
     commentsType = 'external',
@@ -2649,16 +2658,7 @@ export class Editor extends EventEmitter<EditorEventMap> {
     getUpdatedDocs = false,
     fieldsHighlightColor = null,
     compression,
-  }: {
-    isFinalDoc?: boolean;
-    commentsType?: string;
-    exportJsonOnly?: boolean;
-    exportXmlOnly?: boolean;
-    comments?: Comment[];
-    getUpdatedDocs?: boolean;
-    fieldsHighlightColor?: string | null;
-    compression?: 'DEFLATE' | 'STORE';
-  } = {}): Promise<Blob | ArrayBuffer | Buffer | Record<string, string | null> | ProseMirrorJSON | string | undefined> {
+  }: ExportDocxParams = {}): Promise<unknown> {
     try {
       // Use provided comments, or fall back to imported comments from converter
       const effectiveComments = comments ?? this.converter.comments ?? [];
